@@ -9,6 +9,5 @@ Execution
 -Create the war file using maven
 >>mvn package
 
--Add a new Tomcat entry with a reference to the path where the war file is.
--Restart Tomcat or manually try
->>mvn tomcat run
+-Add a new Tomcat entry with a reference to the path where the war file is using the Tomcat Manager Application
+>>http://147.83.7.XXX:8080/manager/html
