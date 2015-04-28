@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title> GelApp 3.0 - Inicio</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<div class="navbar-wrapper">
+  <div class="container">
+    <div class="navbar navbar-inverse navbar-static-top">
+      
+        <div class="navbar-header">
+	    <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	      <span class="icon-bar"></span>
+	    </a>
+        <a class="navbar-brand" href="#">GelApp 3.0</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html"> Inicio </a></li>
+            <li><a href="mis-helados.html"> Mis Helados </a></li>
+			<li class="active"><a href="ranking.html"> Ranking de Helados </a></li>
+			<li><a href="login.html" target="ext"> Iniciar sesión </a></li>
+			<li><a href="about.html" target="ext"> Acerca de </a></li>
+          </ul>
+        </div>
+
+    </div>
+  </div><!-- /container -->
+</div><!-- /navbar wrapper -->
+
+
+<!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarouse2" data-slide-to="1"></li>
+    <li data-target="#myCarouse3" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="images/portada.png" style="width:100%" class="img-responsive">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Gelapp 3.0</h1>
+          <p></p>
+          <p><a class="btn btn-lg btn-primary" href="index.html"> ¡Bienvenido! </a>
+        </p>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/portada2.png" class="img-responsive">
+      <div class="container">
+        <div class="carouse2-caption">
+          <h1>Changes to the Grid</h1>
+          <p>Bootstrap 3 still features a 12-column grid, but many of the CSS class names have completely changed.</p>
+          <p><a class="btn btn-large btn-primary" href="#">Learn more</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/portada3.png" class="img-responsive">
+      <div class="container">
+        <div class="carouse3-caption">
+          <h1>Percentage-based sizing</h1>
+          <p>With "mobile-first" there is now only one percentage-based grid.</p>
+          <p><a class="btn btn-large btn-primary" href="#">Browse gallery</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#myCarouse3" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarouse2" data-slide="next">
+    <span class="icon-next"></span>
+  </a>  
+</div>
+<!-- /.carousel -->
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+  <!-- Three columns of text below the carousel -->
+  
+    
+    <div class="col-md-4 text-center">
+      <img class="img-circle" src="images/ranking2.jpg">
+      <h2>Ranking</h2>
+      <p>A continuación podrás visualizar la lista de helados más valorados por los usuarios de GelApp</p>
+	  
+      <button type="button" class="btn btn-info" id="button_to_list_pagination">View Repositories >></button>
+	  <span id="repos_result"></span>
+	  
+    </div>
+	
+		
+    
+  </div><!-- /.row -->
+
+
+  <!-- START THE FEATURETTES -->
+
+ 
+  <!-- /END THE FEATURETTES -->
+
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="pull-right"><a href="#">Back to top</a></p>
+    <p>This Bootstrap layout is compliments of www.bootply.com/62603. · <a href="http://eetac.upc.edu">Edited by DSA students of http://eetac.upc.edu</a></p>
+  </footer>
+
+</div><!-- /.container -->
+	<!-- script references -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/github-pagination.js"></script>
+		<script src="js/weblinking.js"></script>
+	</body>
+</html>
