@@ -4,25 +4,25 @@ create database gelappdb;
 use gelappdb;
 
 create table usuario (
-	id		int not null auto_increment primary key,	
+	usuario_id		int not null auto_increment primary key,	
 	username	varchar(20) not null,
 	userpass	varchar(32) not null	
 );
 
 create table sabor (
-	id		int not null auto_increment primary key,
+	sabor_id		int not null auto_increment primary key,
 	nombre		varchar(20) not null,
 	codigo_color	varchar(20) not null	
 );
 
 create table topping (
-	id		int not null auto_increment primary key,
+	topping_id		int not null auto_increment primary key,
 	nombre		varchar(20) not null,
 	codigo_color	varchar(20) not null	
 );
 
 create table helado (
-	id		int not null auto_increment primary key,
+	helado_id		int not null auto_increment primary key,
 	creation_timestamp		datetime not null default current_timestamp,
 	last_modified			timestamp default current_timestamp ON UPDATE CURRENT_TIMESTAMP,
 	capa_1_topping			int not null,
