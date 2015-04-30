@@ -1,4 +1,4 @@
-package edu.upc.eetac.dsa.dsaqp1415g3.GelApp.api;
+package edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;

@@ -1,4 +1,4 @@
-package edu.upc.eetac.dsa.dsaqp1415g3.GelApp.api;
+package edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api;
 
 public class MediaType {
 	public final static String GELAPP_API_USER = "application/vnd.beeter.GelApp.user+json";

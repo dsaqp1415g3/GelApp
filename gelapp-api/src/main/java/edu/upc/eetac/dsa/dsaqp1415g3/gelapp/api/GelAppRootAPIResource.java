@@ -1,8 +1,8 @@
-package edu.upc.eetac.dsa.dsaqp1415g3.GelApp.api;
+package edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api;
 
 import javax.ws.rs.GET;
 
-import edu.upc.eetac.dsa.dsaqp1415g3.GelApp.api.model.GelAppRootAPI;
+import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.GelAppRootAPI;
 
 public class GelAppRootAPIResource {
 	@GET

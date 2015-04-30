@@ -1,4 +1,4 @@
-package edu.upc.eetac.dsa.dsaqp1415g3.GelApp.api.model;
+package edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.glassfish.jersey.linking.InjectLink;
 import org.glassfish.jersey.linking.InjectLinks;
 import org.glassfish.jersey.linking.InjectLink.Style;
 
-import edu.upc.eetac.dsa.dsaqp1415g3.GelApp.api.GelAppRootAPIResource;
-import edu.upc.eetac.dsa.dsaqp1415g3.GelApp.api.MediaType;
+import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.GelAppRootAPIResource;
+import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.MediaType;
 
 public class GelAppRootAPI {
 	@InjectLinks({

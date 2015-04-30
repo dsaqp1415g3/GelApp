@@ -1,4 +1,4 @@
-package edu.upc.eetac.dsa.dsaqp1415g3.GelApp.api.model;
+package edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model;
 
 public class GelAppError {
 	private int status;
