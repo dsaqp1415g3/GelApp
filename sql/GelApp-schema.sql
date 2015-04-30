@@ -4,25 +4,25 @@ create database gelappdb;
 use gelappdb;
 
 create table usuario (
-	id		int not null primary key,	
+	id		int not null auto_increment primary key,	
 	username	varchar(20) not null,
 	userpass	varchar(32) not null	
 );
 
 create table sabor (
-	id		int not null primary key,
+	id		int not null auto_increment primary key,
 	nombre		varchar(20) not null,
 	codigo_color	varchar(20) not null	
 );
 
 create table topping (
-	id		int not null primary key,
+	id		int not null auto_increment primary key,
 	nombre		varchar(20) not null,
 	codigo_color	varchar(20) not null	
 );
 
 create table helado (
-	id		int not null primary key,
+	id		int not null auto_increment primary key,
 	creation_timestamp		datetime not null default current_timestamp,
 	last_modified			timestamp default current_timestamp ON UPDATE CURRENT_TIMESTAMP,
 	capa_1_topping			int not null,
@@ -42,7 +42,7 @@ create table relacion_helado_usuario (
 	id_helado 			int not null,
 	foreign key(id_helado) references helado(id) on delete cascade,
 	foreign key(id_usuario) references usuario(id) on delete cascade,
-	primary key (username, rolename)
+	primary key (id_usuario, id_helado)
 );
 
 create table votos (
@@ -50,5 +50,5 @@ create table votos (
 	id_helado 			int not null,
 	foreign key(id_helado) references helado(id) on delete cascade,
 	foreign key(id_usuario) references usuario(id) on delete cascade,
-	primary key (username, rolename)
+	primary key (id_usuario, id_helado)
 );
