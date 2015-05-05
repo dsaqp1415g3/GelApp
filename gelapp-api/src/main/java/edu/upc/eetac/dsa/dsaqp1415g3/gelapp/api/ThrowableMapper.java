@@ -1,4 +1,4 @@
-package edu.upc.eetac.dsa.dsaqp1415g3.GelApp.api;
+package edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api;
 
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
