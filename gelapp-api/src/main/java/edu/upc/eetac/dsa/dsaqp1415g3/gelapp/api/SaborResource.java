@@ -31,8 +31,7 @@ public class SaborResource {
 	@Path("/{sabor_id}")
 	@Produces(MediaType.GELAPP_API_SABOR)
 	
-	public Sabor getSabor(@PathParam("sabor_id") String saborid,
-			@Context Request request) {
+	public Sabor getSabor(@PathParam("sabor_id") String saborid) {
 		Sabor sabor = new Sabor();
 
 		Connection conn = null;
