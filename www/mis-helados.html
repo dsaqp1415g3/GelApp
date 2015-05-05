@@ -109,7 +109,7 @@
   	
     <div class="col-md-4 text-center">
       <img class="img-circle" src="images/ranking1.jpg">
-      <h2>Obtener helado</h2>
+      <h2>Obtener</h2>
       <p>Introduce el nombre de uno de tus helados para obtener sus características</p>
 	  <span class="input-group-addon">Nombre: </span> <!--Etiqueta--!-->
 	  <input class="form-control" id="repository_name" type="text"> <!--Caixa--!-->
@@ -122,14 +122,13 @@
 	 
     <div class="col-md-4 text-center">
       <img class="img-circle" src="images/ranking3.jpg">
-      <h2>Modificar helado</h2>
-      <p>¿No te gusta como queda? Modifícalo aquí</p>
-	<span class="input-group-addon">Nombre: </span> 
-	<input class="form-control" id="repository_name_to_edit" type="textbox">	
-	<span class="input-group-addon">Descripcion a modificar: </span>
-	<input class="form-control" id="description_to_edit" type="textbox">
-	<button title="Modificar un repositorio" type="button" class="btn btn-info" id="button_edit_repo">Modificar »</button>	
-	<span id="update_result"></span>
+      <h2>Consultar sabor por ID</h2>
+      <p>Introduce a continuación el identificador</p>
+	<span class="input-group-addon">ID: </span> 
+	<input class="form-control" id="sabor_id" type="textbox">	
+	<button title="Obtener sabor por ID" type="button" class="btn btn-info" id="button_get_sabor_id">Consultar »</button>	
+	<span class="input-group-addon" id="result"></span>
+	
 	
     </div>
 	
@@ -160,8 +159,9 @@
 </div><!-- /.container -->
 	<!-- script references -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script type="text/javascript" src="js/github.js"></script>
-		<script src="js/bootstrap.min.js"></script>		
+		<script type="text/javascript" src="js/gelapp.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>		
 		
 	</body>
 </html>

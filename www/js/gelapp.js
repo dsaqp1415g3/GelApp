@@ -1,6 +1,6 @@
-var API_BASE_URL = "https://api.github.com";
-var USERNAME = "Darkunito";
-var PASSWORD = "Megotpelka69";
+var API_BASE_URL = "http://147.83.7.157:8080/GelApp";
+var USERNAME = "";
+var PASSWORD = "";
 
 $.ajaxSetup({
     headers: { 'Authorization': "Basic "+ btoa(USERNAME+':'+PASSWORD) }
@@ -10,6 +10,39 @@ $.ajaxSetup({
 Details about repository of GitHub API 
 https://developer.github.com/v3/repos/
 */
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+$("#button_get_sabor_id").click(function(e) {
+	e.preventDefault();
+	getSabor($("#sabor_id").val());
+});
+
+function getSabor(sabor_id) {
+	var url = API_BASE_URL + '/sabores/' + sabor_id;
+	$("#result").text('');
+
+	$.ajax({
+		url : url,
+		type : 'GET',
+		crossDomain : true,
+		dataType : 'json',
+	}).done(function(data, status, jqxhr) {
+
+				var sabor = data;
+
+				$("#result").text('');
+				$('<strong> Nombre sabor: </strong> ' + sabor.name + '<br>').appendTo($('#result'));
+				$('<strong> Código de color: </strong> ' + sabor.code_color + '<br>').appendTo($('#result'));	
+				$('<strong> ID: </strong> ' + sabor.saborid + '<br>').appendTo($('#result'));
+
+			}).fail(function() {
+				$('<div class="alert alert-danger"> <strong>Oh!</strong> El identificador que has introducido es incorrecto </div>').appendTo($("#result"));
+	});
+}
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
 
 $("#button_get_repos").click(function(e) {
 	e.preventDefault();
