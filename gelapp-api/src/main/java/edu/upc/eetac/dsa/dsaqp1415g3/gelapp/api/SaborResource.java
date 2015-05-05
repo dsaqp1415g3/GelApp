@@ -28,7 +28,7 @@ public class SaborResource {
 	
 	private String GET_SABOR_BY_ID_QUERY ="select * from sabor where sabor_id =?";
 	@GET
-	@Path("/{saborid}")
+	@Path("/{sabor_id}")
 	@Produces(MediaType.GELAPP_API_SABOR)
 	
 	public Sabor getSabor(@PathParam("sabor_id") String saborid,
