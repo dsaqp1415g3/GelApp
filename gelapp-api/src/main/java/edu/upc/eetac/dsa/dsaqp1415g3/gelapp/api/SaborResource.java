@@ -22,7 +22,7 @@ import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.Sabor;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.MediaType;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.DataSourceSPA;
 
-@Path("/sabor")
+@Path("sabor")
 public class SaborResource {
 	private DataSource ds = DataSourceSPA.getInstance().getDataSource();
 	
@@ -52,7 +52,7 @@ public class SaborResource {
 				sabor.setName(rs.getString("nombre"));
 				sabor.setCode_color(rs.getString("codigo_color"));
 			} else {
-				throw new NotFoundException("There's no sting with stingid="
+				throw new NotFoundException("There's no sting with saborid="
 						+ saborid);
 			}
 		} catch (SQLException e) {
