@@ -18,12 +18,12 @@ import javax.ws.rs.core.EntityTag;
 import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
 
-import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.Sabor;
+import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.Sabores;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.MediaType;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.DataSourceSPA;
 
-@Path("sabor")
-public class SaborResource {
+@Path("/sabores")
+public class SaboresResource {
 	private DataSource ds = DataSourceSPA.getInstance().getDataSource();
 	
 	private String GET_SABOR_BY_ID_QUERY ="select * from sabor where sabor_id =?";
@@ -31,8 +31,8 @@ public class SaborResource {
 	@Path("/{sabor_id}")
 	@Produces(MediaType.GELAPP_API_SABOR)
 	
-	public Sabor getSabor(@PathParam("sabor_id") String saborid) {
-		Sabor sabor = new Sabor();
+	public Sabores getSabor(@PathParam("sabor_id") String saborid) {
+		Sabores sabor = new Sabores();
 
 		Connection conn = null;
 		try {
@@ -109,3 +109,4 @@ public class SaborResource {
 		return sabor;
 	}*/
 }
+

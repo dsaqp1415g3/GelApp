@@ -1,6 +1,6 @@
 package edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model;
 
-public class Sabor {
+public class Sabores {
 	private int saborid;
 	private String name;
 	private String code_color;
@@ -31,3 +31,4 @@ public class Sabor {
 	
 	
 }
+
