@@ -28,10 +28,10 @@ public class SaborResource {
 	
 	private String GET_SABOR_BY_ID_QUERY ="select * from sabor where sabor_id =?";
 	@GET
-	@Path("/{saborid}")
+	@Path("/{sabor_id}")
 	@Produces(MediaType.GELAPP_API_SABOR)
 	
-	public Sabor getSabor(@PathParam("saborid") String saborid,
+	public Sabor getSabor(@PathParam("sabor_id") String saborid,
 			@Context Request request) {
 		Sabor sabor = new Sabor();
 
@@ -49,7 +49,7 @@ public class SaborResource {
 			stmt.setInt(1, Integer.valueOf(saborid));
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
-				sabor.setSaborid(rs.getInt("saborid"));
+				sabor.setSaborid(rs.getInt("sabor_id"));
 				sabor.setName(rs.getString("nombre"));
 				sabor.setCode_color(rs.getString("codigo_color"));
 			} else {
