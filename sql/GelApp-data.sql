@@ -18,4 +18,3 @@ insert into topping (nombre, codigo_color) values('multicolor', '#00FF00');
 
 insert into helado (capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (1,2,1,2,1);
 
-#FALTA AÑADIR TABLA HELADOS Y LA DE RELACION, TAMBIEN ESCOGER SABORES Y TOPPINGS Y AÑADIRLOS
