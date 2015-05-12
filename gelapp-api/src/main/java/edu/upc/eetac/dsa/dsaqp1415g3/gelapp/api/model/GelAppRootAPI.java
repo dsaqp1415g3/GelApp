@@ -20,7 +20,8 @@ public class GelAppRootAPI {
         @InjectLink(resource = SaboresResource.class, style = Style.ABSOLUTE, rel = "sabor", title = "Get sabor", type=MediaType.GELAPP_API_SABOR),
         @InjectLink(resource = SaboresResource.class, style = Style.ABSOLUTE, rel = "sabores", title = "Get sabores", type=MediaType.GELAPP_API_SABOR_COLLECTION),
 		@InjectLink(resource = ToppingsResource.class, style = Style.ABSOLUTE, rel = "topping", title = "Get topping", type=MediaType.GELAPP_API_TOPPING),
-		@InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "helado", title = "Get helado", type=MediaType.GELAPP_API_HELADO)})
+		@InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "helado", title = "Get helado", type=MediaType.GELAPP_API_HELADO),
+		@InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "helados", title = "Get helados", type=MediaType.GELAPP_API_HELADO_COLLECTION)})
 		
 		
 	private List<Link> links;

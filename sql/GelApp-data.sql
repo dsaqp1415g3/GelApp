@@ -18,3 +18,5 @@ insert into topping (nombre, codigo_color) values('multicolor', '#00FF00');
 
 insert into helado (capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values ('caramelo','nata','caramelo','nata','caramelo');
 
+insert into helado (capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values ('chocolate_negro','turron','caramelo','nata','sirope_fresa');
+

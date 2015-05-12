@@ -30,14 +30,14 @@ create table helado (
 	capa_1_topping			varchar(20) not null,
 	foreign key(capa_1_topping) references topping(nombre) on delete cascade,
 	capa_2_helado			varchar(20) not null,
-	foreign key(capa_2_helado) references sabor(sabor_id) on delete cascade,
+	foreign key(capa_2_helado) references sabor(nombre) on delete cascade,
 	capa_3_topping			varchar(20) not null,
 	foreign key(capa_3_topping) references topping(nombre) on delete cascade,
 	capa_4_helado			varchar(20) not null,
 	foreign key(capa_4_helado) references sabor(nombre) on delete cascade,
 	capa_5_topping			varchar(20) not null,
 	foreign key(capa_5_topping) references topping(nombre) on delete cascade,
-	primary key (capa_1_topping, capa_2_helado, capa_3_topping, capa_4_helado, capa_5_topping, helado_id)
+	primary key (helado_id)
 );
 
 create table relacion_helado_usuario (
