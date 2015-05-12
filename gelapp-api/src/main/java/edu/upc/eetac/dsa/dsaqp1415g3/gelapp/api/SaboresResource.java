@@ -12,19 +12,58 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.ServerErrorException;
-import javax.ws.rs.core.CacheControl;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.EntityTag;
-import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
 
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.Sabores;
+import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.SaboresCollection;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.MediaType;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.DataSourceSPA;
 
 @Path("/sabores")
 public class SaboresResource {
 	private DataSource ds = DataSourceSPA.getInstance().getDataSource();
+	
+	private String GET_SABORES_QUERY ="select * from sabor";
+	
+	@GET
+	@Produces(MediaType.GELAPP_API_SABOR_COLLECTION)
+	public SaboresCollection getSabores() {
+		SaboresCollection sabores = new SaboresCollection();
+
+		Connection conn = null;
+		try {
+			conn = ds.getConnection();
+		} catch (SQLException e) {
+			throw new ServerErrorException("Could not connect to the database",
+					Response.Status.SERVICE_UNAVAILABLE);
+		}
+
+		PreparedStatement stmt = null;
+		try {			
+			stmt = conn.prepareStatement(GET_SABORES_QUERY);
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				Sabores sabor = new Sabores();
+				sabor.setSaborid(rs.getInt("sabor_id"));
+				sabor.setName(rs.getString("nombre"));
+				sabor.setCode_color(rs.getString("codigo_color"));			
+				
+				sabores.addSabor(sabor);
+			}			
+		} catch (SQLException e) {
+			throw new ServerErrorException(e.getMessage(),
+					Response.Status.INTERNAL_SERVER_ERROR);
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+				conn.close();
+			} catch (SQLException e) {
+			}
+		}
+
+		return sabores;
+	}
 	
 	private String GET_SABOR_BY_ID_QUERY ="select * from sabor where sabor_id =?";
 	@GET

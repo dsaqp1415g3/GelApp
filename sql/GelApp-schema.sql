@@ -10,31 +10,34 @@ create table usuario (
 );
 
 create table sabor (
-	sabor_id	int not null auto_increment primary key,
+	sabor_id	int not null auto_increment,
 	nombre		varchar(20) not null,
-	codigo_color	varchar(20) not null	
+	codigo_color	varchar(20) not null,
+	primary key (sabor_id, nombre)	
 );
 
 create table topping (
-	topping_id	int not null auto_increment primary key,
+	topping_id	int not null auto_increment,
 	nombre		varchar(20) not null,
-	codigo_color	varchar(20) not null	
+	codigo_color	varchar(20) not null,
+	primary key (topping_id, nombre)	
 );
 
 create table helado (
-	helado_id		int not null auto_increment primary key,
+	helado_id			int not null auto_increment,
 	creation_timestamp		datetime not null default current_timestamp,
 	last_modified			timestamp default current_timestamp ON UPDATE CURRENT_TIMESTAMP,
-	capa_1_topping			int not null,
-	foreign key(capa_1_topping) references topping(topping_id) on delete cascade,
-	capa_2_helado			int not null,
-	foreign key(capa_2_helado) references sabor(sabor_id) on delete cascade,
-	capa_3_topping			int not null,
-	foreign key(capa_3_topping) references topping(topping_id) on delete cascade,
-	capa_4_helado			int not null,
-	foreign key(capa_4_helado) references sabor(sabor_id) on delete cascade,
-	capa_5_topping			int not null,
-	foreign key(capa_5_topping) references topping(topping_id) on delete cascade
+	capa_1_topping			varchar(20) not null,
+	foreign key(capa_1_topping) references topping(nombre) on delete cascade,
+	capa_2_helado			varchar(20) not null,
+	foreign key(capa_2_helado) references sabor(nombre) on delete cascade,
+	capa_3_topping			varchar(20) not null,
+	foreign key(capa_3_topping) references topping(nombre) on delete cascade,
+	capa_4_helado			varchar(20) not null,
+	foreign key(capa_4_helado) references sabor(nombre) on delete cascade,
+	capa_5_topping			varchar(20) not null,
+	foreign key(capa_5_topping) references topping(nombre) on delete cascade,
+	primary key (capa_1_topping, capa_2_helado, capa_3_topping, capa_4_helado, capa_5_topping, helado_id)
 );
 
 create table relacion_helado_usuario (
