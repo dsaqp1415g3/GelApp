@@ -1,6 +1,6 @@
-var API_BASE_URL = "https://api.github.com";
-var USERNAME = "";
-var PASSWORD = "";
+var API_BASE_URL = "http://147.83.7.157:8080/GelApp";
+var USERNAME = "darkunito";
+var PASSWORD = "Megotpelka69";
 
 $.ajaxSetup({
     headers: { 'Authorization': "Basic "+ btoa(USERNAME+':'+PASSWORD) }
@@ -17,13 +17,13 @@ http://tools.ietf.org/html/rfc5988
 $("#button_to_list_pagination").click(function(e) {
 	e.preventDefault();
 	
-	var url = API_BASE_URL + '/users/' + USERNAME + '/repos?per_page=4';
+	var url = API_BASE_URL + '/helados?per_page=4';
 	getRepos(url);
 });
 
 function RepoCollection(repoCollection){
 	this.repos = repoCollection;
-        var href = {};
+        var href = [];
 
 	var instance = this;
 
@@ -38,8 +38,8 @@ function RepoCollection(repoCollection){
 	this.toHTML = function(){
 		var html = '';
 		$.each(this.repos, function(i, v) {
-			var repo = v;
-			html = html.concat('<br><strong> Name: ' + repo.name + '</strong><br>');
+			var repo = v.helados;
+			html = html.concat('<br><strong> Name: ' + repo.heladoid+ '</strong><br>');
 			
 		});
 		
@@ -62,7 +62,7 @@ function RepoCollection(repoCollection){
 
 
 function getRepos(url) {
-	$("#repos_result").text('');
+	$("#helados_result").text('');
 
 	$.ajax({
 		url : url,
@@ -81,7 +81,7 @@ function getRepos(url) {
 			
 		    var html = repoCollection.toHTML();
 			
-		    $("#repos_result").html(html);
+		    $("#helados_result").html(html);
 
 	}).fail(function(jqXHR, textStatus) {
 		console.log(textStatus);
