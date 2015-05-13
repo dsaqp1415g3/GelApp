@@ -1,25 +1,9 @@
 package edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model;
 
-import java.util.List;
-
-import javax.ws.rs.core.Link;
-
 public class Sabores {
 	private int saborid;
 	private String name;
 	private String code_color;
-	private long lastModified;
-	private long creationTimestamp;
-	
-	private List<Link> links;
-	
-	public List<Link> getLinks() {
-		return links;
-	}
-
-	public void setLinks(List<Link> links) {
-		this.links = links;
-	}
 	
 	public int getSaborid() {
 		return saborid;
@@ -44,22 +28,7 @@ public class Sabores {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public long getLastModified() {
-		return lastModified;
-	}
-
-	public void setLastModified(long lastModified) {
-		this.lastModified = lastModified;
-	}
-
-	public long getCreationTimestamp() {
-		return creationTimestamp;
-	}
-
-	public void setCreationTimestamp(long creationTimestamp) {
-		this.creationTimestamp = creationTimestamp;
-	}
+	
 	
 }
 

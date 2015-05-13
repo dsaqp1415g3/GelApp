@@ -5,14 +5,23 @@ import java.util.List;
 
 import javax.ws.rs.core.Link;
 
+import org.glassfish.jersey.linking.InjectLink;
+import org.glassfish.jersey.linking.InjectLinks;
+import org.glassfish.jersey.linking.InjectLink.Style;
 
-public class SaboresCollection {	
+import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.MediaType;
+import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.SaboresResource;
+
+
+public class SaboresCollection {
+	@InjectLinks({
+	@InjectLink(resource = SaboresResource.class, style = Style.ABSOLUTE, rel = "create-sting", title = "Create sting", type = MediaType.GELAPP_API_SABOR),
+	})
+	
 	
 	private List<Link> links;
 
 	private List<Sabores> sabores;
-	private long newestTimestamp;
-	private long oldestTimestamp;
 	
 	public List<Link> getLinks() {
 		return links;
@@ -37,21 +46,5 @@ public class SaboresCollection {
  
 	public void addSabor(Sabores sabor) {
 		sabores.add(sabor);
-	}
-
-	public long getOldestTimestamp() {
-		return oldestTimestamp;
-	}
-
-	public void setOldestTimestamp(long oldestTimestamp) {
-		this.oldestTimestamp = oldestTimestamp;
-	}
-
-	public long getNewestTimestamp() {
-		return newestTimestamp;
-	}
-
-	public void setNewestTimestamp(long newestTimestamp) {
-		this.newestTimestamp = newestTimestamp;
 	}
 }

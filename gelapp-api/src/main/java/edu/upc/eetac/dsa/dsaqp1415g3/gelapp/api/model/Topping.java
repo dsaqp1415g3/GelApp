@@ -4,9 +4,6 @@ public class Topping {
 	private int toppingid;
 	private String name;
 	private String code_color;
-	private long lastModified;
-	private long creationTimestamp;
-	
 	public String getName() {
 		return name;
 	}
@@ -24,18 +21,6 @@ public class Topping {
 	}
 	public void setToppingid(int toppingid) {
 		this.toppingid = toppingid;
-	}
-	public long getLastModified() {
-		return lastModified;
-	}
-	public void setLastModified(long lastModified) {
-		this.lastModified = lastModified;
-	}
-	public long getCreationTimestamp() {
-		return creationTimestamp;
-	}
-	public void setCreationTimestamp(long creationTimestamp) {
-		this.creationTimestamp = creationTimestamp;
 	}
 	
 }
