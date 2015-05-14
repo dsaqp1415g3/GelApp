@@ -26,8 +26,8 @@ public class Helado {
 	private long lastModified;
 	private long creationTimestamp;
 	@InjectLinks({
-        @InjectLink(resource = GelAppRootAPIResource.class, style = Style.ABSOLUTE, rel = "self bookmark home", title = "Beeter Root API"),
-        @InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "collection", title = "Latest stings", type = MediaType.GELAPP_API_HELADO_COLLECTION)})
+        @InjectLink(resource = GelAppRootAPIResource.class, style = Style.ABSOLUTE, rel = "self bookmark home", title = "GelApp Root API"),
+        @InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "collection", title = "Latest helado", type = MediaType.GELAPP_API_HELADO_COLLECTION)})
 	
 	private List<Link> links;
 	

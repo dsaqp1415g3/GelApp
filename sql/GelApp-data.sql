@@ -19,3 +19,29 @@ insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_
 
 insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (2,'DeliciousMax','chocolate_negro','turron','caramelo','nata','sirope_fresa');
 
+
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (2,'nata','nata','turron','sirope_fresa','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (2,'chocolate','chocolate_negro','nata','caramelo','chocolate_negro','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (2,'deliciaCarnica','chocolate_negro','turron','caramelo','caramelo','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (2,'freson','sirope_fresa','turron','caramelo','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (3,'delicia de sirope','chocolate_negro','sirope_fresa','caramelo','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (2,'UriMaximo','sirope_fresa','turron','sirope_fresa','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (2,'McUri','chocolate_negro','turron','caramelo','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (3,'Chocolate y fresa','chocolate_negro','sirope_fresa','caramelo','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (2,'CarameloyTurron','chocolate_negro','turron','caramelo','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (1,'ChocolateyNata','chocolate_negro','turron','sirope_fresa','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (1,'CarameloyNata','chocolate_negro','sirope_fresa','caramelo','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (1,'McMarc','sirope_fresa','turron','caramelo','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (1,'deliciadeMarc','chocolate_negro','sirope_fresa','caramelo','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (1,'TuronTurron','turron','turron','sirope_fresa','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (1,'ChocolateyTurron','chocolate_negro','turron','caramelo','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (1,'MarcusdeFresa','sirope_fresa','sirope_fresa','sirope_fresa','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (3,'TurronyCaramelo','chocolate_negro','turron','caramelo','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (3,'SiropeyTurron','sirope_fresa','turron','caramelo','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (3,'tatata','chocolate_negro','turron','caramelo','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (3,'gelapppppp','chocolate_negro','sirope_fresa','sirope_fresa','sirope_fresa','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (3,'heladoooooo','chocolate_negro','turron','caramelo','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (3,'heladoconSirope','caramelo','turron','caramelo','nata','sirope_fresa');
+insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (3,'heladerooooooo','caramelo','caramelo','caramelo','nata','caramelo');
+
+

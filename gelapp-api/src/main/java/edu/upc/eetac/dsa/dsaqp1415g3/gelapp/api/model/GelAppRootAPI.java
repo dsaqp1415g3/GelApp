@@ -26,11 +26,11 @@ public class GelAppRootAPI {
 		
 	private List<Link> links;
 
-public List<Link> getLinks() {
-	return links;
-}
+	public List<Link> getLinks() {
+		return links;
+	}
 
-public void setLinks(List<Link> links) {
-	this.links = links;
-}
+	public void setLinks(List<Link> links) {
+		this.links = links;
+	}
 }

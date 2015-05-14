@@ -40,7 +40,7 @@ create table helado (
 	capa_3_topping			varchar(20) not null,
 	capa_4_helado			varchar(20) not null,
 	capa_5_topping			varchar(20) not null,
-	primary key (helado_id)
+	primary key (helado_id, nombre_helado)
 );
 
 create table votos (

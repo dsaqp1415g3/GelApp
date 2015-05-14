@@ -100,6 +100,7 @@ public class HeladoResource {
 	
 	
 	/*    HELADO POR ID 			*//////////////////////////////////////////////////////////////////////////
+	
 	private String GET_HELADO_BY_ID_QUERY ="select * from helado where helado_id =?";
 	@GET
 	@Path("/{helado_id}")
@@ -133,6 +134,7 @@ public class HeladoResource {
 	
 	
 	/*		HELADO POR NOMBRE AUTOR		*////////////////////////////////////////////////////////////////////////////////////////////////
+	
 	/*private String GET_HELADO_BY_AUTOR_QUERY ="select * from helado where autor_id = (select usuario_id from usuario where username = '?')";
 	@GET
 	@Produces(MediaType.GELAPP_API_HELADO_COLLECTION)
