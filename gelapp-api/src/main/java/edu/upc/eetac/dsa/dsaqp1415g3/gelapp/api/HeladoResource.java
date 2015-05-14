@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 
 import javax.sql.DataSource;
 import javax.ws.rs.GET;
@@ -30,16 +29,62 @@ public class HeladoResource {
 	
 	/*			LISTA HELADOS		*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	private String GET_HELADOS_QUERY = "select * from helado where creation_timestamp < ifnull(?, now())  order by creation_timestamp desc limit ?";
-	private String GET_HELADOS_QUERY_FROM_LAST = "select * from helado where creation_timestamp > ? order by creation_timestamp desc";
-			
+	//private String GET_HELADOS_QUERY = "select * from helado where creation_timestamp < ifnull(?, now())  order by creation_timestamp desc limit ?";
+	//private String GET_HELADOS_QUERY_FROM_LAST = "select * from helado where creation_timestamp > ? order by creation_timestamp desc";
+	private String GET_HELADOS_QUERY = "select * from helado order by helado_id asc limit 5 offset ?";
+	
+	
 	@GET
 	@Produces(MediaType.GELAPP_API_HELADO_COLLECTION)
-	public HeladoCollection getHelados(@QueryParam("length") int length,
-			@QueryParam("before") long before, @QueryParam("after") long after) {
+	public HeladoCollection getHelados(@QueryParam ("page") int page) {
 		HeladoCollection helados = new HeladoCollection();
+		
 		Connection conn = null;
 		try {
+			conn = ds.getConnection();
+		} catch (SQLException e) {
+			throw new ServerErrorException("Could not connect to the database",
+					Response.Status.SERVICE_UNAVAILABLE);
+		}
+
+		PreparedStatement stmt = null;
+		try {
+			stmt = conn.prepareStatement(GET_HELADOS_QUERY);
+			stmt.setInt(1, page);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				while (rs.next()) {
+					Helado helado = new Helado();
+					helado.setHeladoid(rs.getInt("helado_id"));
+					helado.setAutorid(rs.getInt("autor_id"));
+					helado.setNombreHelado(rs.getString("nombre_helado"));
+					helado.setCapa1Topping(rs.getString("capa_1_topping"));
+					helado.setCapa2Helado(rs.getString("capa_2_helado"));
+					helado.setCapa3Topping(rs.getString("capa_3_topping"));
+					helado.setCapa4Helado(rs.getString("capa_4_helado"));
+					helado.setCapa5Topping(rs.getString("capa_5_topping"));
+					helado.setLastModified(rs.getTimestamp("last_modified").getTime());
+					helado.setCreationTimestamp(rs.getTimestamp("creation_timestamp").getTime());
+				
+					helados.addHelado(helado);
+				}
+				helados.setNextPage(page + 10);
+				helados.setPreviousPage(page - 10);
+			} else {
+				throw new NotFoundException("There's no helado");
+			}
+		} catch (SQLException e) {
+			throw new ServerErrorException(e.getMessage(),
+					Response.Status.INTERNAL_SERVER_ERROR);
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+				conn.close();
+			} catch (SQLException e) {
+			}
+		}
+		/*try {
 			conn = ds.getConnection();
 		} catch (SQLException e) {
 			throw new ServerErrorException("Could not connect to the database",
@@ -93,7 +138,7 @@ public class HeladoResource {
 				conn.close();
 			} catch (SQLException e) {
 			}
-		}
+		}*/
 
 			return helados;
 	}
@@ -135,11 +180,11 @@ public class HeladoResource {
 	
 	/*		HELADO POR NOMBRE AUTOR		*////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	/*private String GET_HELADO_BY_AUTOR_QUERY ="select * from helado where autor_id = (select usuario_id from usuario where username = '?')";
+	private String GET_HELADO_BY_AUTOR_QUERY ="select * from helado where autor_id = (select usuario_id from usuario where username = ? ) order by helado_id asc";
 	@GET
+	@Path("/{username}")
 	@Produces(MediaType.GELAPP_API_HELADO_COLLECTION)
-	public HeladoCollection getHeladoAutor(@QueryParam("username") String username, @QueryParam("length") int length,
-			@QueryParam("before") long before, @QueryParam("after") long after) {
+		public HeladoCollection getHelados(@PathParam("username") String username) {
 		HeladoCollection helados = new HeladoCollection();
 		Connection conn = null;
 		try {
@@ -148,45 +193,31 @@ public class HeladoResource {
 			throw new ServerErrorException("Could not connect to the database",
 					Response.Status.SERVICE_UNAVAILABLE);
 		}
-			PreparedStatement stmt = null;
+
+		PreparedStatement stmt = null;
 		try {
-			boolean updateFromLast = after > 0;
-			stmt = updateFromLast ? conn
-					.prepareStatement(GET_HELADOS_QUERY_FROM_LAST) : conn
-					.prepareStatement(GET_HELADO_BY_AUTOR_QUERY);
-					stmt.setString(1, String.valueOf(username));
-			if (updateFromLast) {
-				stmt.setTimestamp(2, new Timestamp(after));
-			} else {
-				if (before > 0)
-					stmt.setTimestamp(2, new Timestamp(before));
-				else
-					stmt.setTimestamp(2, null);
-				length = (length <= 0) ? 100 : length;
-				stmt.setInt(2, length);
-			}
+			stmt = conn.prepareStatement(GET_HELADO_BY_AUTOR_QUERY);
+			stmt.setString(1, String.valueOf(username));
 			ResultSet rs = stmt.executeQuery();
-			boolean first = true;
-			long oldestTimestamp = 0;
-			while (rs.next()) {
-				Helado helado = new Helado();
-				helado.setHeladoid(rs.getInt("helado_id"));
-				helado.setAutorid(rs.getInt("autor_id"));
-				helado.setNombreHelado(rs.getString("nombre_helado"));
-				helado.setCapa1Topping(rs.getString("capa_1_topping"));
-				helado.setCapa2Helado(rs.getString("capa_2_helado"));
-				helado.setCapa3Topping(rs.getString("capa_3_topping"));
-				helado.setCapa4Helado(rs.getString("capa_4_helado"));
-				helado.setCapa5Topping(rs.getString("capa_5_topping"));
-				helado.setLastModified(rs.getTimestamp("last_modified").getTime());
-				helado.setCreationTimestamp(rs.getTimestamp("creation_timestamp").getTime());
-				if (first) {
-					first = false;
-					helados.setNewestTimestamp(helado.getCreationTimestamp());
+			if (rs.next()) {
+				while (rs.next()) {
+					Helado helado = new Helado();
+					helado.setHeladoid(rs.getInt("helado_id"));
+					helado.setAutorid(rs.getInt("autor_id"));
+					helado.setNombreHelado(rs.getString("nombre_helado"));
+					helado.setCapa1Topping(rs.getString("capa_1_topping"));
+					helado.setCapa2Helado(rs.getString("capa_2_helado"));
+					helado.setCapa3Topping(rs.getString("capa_3_topping"));
+					helado.setCapa4Helado(rs.getString("capa_4_helado"));
+					helado.setCapa5Topping(rs.getString("capa_5_topping"));
+					helado.setLastModified(rs.getTimestamp("last_modified").getTime());
+					helado.setCreationTimestamp(rs.getTimestamp("creation_timestamp").getTime());
+				
+					helados.addHelado(helado);
 				}
-				helados.addHelado(helado);
+			} else {
+				throw new NotFoundException("There's no helado");
 			}
-			helados.setOldestTimestamp(oldestTimestamp);
 		} catch (SQLException e) {
 			throw new ServerErrorException(e.getMessage(),
 					Response.Status.INTERNAL_SERVER_ERROR);
@@ -198,9 +229,8 @@ public class HeladoResource {
 			} catch (SQLException e) {
 			}
 		}
-
 			return helados;
-	}*/
+	}
 	
 	/*			INSERTAR HELADO		*//////////////////////////////////////////////////////////////////////////////////////
 	
