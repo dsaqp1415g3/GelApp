@@ -42,7 +42,7 @@ public class HeladoAdapter extends BaseAdapter {
     }
 
     private static class ViewHolder {
-        TextView tvID;
+        TextView tvNombreHelado;
         //TextView tvCreationTime;
         TextView tvCapa1;
         TextView tvCapa2;
@@ -58,7 +58,7 @@ public class HeladoAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.list_row_helado, null);
             viewHolder = new ViewHolder();
 
-            viewHolder.tvID = (TextView) convertView.findViewById(R.id.tvID);
+            viewHolder.tvNombreHelado = (TextView) convertView.findViewById(R.id.tvNombreHelado);
             //viewHolder.tvCreationTime = (TextView) convertView.findViewById(R.id.tvCreationTime);
             viewHolder.tvCapa1 = (TextView) convertView.findViewById(R.id.tvCapa1);
             viewHolder.tvCapa2 = (TextView) convertView.findViewById(R.id.tvCapa2);
@@ -70,7 +70,7 @@ public class HeladoAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        int helado_id = data.get(position).getHeladoid();
+        String nombreHelado = data.get(position).getNombreHelado();
         String capa1 = data.get(position).getCapa1Topping();
         String capa2 = data.get(position).getCapa2Helado();
         String capa3 = data.get(position).getCapa3Topping();
@@ -78,12 +78,12 @@ public class HeladoAdapter extends BaseAdapter {
         String capa5 = data.get(position).getCapa5Topping();
         //String creation_time = SimpleDateFormat.getInstance().format(data.get(position).getLastModified());
 
-        viewHolder.tvID.setText(helado_id);
+        viewHolder.tvNombreHelado.setText(nombreHelado);
         viewHolder.tvCapa1.setText(capa1);
-        viewHolder.tvCapa1.setText(capa2);
-        viewHolder.tvCapa1.setText(capa3);
-        viewHolder.tvCapa1.setText(capa4);
-        viewHolder.tvCapa1.setText(capa5);
+        viewHolder.tvCapa2.setText(capa2);
+        viewHolder.tvCapa3.setText(capa3);
+        viewHolder.tvCapa4.setText(capa4);
+        viewHolder.tvCapa5.setText(capa5);
         //viewHolder.tvCreationTime.setText(creation_time);
         return convertView;
     }

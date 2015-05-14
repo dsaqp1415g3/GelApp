@@ -114,8 +114,8 @@ public class GelappAPI {
             }
 
             JSONObject jsonObject = new JSONObject(sb.toString());
-            JSONArray jsonLinks = jsonObject.getJSONArray("links");
-            parseLinks(jsonLinks, helados.getLinks());
+            //JSONArray jsonLinks = jsonObject.getJSONArray("links");
+            //parseLinks(jsonLinks, helados.getLinks());
 
             helados.setNewestTimestamp(jsonObject.getLong("newestTimestamp"));
             helados.setOldestTimestamp(jsonObject.getLong("oldestTimestamp"));
@@ -124,23 +124,26 @@ public class GelappAPI {
                 Helado helado = new Helado();
                 JSONObject jsonHelado = jsonHelados.getJSONObject(i);
 
-                helado.setHeladoid(jsonHelado.getInt("heladoid"));
+                helado.setAutorid(jsonHelado.getInt("autorid"));
                 helado.setCapa1Topping(jsonHelado.getString("capa1Topping"));
                 helado.setCapa2Helado(jsonHelado.getString("capa2Helado"));
                 helado.setCapa3Topping(jsonHelado.getString("capa3Topping"));
                 helado.setCapa4Helado(jsonHelado.getString("capa4Helado"));
                 helado.setCapa5Topping(jsonHelado.getString("capa5Topping"));
-                helado.setLastModified(jsonHelado.getLong("lastModified"));
                 helado.setCreationTimestamp(jsonHelado.getLong("creationTimestamp"));
-                jsonLinks = jsonHelado.getJSONArray("links");
-                parseLinks(jsonLinks, helado.getLinks());
+                helado.setHeladoid(jsonHelado.getInt("heladoid"));
+                helado.setLastModified(jsonHelado.getLong("lastModified"));
+                helado.setNombreHelado(jsonHelado.getString("nombreHelado"));
+
+                //jsonLinks = jsonHelado.getJSONArray("links");
+                //parseLinks(jsonLinks, helado.getLinks());
                 helados.getHelados().add(helado);
             }
         } catch (IOException e) {
             throw new AppException(
                     "Can't get response from Gelapp API Web Service");
         } catch (JSONException e) {
-            throw new AppException("Error parsing Gelapp Root API");
+            throw new AppException("Error parsing Gelapp Rooooooot API");
         }
 
         return helados;

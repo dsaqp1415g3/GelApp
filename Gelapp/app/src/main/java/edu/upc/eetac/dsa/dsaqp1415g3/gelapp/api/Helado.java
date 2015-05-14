@@ -16,7 +16,9 @@ public class Helado {
     private String capa3Topping;
     private String capa4Helado;
     private String capa5Topping;
-    //private String nombreHelado;
+    private String nombreHelado;
+    private int autorid;
+
     //private String eTag;
     private Map<String, Link> links = new HashMap<String, Link>();
 
@@ -88,6 +90,24 @@ public class Helado {
     public Map<String, Link> getLinks() {
         return links;
     }
+
+
+    public int getAutorid() {
+        return autorid;
+    }
+
+    public void setAutorid(int autorid) {
+        this.autorid = autorid;
+    }
+
+    public String getNombreHelado() {
+        return nombreHelado;
+    }
+
+    public void setNombreHelado(String nombreHelado) {
+        this.nombreHelado = nombreHelado;
+    }
+
 /*
     public String getETag() {
         return eTag;
