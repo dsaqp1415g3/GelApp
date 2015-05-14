@@ -1,6 +1,6 @@
 var API_BASE_URL = "http://147.83.7.157:8080/GelApp";
-var USERNAME = "darkunito";
-var PASSWORD = "Megotpelka69";
+var USERNAME = "";
+var PASSWORD = "";
 
 $.ajaxSetup({
     headers: { 'Authorization': "Basic "+ btoa(USERNAME+':'+PASSWORD) }
@@ -17,7 +17,7 @@ http://tools.ietf.org/html/rfc5988
 $("#button_to_list_pagination").click(function(e) {
 	e.preventDefault();
 	
-	var url = API_BASE_URL + '/helados?per_page=4';
+	var url = API_BASE_URL + '/helados';
 	getRepos(url);
 });
 
@@ -74,7 +74,9 @@ function getRepos(url) {
         	var response = data;
 		    var repoCollection = new RepoCollection(response);
 			
-            var linkHeader = jqxhr.getResponseHeader('Link');
+            var linkHeader = data.links;
+			console.log(data);
+        
             repoCollection.buildLinks(linkHeader);
 		    
 			console.log(linkHeader);

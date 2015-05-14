@@ -75,8 +75,8 @@ function getHelado(helado_id) {
                 $("#result_9").empty("#result_9");
 
 				$("#result").text('');
-                $('<strong> Nombre: </strong> ' + + '<br>').appendTo($('#result_1'));
-                $('<strong> ID: </strong> ' + helado.heladoid + '<br>').appendTo($('#result_2'));
+                $('<strong> Nombre: </strong> ' + helado.nombreHelado + '<br>').appendTo($('#result_1'));
+                $('<strong> Autor ID: </strong> ' + helado.autorid + '<br>').appendTo($('#result_2'));
 				$('<strong> Capa 1 (Topping): </strong> ' + helado.capa1Topping + '<br>').appendTo($('#result_3'));
                 $('<strong> Capa 2 (Helado): </strong> ' + helado.capa2Helado + '<br>').appendTo($('#result_4'));
                 $('<strong> Capa 3 (Topping): </strong> ' + helado.capa3Topping + '<br>').appendTo($('#result_5'));
