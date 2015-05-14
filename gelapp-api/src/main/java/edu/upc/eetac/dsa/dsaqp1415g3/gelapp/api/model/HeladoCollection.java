@@ -25,8 +25,6 @@ public class HeladoCollection {
 	private int nextPage;
 	
 	
-	
-	
 	public List<Link> getLinks() {
 		return links;
 	}
