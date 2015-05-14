@@ -51,12 +51,12 @@
   </ol>
   <div class="carousel-inner">
     <div class="item active">
-      <img src="images/portada4.png" style="width:100%" class="img-responsive">
+      <img src="images/portada5.png" style="width:100%" class="img-responsive">
       <div class="container">
         <div class="carousel-caption">
-          <h1>Gelapp 3.0</h1>
-          <p></p>
-          <p><a class="btn btn-lg btn-primary" href="index.html"> ¡Bienvenido! </a>
+          <h1>Ranking</h1>
+          <p>¡Aquí podrás ver el top 10 de nuestros helados, comprarlos y votar el que más te haya gustado!</p>
+          <a href="#enlace_ranking" class="btn btn-lg btn-primary"> Ir al ranking >> </a>
         </p>
         </div>
       </div>
@@ -100,52 +100,93 @@
 <div class="container marketing">
 
   <!-- Three columns of text below the carousel -->
-  <div class="row">
+  <div class="row">    
+    
     <div class="col-md-4 text-center">
-      <img class="img-circle" src="images/ranking2.jpg">
-      <h2>Ranking</h2>
+      <img class="img-circle" src="images/info.png">        
+      <h2> Información </h2>
       <p>A continuación podrás visualizar la lista de helados más valorados por los usuarios de GelApp</p>	  
-      <button type="button" class="btn btn-info" id="button_to_list_pagination">View Repositories >></button>
-	  <span id="repos_result"></span>	  
+      <a href="#enlace_ranking" class="btn btn-info"> Bajar al ranking >> </a>
+      
     </div>
+    
+    
     <div class="col-md-4 text-center">
-      <img class="img-circle" src="images/ranking2.jpg">
-      <h2>Ranking #2</h2>
-      <p>There is now just one percentage-based grid for Bootstrap 3. Customize for fixed widths.</p>
-      <p><a class="btn btn-default" href="#"> Comprar » </a></p>
+      <img class="img-circle" src="images/comprar.png">
+      <h2>Comprar helados</h2>
+      <p>Aquí podrás ver todos los helados creados por nuestros usuarios, ¡y comprar el que más te gusto!</p>	
+      <p><a class="btn btn-default" id="button_to_list_pagination"> Ver » </a></p>      
+	  <span class="output-group-addon" id="helados_result"></span>	  
     </div>
+    
     <div class="col-md-4 text-center">
-      <img class="img-circle" src="images/ranking3.jpg">
-      <h2>Ranking #3</h2>
-      <p>Improved support for mixins make the new Bootstrap 3 easier to customize.</p>
-      <p><a class="btn btn-default" href="#"> Comprar » </a></p>
+      <img class="img-circle" src="images/pulgar.jpg">
+      <h2>Votar helado</h2>
+      <p>¡Vota tu helado favorito! Introduce su ID, consulta su información y vótalo </p>
+      <span class="input-group-addon">ID del helado que quieres votar: </span> 
+      <input class="form-control" id="helado_id" type="textbox">        
+      <p><a>  </a></p>    
+      <p><a type="button" class="btn btn-default" id="get_helado"> Consultar helado » </a></p>      
+        
+         <div class="list-group"> 
+            <a class="list-group-item active" id="result_1"> </a>
+            <a class="list-group-item disabled" id="result_2"> </a>
+            <a class="list-group-item disabled" id="result_3"> </a>
+            <a class="list-group-item disabled" id="result_4"> </a>
+            <a class="list-group-item disabled" id="result_5"> </a>
+            <a class="list-group-item disabled" id="result_6"> </a>
+            <a class="list-group-item disabled" id="result_7"> </a>
+            <a class="list-group-item disabled" id="result_8"> </a>
+            <a class="list-group-item disabled" id="result_9"> </a>  
+            <a type="button" class="btn btn-info" id="votar_helado"> ¡Votar! </a>
+        </div>          
+            
+        
     </div>
+      
   </div>
 
 
   <!-- START THE FEATURETTES -->
-
+  
   <hr class="featurette-divider">
-
+  <a name="enlace_ranking">  </a>
+    
   <div class="featurette">
-    <img class="featurette-image img-circle pull-right" src="http://placehold.it/512">
-    <h2 class="featurette-heading">Responsive Design. <span class="text-muted">It'll blow your mind.</span></h2>
+    <img class="featurette-image img-circle pull-right" src="http://placehold.it/350">
+    <h2 class="featurette-heading">Ranking #1 <span class="text-muted">It'll blow your mind.</span></h2>    
     <p class="lead">In simple terms, a responsive web design figures out what resolution of device it's being served on. Flexible grids then size correctly to fit the screen.</p>
   </div>
 
   <hr class="featurette-divider">
 
   <div class="featurette">
-    <img class="featurette-image img-circle pull-left" src="http://placehold.it/512">
-    <h2 class="featurette-heading">Smaller Footprint. <span class="text-muted">Lightweight.</span></h2>
+    <img class="featurette-image img-circle pull-left" src="http://placehold.it/325">
+    <h2 class="featurette-heading">Ranking #2 <span class="text-muted">Lightweight.</span></h2>
     <p class="lead">The new Bootstrap 3 promises to be a smaller build. The separate Bootstrap base and responsive.css files have now been merged into one. There is no more fixed grid, only fluid.</p>
   </div>
 
   <hr class="featurette-divider">
 
   <div class="featurette">
-    <img class="featurette-image img-circle pull-right" src="http://placehold.it/512">
-    <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Flatness.</span></h2>
+    <img class="featurette-image img-circle pull-right" src="http://placehold.it/300">
+    <h2 class="featurette-heading">Ranking #3 <span class="text-muted">Flatness.</span></h2>
+    <p class="lead">A big design trend for 2013 is "flat" design. Gone are the days of excessive gradients and shadows. Designers are producing cleaner flat designs, and Bootstrap 3 takes advantage of this minimalist trend.</p>
+  </div>
+    
+    <hr class="featurette-divider">
+    
+  <div class="featurette">
+    <img class="featurette-image img-circle pull-left" src="http://placehold.it/250">
+    <h2 class="featurette-heading">Ranking #4 <span class="text-muted">Flatness.</span></h2>
+    <p class="lead">A big design trend for 2013 is "flat" design. Gone are the days of excessive gradients and shadows. Designers are producing cleaner flat designs, and Bootstrap 3 takes advantage of this minimalist trend.</p>
+  </div>   
+    
+    <hr class="featurette-divider">
+    
+  <div class="featurette">
+    <img class="featurette-image img-circle pull-right" src="http://placehold.it/200">
+    <h2 class="featurette-heading">Ranking #5 <span class="text-muted">Flatness.</span></h2>
     <p class="lead">A big design trend for 2013 is "flat" design. Gone are the days of excessive gradients and shadows. Designers are producing cleaner flat designs, and Bootstrap 3 takes advantage of this minimalist trend.</p>
   </div>
 
@@ -159,10 +200,13 @@
     <p class="pull-right"><a href="#">Back to top</a></p>
     <p>This Bootstrap layout is compliments of www.bootply.com/62603. · <a href="http://eetac.upc.edu">Edited by DSA students of http://eetac.upc.edu</a></p>
   </footer>
-
+    
 </div><!-- /.container -->
 	<!-- script references -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/gelapp.js"></script>
+        <script type="text/javascript" src="js/gelapp-pagination.js"></script> 
+		<script src="js/weblinking.js"></script>
 	</body>
 </html>

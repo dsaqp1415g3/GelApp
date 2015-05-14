@@ -12,6 +12,7 @@ https://developer.github.com/v3/repos/
 */
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
 $("#button_get_sabor_id").click(function(e) {
 	e.preventDefault();
 	getSabor($("#sabor_id").val());
@@ -41,7 +42,162 @@ function getSabor(sabor_id) {
 }
 
 
+
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+  
+$("#get_helado").click(function(e) {
+	e.preventDefault();
+	getHelado($("#helado_id").val());
+});
+
+function getHelado(helado_id) {
+	var url = API_BASE_URL + '/helados/' + helado_id;
+	$("#result").text('');
+
+	$.ajax({
+		url : url,
+		type : 'GET',
+		crossDomain : true,
+		dataType : 'json',
+	}).done(function(data, status, jqxhr) {
+
+				var helado = data;
+        
+     
+                $("#result_1").empty("#result_1");
+                $("#result_2").empty("#result_2");
+                $("#result_3").empty("#result_3");
+                $("#result_4").empty("#result_4");
+                $("#result_5").empty("#result_5");
+                $("#result_6").empty("#result_6");
+                $("#result_7").empty("#result_7");
+                $("#result_8").empty("#result_8");
+                $("#result_9").empty("#result_9");
+
+				$("#result").text('');
+                $('<strong> Nombre: </strong> ' + + '<br>').appendTo($('#result_1'));
+                $('<strong> ID: </strong> ' + helado.heladoid + '<br>').appendTo($('#result_2'));
+				$('<strong> Capa 1 (Topping): </strong> ' + helado.capa1Topping + '<br>').appendTo($('#result_3'));
+                $('<strong> Capa 2 (Helado): </strong> ' + helado.capa2Helado + '<br>').appendTo($('#result_4'));
+                $('<strong> Capa 3 (Topping): </strong> ' + helado.capa3Topping + '<br>').appendTo($('#result_5'));
+                $('<strong> Capa 4 (Helado): </strong> ' + helado.capa4Helado + '<br>').appendTo($('#result_6'));
+                $('<strong> Capa 5 (Topping): </strong> ' + helado.capa5Topping + '<br>').appendTo($('#result_7'));
+                $('<strong> Fecha de creación: </strong> ' + helado.creationTimestamp + '<br>').appendTo($('#result_8'));
+                $('<strong> Última modificación: </strong> ' + helado.lastModified + '<br>').appendTo($('#result_9'));
+                
+        
+			}).fail(function() {
+                $("#result_1").empty("#result_1");
+                $('<div class="alert alert-danger"> <strong>¡Lo sentimos!</strong> No disponemos de ningún helado con esa ID en la base de datos</div>').appendTo($("#result_1"));
+                $("#result_2").empty("#result_2");
+                $("#result_3").empty("#result_3");
+                $("#result_4").empty("#result_4");
+                $("#result_5").empty("#result_5");
+                $("#result_6").empty("#result_6");
+                $("#result_7").empty("#result_7");
+                $("#result_8").empty("#result_8");
+                $("#result_9").empty("#result_9");
+        
+	});
+    
+}
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+$("#button_to_list").click(function(e) {
+	e.preventDefault();
+	getList();
+})
+
+function getList() {
+	var url = API_BASE_URL + '/helados';
+	$("#helados_result").text('');
+	
+	$.ajax({
+		url : url,
+		type : 'GET',
+		crossDomain : true,
+		dataType : 'json',
+	}).done(function(data, status, jqxhr) {
+				var files = data.helados;
+				
+				$.each(files, function(i, v) {
+					var file = v;
+	
+				        $('<br><strong> Name: </strong>' + file.heladoid + '<br>').appendTo($('#helados_result'));
+					$('<br><strong> Description: </strong>' + file.creationTimestamp + '<br>').appendTo($('#helados_result'));
+                                        
+					
+				});
+				
+
+	}).fail(function() {
+		$("#helados_result").text("No data to show.");
+	});
+
+}
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
+
+
+
+
 
 
 $("#button_get_repos").click(function(e) {
