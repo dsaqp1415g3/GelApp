@@ -4,8 +4,20 @@ import java.util.List;
 
 import javax.ws.rs.core.Link;
 
+import org.glassfish.jersey.linking.InjectLink;
+import org.glassfish.jersey.linking.InjectLinks;
+import org.glassfish.jersey.linking.InjectLink.Style;
+
+import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.GelAppRootAPIResource;
+import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.HeladoResource;
+import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.MediaType;
+
+
+
 public class Helado {
 	private int heladoid;
+	private String nombreHelado;
+	private int autorid;
 	private String capa1Topping;
 	private String capa2Helado;
 	private String capa3Topping;
@@ -13,7 +25,9 @@ public class Helado {
 	private String capa5Topping;
 	private long lastModified;
 	private long creationTimestamp;
-	
+	@InjectLinks({
+        @InjectLink(resource = GelAppRootAPIResource.class, style = Style.ABSOLUTE, rel = "self bookmark home", title = "GelApp Root API"),
+        @InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "collection", title = "Latest helado", type = MediaType.GELAPP_API_HELADO_COLLECTION)})
 	
 	private List<Link> links;
 	
@@ -104,5 +118,25 @@ public class Helado {
 
 	public void setCreationTimestamp(long creationTimestamp) {
 		this.creationTimestamp = creationTimestamp;
+	}
+
+
+	public int getAutorid() {
+		return autorid;
+	}
+
+
+	public void setAutorid(int autorid) {
+		this.autorid = autorid;
+	}
+
+
+	public String getNombreHelado() {
+		return nombreHelado;
+	}
+
+
+	public void setNombreHelado(String nombreHelado) {
+		this.nombreHelado = nombreHelado;
 	}	
 }

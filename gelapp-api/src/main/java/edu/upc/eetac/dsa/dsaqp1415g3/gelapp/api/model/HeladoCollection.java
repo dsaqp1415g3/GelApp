@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.ws.rs.core.Link;
 
+
 public class HeladoCollection {
 	
 	private List<Link> links;
