@@ -155,9 +155,11 @@ function deleteHelado(id_helado_a_eliminar) {
 		type : 'DELETE',
 		crossDomain : true,
 		dataType : 'json',
-		statusCode: {
+        
+	/*	statusCode: {
     		202: function() {$('<div class="alert alert-danger"> <strong>Ok!</strong> File deleted successfully </div>').appendTo($("#delete_helado_result"));}
-    	}
+    	} */
+        
 	}).done(function(data, status, jqxhr) {
 		$('<div class="alert alert-success"> <strong>Ok!</strong> File deleted successfully</div>').appendTo($("#delete_helado_result"));				
   	}).fail(function() {
