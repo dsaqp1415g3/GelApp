@@ -36,9 +36,9 @@ public class HeladoResource {
 	//private String GET_HELADOS_QUERY = "select * from helado where creation_timestamp < ifnull(?, now())  order by creation_timestamp desc limit ?";
 	//private String GET_HELADOS_QUERY_FROM_LAST = "select * from helado where creation_timestamp > ? order by creation_timestamp desc";
 	private String GET_HELADOS_QUERY = "select * from helado order by helado_id asc limit 5 offset ?";
-	private String GET_COUNT_HELADOS_QUERY = "select count(*) as helado_id from helado";
+	//private String GET_COUNT_HELADOS_QUERY = "select count(*) as helado_id from helado";
 	
-	@SuppressWarnings("resource")
+	//@SuppressWarnings("resource")
 	@GET
 	@Produces(MediaType.GELAPP_API_HELADO_COLLECTION)
 	public HeladoCollection getHelados(@QueryParam ("page") int page) {

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ws.rs.core.Link;
 
+import org.glassfish.jersey.linking.Binding;
 import org.glassfish.jersey.linking.InjectLink;
 import org.glassfish.jersey.linking.InjectLinks;
 import org.glassfish.jersey.linking.InjectLink.Style;
@@ -27,7 +28,8 @@ public class Helado {
 	private long creationTimestamp;
 	@InjectLinks({
         @InjectLink(resource = GelAppRootAPIResource.class, style = Style.ABSOLUTE, rel = "self bookmark home", title = "GelApp Root API"),
-        @InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "collection", title = "Latest helado", type = MediaType.GELAPP_API_HELADO_COLLECTION)})
+        @InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "collection", title = "Latest helado", type = MediaType.GELAPP_API_HELADO_COLLECTION),
+        @InjectLink(value = "/helados/{heladoid}", style = Style.ABSOLUTE, rel = "heladoid", title = "helado", type = MediaType.GELAPP_API_HELADO, bindings = { @Binding(name = "heladoid", value = "${instance.heladoid}") }) })
 	
 	private List<Link> links;
 	
