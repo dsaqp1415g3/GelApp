@@ -1,4 +1,4 @@
-var API_BASE_URL = "http://147.83.7.157:8080/GelApp";
+var API_BASE_URL = "http://localhost:8080/gelapp-api";
 var USERNAME = "";
 var PASSWORD = "";
 
@@ -139,6 +139,33 @@ function getList() {
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
+$("#button_to_delete").click(function(e) {
+	e.preventDefault();	
+	deleteHelado($("#id_helado_a_eliminar").val());
+});
+
+
+function deleteHelado(id_helado_a_eliminar) {
+	var url = API_BASE_URL + '/helados/' + id_helado_a_eliminar;
+	
+	$("#delete_helado_result").text('');
+
+	$.ajax({
+		url : url,
+		type : 'DELETE',
+		crossDomain : true,
+		dataType : 'json',
+		statusCode: {
+    		202: function() {$('<div class="alert alert-danger"> <strong>Ok!</strong> File deleted successfully </div>').appendTo($("#delete_helado_result"));}
+    	}
+	}).done(function(data, status, jqxhr) {
+		$('<div class="alert alert-success"> <strong>Ok!</strong> File deleted successfully</div>').appendTo($("#delete_helado_result"));				
+  	}).fail(function() {
+		$('<div class="alert alert-danger"> <strong>Oh!</strong> Error </div>').appendTo($("#delete_helado_result"));
+	});
+
+}
+
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
@@ -240,10 +267,6 @@ $("#button_to_create").click(function(e) {
 	createRepo(newRepo);
 });
 
-$("#button_to_delete").click(function(e) {
-	e.preventDefault();	
-	deleteRepo($("#repository_name_to_delete").val());
-});
 
 
 
@@ -301,23 +324,6 @@ function getRepo(repository_name) {
 	});
 }
 
-
-function deleteRepo(repository_name_to_delete) {
-	var url = API_BASE_URL + '/repos/' + USERNAME + '/' + repository_name_to_delete;
-	$.ajax({
-		url : url,
-		type : 'DELETE',
-		crossDomain : true,
-		dataType : 'json',
-	}).done(function(data, status, jqxhr) {
-	$("#delete_repo_result").text('');
-	$('<div class="alert alert-succes"> <strong>Okey!</strong> Repository has been delete </div>').appendTo($("#delete_repo_result"));
-				
-
-			}).fail(function() {
-				$('<div class="alert alert-danger"> <strong>Oh!</strong> Repository not found </div>').appendTo($("#delete_repo_result"));
-	});
-}
 
 
 function getRepoToEdit(repository_name) {

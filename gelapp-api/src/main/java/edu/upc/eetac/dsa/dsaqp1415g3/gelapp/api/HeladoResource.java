@@ -9,6 +9,7 @@ import java.sql.Statement;
 import javax.sql.DataSource;
 import javax.ws.rs.BadRequestException;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.POST;
@@ -317,4 +318,41 @@ public class HeladoResource {
 
 		return helado;
 	}
+	
+	
+	/*			ELIMINAR HELADO		*//////////////////////////////////////////////////////////////////////////////////////
+	
+	private String DELETE_HELADO_QUERY = "delete from helado where helado_id=?";
+	 
+	@DELETE
+	@Path("/{helado_id}")
+	public void deleteHelado(@PathParam("helado_id") String helado_id) {
+		Connection conn = null;
+		try {
+			conn = ds.getConnection();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	 
+		PreparedStatement stmt = null;
+		try {
+			stmt = conn.prepareStatement(DELETE_HELADO_QUERY);
+			stmt.setInt(1, Integer.valueOf(helado_id));
+	 
+			int rows = stmt.executeUpdate();
+			if (rows == 0)
+				;// Deleting inexistent sting
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+				conn.close();
+			} catch (SQLException e) {
+			}
+		}
+	}
+	
+	
 }
