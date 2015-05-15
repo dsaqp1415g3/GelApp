@@ -20,15 +20,61 @@ import javax.ws.rs.core.EntityTag;
 import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
 
-import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.Sabores;
+import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.Sabor;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.SaboresCollection;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.MediaType;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.DataSourceSPA;
+
 
 @Path("/sabores")
 public class SaboresResource {
 	private DataSource ds = DataSourceSPA.getInstance().getDataSource();
 	
+	
+	private String GET_SABORES_QUERY = "select * from sabor";
+	 
+	@GET
+	@Produces(MediaType.GELAPP_API_SABOR_COLLECTION)
+	public SaboresCollection getSabores() {
+		SaboresCollection sabores = new SaboresCollection();
+	 
+		Connection conn = null;
+		try {
+			conn = ds.getConnection();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	 
+		PreparedStatement stmt = null;
+		try {
+			stmt = conn.prepareStatement(GET_SABORES_QUERY);
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				Sabor sabor = new Sabor();
+				sabor.setSaborid(rs.getInt("sabor_id"));
+				sabor.setName(rs.getString("nombre"));
+				sabor.setCode_color(rs.getString("codigo_color"));
+				sabor.setLastModified(rs.getTimestamp("last_modified").getTime());
+				sabor.setCreationTimestamp(rs.getTimestamp("creation_timestamp").getTime());
+				sabores.addSabor(sabor);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+				conn.close();
+			} catch (SQLException e) {
+			}
+		}
+	 
+		return sabores;
+	}
+	
+	
+
+	/*
 	private String GET_SABORES_QUERY = "select * from sabor where creation_timestamp < ifnull(?, now())  order by creation_timestamp desc limit ?";
 	private String GET_SABORES_QUERY_FROM_LAST = "select * from sabor where creation_timestamp > ? order by creation_timestamp desc";
 			
@@ -90,7 +136,7 @@ public class SaboresResource {
 		}
 
 			return sabores;
-	}
+	}*/
 	
 	private String GET_SABOR_BY_ID_QUERY ="select * from sabor where sabor_id =?";
 	@GET
@@ -102,7 +148,7 @@ public class SaboresResource {
 		// Create CacheControl
 		CacheControl cc = new CacheControl();
 
-		Sabores sabor= getSaborFromDatabase(saborid);
+		Sabor sabor= getSaborFromDatabase(saborid);
 
 		// Calculate the ETag on last modified date of user resource
 		EntityTag eTag = new EntityTag(Long.toString(sabor.getLastModified()));
@@ -162,8 +208,8 @@ public class SaboresResource {
 		return sabor;
 	}*/
 	
-	private Sabores getSaborFromDatabase(String saborid) {
-		Sabores sabor = new Sabores();
+	private Sabor getSaborFromDatabase(String saborid) {
+		Sabor sabor = new Sabor();
 
 		Connection conn = null;
 		try {
