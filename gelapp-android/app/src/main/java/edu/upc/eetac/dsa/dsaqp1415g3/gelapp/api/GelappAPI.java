@@ -114,8 +114,9 @@ public class GelappAPI {
             }
 
             JSONObject jsonObject = new JSONObject(sb.toString());
-            //JSONArray jsonLinks = jsonObject.getJSONArray("links");
-            //parseLinks(jsonLinks, helados.getLinks());
+
+            JSONArray jsonLinks = jsonObject.getJSONArray("links");
+            parseLinks(jsonLinks, helados.getLinks());
 
             helados.setNewestTimestamp(jsonObject.getLong("newestTimestamp"));
             helados.setOldestTimestamp(jsonObject.getLong("oldestTimestamp"));
@@ -135,8 +136,8 @@ public class GelappAPI {
                 helado.setLastModified(jsonHelado.getLong("lastModified"));
                 helado.setNombreHelado(jsonHelado.getString("nombreHelado"));
 
-                //jsonLinks = jsonHelado.getJSONArray("links");
-                //parseLinks(jsonLinks, helado.getLinks());
+                jsonLinks = jsonHelado.getJSONArray("links");
+                parseLinks(jsonLinks, helado.getLinks());
                 helados.getHelados().add(helado);
             }
         } catch (IOException e) {
