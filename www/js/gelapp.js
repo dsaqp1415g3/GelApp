@@ -1,4 +1,4 @@
-var API_BASE_URL = "http://localhost:8080/gelapp-api";
+var API_BASE_URL = "http://147.83.7.157:8080/GelApp";
 var USERNAME = "";
 var PASSWORD = "";
 
@@ -63,6 +63,21 @@ function getHelado(helado_id) {
 
 				var helado = data;
         
+                var dc = new Date(helado.creationTimestamp);        
+                var _mes=dc.getMonth()+1;
+                var _dia=dc.getDate();
+                var _anyo=dc.getFullYear();
+                var _hora = dc.getHours();
+                var _minuto = dc.getMinutes();
+                var _segundo = dc.getSeconds();    
+        
+                var dm = new Date(helado.lastModified);
+                var mes_=dm.getMonth()+1;
+                var dia_=dm.getDate();
+                var anyo_=dm.getFullYear();
+                var hora_ = dm.getHours();
+                var minuto_ = dm.getMinutes();
+                var segundo_ = dm.getSeconds();
      
                 $("#result_1").empty("#result_1");
                 $("#result_2").empty("#result_2");
@@ -82,8 +97,9 @@ function getHelado(helado_id) {
                 $('<strong> Capa 3 (Topping): </strong> ' + helado.capa3Topping + '<br>').appendTo($('#result_5'));
                 $('<strong> Capa 4 (Helado): </strong> ' + helado.capa4Helado + '<br>').appendTo($('#result_6'));
                 $('<strong> Capa 5 (Topping): </strong> ' + helado.capa5Topping + '<br>').appendTo($('#result_7'));
-                $('<strong> Fecha de creación: </strong> ' + helado.creationTimestamp + '<br>').appendTo($('#result_8'));
-                $('<strong> Última modificación: </strong> ' + helado.lastModified + '<br>').appendTo($('#result_9'));
+                $('<strong> Fecha de creación: </strong> ' + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+'<br>').appendTo($('#result_8'));
+              
+        $('<strong> Última modificación: </strong> '+ dia_+"-"+mes_+"-"+anyo_ +" a las "+hora_+":"+minuto_+":"+segundo_+ '<br>').appendTo($('#result_9'));
                 
         
 			}).fail(function() {
@@ -218,7 +234,33 @@ function deleteHelado(id_helado_a_eliminar) {
 
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+$("#comprar_en_mis_helados").click(function(e) {
+	e.preventDefault();	
+	comprarHelado($("#helado_id").val());
+});
 
+
+function comprarHelado(helado_id) {
+	var url = API_BASE_URL + '/helados/' + helado_id;
+	
+	$("#mishelados_comprar").text('');
+
+	$.ajax({
+		url : url,
+		type : 'GET',
+		crossDomain : true,
+		dataType : 'json',                
+	/*	statusCode: {
+    		202: function() {$('<div class="alert alert-danger"> <strong>Ok!</strong> File deleted successfully </div>').appendTo($("#delete_helado_result"));}
+    	} */
+        
+	}).done(function(data, status, jqxhr) {
+		$('<div class="alert alert-success"> <strong>Gracias!</strong> Puedes pasar a recogerlo a tu tienda GelApp más cercana </div>').appendTo($("#mishelados_comprar"));				
+  	}).fail(function() {
+		$('<div class="alert alert-danger"> <strong>Oh!</strong> El helado que quieres comprar no existe </div>').appendTo($("#mishelados_comprar"));
+	});
+
+}
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
