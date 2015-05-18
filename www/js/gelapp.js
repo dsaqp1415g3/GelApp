@@ -179,13 +179,185 @@ function deleteHelado(id_helado_a_eliminar) {
 	}).done(function(data, status, jqxhr) {
 		$('<div class="alert alert-success"> <strong>Ok!</strong> File deleted successfully</div>').appendTo($("#delete_helado_result"));				
   	}).fail(function() {
-		$('<div class="alert alert-danger"> <strong>Oh!</strong> Error </div>').appendTo($("#delete_helado_result"));
+		$('<div class="alert alert-danger"> <strong>Oh!</strong> No existe ningún helado con esa ID! </div>').appendTo($("#delete_helado_result"));
 	});
 
 }
 
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+$("#top1_caramelo").click(function(e) {
+	e.preventDefault();   
+    $("#topping_1").val('caramelo');
+    $("#topping_1").text('Caramelo');
+});
+$("#top1_chocolate_negro").click(function(e) {
+	e.preventDefault();
+	$("#topping_1").val('chocolate_negro');
+    $("#topping_1").text('Chocolate Negro');
+});
+$("#top1_chocolate_blanco").click(function(e) {
+	e.preventDefault();
+	$("#topping_1").val('chocolate_blanco');
+    $("#topping_1").text('Chocolate Blanco');
+});
+$("#top1_sirope_fresa").click(function(e) {
+	e.preventDefault();
+	$("topping_1").val('sirope_fresa');
+    $("topping_1").text('Sirope de Fresa');
+});
+$("#top1_multicolor").click(function(e) {
+	e.preventDefault();
+	$("#topping_1").val('multicolor');
+    $("#topping_1").text('Multicolor');
+});
+
+
+$("#capa2_fresa").click(function(e) {
+	e.preventDefault();
+	$("#capa_2").val('fresa');
+    $("#capa_2").text('Fresa');
+});
+$("#capa2_nata").click(function(e) {
+	e.preventDefault();
+	$("#capa_2").val('nata');
+    $("#capa_2").text('Nata');
+});
+$("#capa2_vainilla").click(function(e) {
+	e.preventDefault();
+	$("#capa_2").val('vainilla');
+    $("#capa_2").text('Vainilla');
+});
+$("#capa2_chocolate").click(function(e) {
+	e.preventDefault();
+	$("#capa_2").val('chocolate');
+    $("#capa_2").text('Chocolate');
+});
+$("#capa2_turron").click(function(e) {
+	e.preventDefault();
+	$("#capa_2").val('turron');
+    $("#capa_2").text('Turrón');
+});
+
+$("#top3_caramelo").click(function(e) {
+	e.preventDefault();
+	$("#topping_3").val('caramelo');
+    $("#topping_3").text('Caramelo');
+});
+$("#top3_chocolate_negro").click(function(e) {
+	e.preventDefault();
+	$("#topping_3").val('chocolate_negro');
+    $("#topping_3").text('Chocolate Negro');
+});
+$("#top3_chocolate_blanco").click(function(e) {
+	e.preventDefault();
+	$("#topping_3").val('chocolate_blanco');
+    $("#topping_3").text('Chocolate Blanco');
+});
+$("#top3_sirope_fresa").click(function(e) {
+	e.preventDefault();
+	$("#topping_3").val('sirope_fresa');
+    $("#topping_3").text('Sirope Fresa');
+});
+$("#top3_multicolor").click(function(e) {
+	e.preventDefault();
+	$("#topping_3").val('multicolor');
+    $("#topping_3").text('Multicolor');
+});
+
+
+$("#capa4_fresa").click(function(e) {
+	e.preventDefault();
+	$("#capa_4").val('fresa');
+    $("#capa_4").text('Fresa');
+});
+$("#capa4_nata").click(function(e) {
+	e.preventDefault();
+	$("#capa_4").val('nata');
+    $("#capa_4").text('Nata');
+});
+$("#capa4_vainilla").click(function(e) {
+	e.preventDefault();
+	$("#capa_4").val('vainilla');
+    $("#capa_4").text('Vainilla');
+});
+$("#capa4_chocolate").click(function(e) {
+	e.preventDefault();
+	$("#capa_4").val('chocolate');
+    $("#capa_4").text('Chocolate');
+});
+$("#capa4_turron").click(function(e) {
+	e.preventDefault();
+	$("#capa_4").val('turron');
+    $("#capa_4").text('Turrón');
+});
+
+
+$("#top5_caramelo").click(function(e) {
+	e.preventDefault();
+	$("#topping_5").val('caramelo');
+    $("#topping_5").text('Caramelo');
+});
+$("#top1_chocolate_negro").click(function(e) {
+	e.preventDefault();
+	$("#topping_5").val('chocolate_negro');
+    $("#topping_5").text('chocolate_negro');
+});
+$("#top5_chocolate_blanco").click(function(e) {
+	e.preventDefault();
+	$("#topping_5").val('chocolate_blanco');
+});
+$("#top5_sirope_fresa").click(function(e) {
+	e.preventDefault();
+	$("#topping_5").val('sirope_fresa');
+});
+$("#top5_multicolor").click(function(e) {
+	e.preventDefault();
+	$("#topping_5").val('multicolor');
+});
+
+
+
+/*-----------------------------------------------------------*/
+$("#button_to_create").click(function(e) {
+	e.preventDefault();
+
+    var newIce = new Object();
+    
+    newIce.nombreHelado = $("#nombre_helado").val();   
+    newIce.capa1Topping = $("#topping_1").val();  
+    newIce.capa2Helado = $("#capa_2").val();
+    newIce.capa3Topping = $("#topping_3").val();
+    newIce.capa4Helado = $("#capa_4").val();
+    newIce.capa5Topping = $("#topping_5").val();
+    newIce.autorid = 2;
+
+	createIce(newIce);
+});
+
+function createIce(newIce) {
+    
+	var url = API_BASE_URL + '/helados';
+	var data = JSON.stringify(newIce);
+
+	$("#create_result").text('');
+
+	$.ajax({
+		url : url,
+		type : 'POST',
+		crossDomain : true,
+		dataType : 'json',
+		data : data,
+        contentType : 'application/vnd.GelApp.helado+json',
+	}).done(function(data, status, jqxhr) {
+		$('<div class="alert alert-success"> <strong>Ok!</strong> Helado con nombre: '+ newIce.nombreHelado +' creado correctamente. </div>').appendTo($("#create_result"));				
+  	}).fail(function() {
+        $("#create_result").empty("#create_result");
+		$('<div class="alert alert-danger"> <strong>Oh!</strong> Error </div>').appendTo($("#create_result"));
+	});
+
+}
 
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
@@ -255,7 +427,7 @@ function comprarHelado(helado_id) {
     	} */
         
 	}).done(function(data, status, jqxhr) {
-		$('<div class="alert alert-success"> <strong>Gracias!</strong> Puedes pasar a recogerlo a tu tienda GelApp más cercana </div>').appendTo($("#mishelados_comprar"));				
+		$('<div class="alert alert-success"> <strong>¡Gracias!</strong> Puedes pasar a recogerlo a tu tienda GelApp más cercana </div>').appendTo($("#mishelados_comprar"));				
   	}).fail(function() {
 		$('<div class="alert alert-danger"> <strong>Oh!</strong> El helado que quieres comprar no existe </div>').appendTo($("#mishelados_comprar"));
 	});
