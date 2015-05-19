@@ -16,10 +16,7 @@ insert into topping (nombre, codigo_color) values('sirope_fresa', '#FF0040');
 insert into topping (nombre, codigo_color) values('multicolor', '#00FF00');
 
 insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (1,'MarceDelicious','caramelo','nata','caramelo','nata','caramelo');
-
 insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (2,'DeliciousMax','chocolate_negro','turron','caramelo','nata','sirope_fresa');
-
-
 insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (2,'nata','nata','turron','sirope_fresa','nata','sirope_fresa');
 insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (2,'chocolate','chocolate_negro','nata','caramelo','chocolate_negro','sirope_fresa');
 insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (2,'deliciaCarnica','chocolate_negro','turron','caramelo','caramelo','sirope_fresa');
@@ -43,4 +40,15 @@ insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_
 insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (3,'heladoooooo','chocolate_negro','turron','caramelo','nata','sirope_fresa');
 insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (3,'heladoconSirope','caramelo','turron','caramelo','nata','sirope_fresa');
 insert into helado (autor_id, nombre_helado,capa_1_topping,capa_2_helado,capa_3_topping,capa_4_helado,capa_5_topping) values (3,'heladerooooooo','caramelo','caramelo','caramelo','nata','caramelo');
+
+
+insert into votos (id_usuario, id_helado) values (1, 1);
+insert into votos (id_usuario, id_helado) values (1, 2);
+insert into votos (id_usuario, id_helado) values (1, 3);
+insert into votos (id_usuario, id_helado) values (2, 2);
+insert into votos (id_usuario, id_helado) values (2, 4);
+insert into votos (id_usuario, id_helado) values (2, 5);
+insert into votos (id_usuario, id_helado) values (3, 2);
+insert into votos (id_usuario, id_helado) values (3, 4);
+insert into votos (id_usuario, id_helado) values (3, 7);
 

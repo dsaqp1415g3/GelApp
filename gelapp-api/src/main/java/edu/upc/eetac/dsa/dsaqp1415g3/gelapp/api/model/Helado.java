@@ -24,6 +24,7 @@ public class Helado {
 	private String capa3Topping;
 	private String capa4Helado;
 	private String capa5Topping;
+	private String autor;
 	private long lastModified;
 	private long creationTimestamp;
 	@InjectLinks({
@@ -140,5 +141,15 @@ public class Helado {
 
 	public void setNombreHelado(String nombreHelado) {
 		this.nombreHelado = nombreHelado;
+	}
+
+
+	public String getAutor() {
+		return autor;
+	}
+
+
+	public void setAutor(String autor) {
+		this.autor = autor;
 	}	
 }

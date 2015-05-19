@@ -19,7 +19,6 @@ import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
 
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.Sabor;
-import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.SaboresCollection;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.MediaType;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.DataSourceSPA;
 
@@ -29,9 +28,10 @@ public class SaboresResource {
 	private DataSource ds = DataSourceSPA.getInstance().getDataSource();
 	
 	
-	private String GET_SABORES_QUERY = "select * from sabor";
+	/*private String GET_SABORES_QUERY = "select * from sabor";
 	 
 	@GET
+	@Path("/list")
 	@Produces(MediaType.GELAPP_API_SABOR_COLLECTION)
 	public SaboresCollection getSabores() {
 		SaboresCollection sabores = new SaboresCollection();
@@ -73,7 +73,7 @@ public class SaboresResource {
 		}
 	 
 		return sabores;
-	}
+	}*/
 	
 	
 

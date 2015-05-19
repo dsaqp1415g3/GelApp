@@ -33,10 +33,9 @@ public class HeladoResource {
 	
 	/*			LISTA HELADOS		*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	//private String GET_HELADOS_QUERY = "select * from helado where creation_timestamp < ifnull(?, now())  order by creation_timestamp desc limit ?";
-	//private String GET_HELADOS_QUERY_FROM_LAST = "select * from helado where creation_timestamp > ? order by creation_timestamp desc";
 	//private String GET_HELADOS_QUERY = "select * from helado order by helado_id asc limit 5 offset ?";
-	private String GET_HELADOS_QUERY = "select * from helado order by helado_id asc";
+	//private String GET_HELADOS_QUERY = "select * from helado order by helado_id asc";
+	private String GET_HELADOS_QUERY = "select helado.*, usuario.username from helado inner join usuario on helado.autor_id = usuario.usuario_id order by helado_id asc";
 	//private String GET_COUNT_HELADOS_QUERY = "select count(*) as helado_id from helado";
 	
 	//@SuppressWarnings("resource")
@@ -72,7 +71,7 @@ public class HeladoResource {
 					helado.setCapa5Topping(rs.getString("capa_5_topping"));
 					helado.setLastModified(rs.getTimestamp("last_modified").getTime());
 					helado.setCreationTimestamp(rs.getTimestamp("creation_timestamp").getTime());
-				
+					helado.setAutor(rs.getString("username"));
 					helados.addHelado(helado);
 				}
 				
@@ -116,7 +115,7 @@ public class HeladoResource {
 	
 	/*    HELADO POR ID 			*//////////////////////////////////////////////////////////////////////////
 	
-	private String GET_HELADO_BY_ID_QUERY ="select * from helado where helado_id =?";
+	private String GET_HELADO_BY_ID_QUERY ="select helado.*, usuario.username from helado inner join usuario on helado.autor_id = usuario.usuario_id where helado_id =?";
 	@GET
 	@Path("/{helado_id}")
 	@Produces(MediaType.GELAPP_API_HELADO)
@@ -182,7 +181,7 @@ public class HeladoResource {
 					helado.setCapa5Topping(rs.getString("capa_5_topping"));
 					helado.setLastModified(rs.getTimestamp("last_modified").getTime());
 					helado.setCreationTimestamp(rs.getTimestamp("creation_timestamp").getTime());
-				
+					
 					helados.addHelado(helado);
 				}
 			} else {
@@ -301,6 +300,7 @@ public class HeladoResource {
 				helado.setCapa5Topping(rs.getString("capa_5_topping"));
 				helado.setLastModified(rs.getTimestamp("last_modified").getTime());
 				helado.setCreationTimestamp(rs.getTimestamp("creation_timestamp").getTime());
+				helado.setAutor(rs.getString("username"));
 			} else {
 				throw new NotFoundException("There's no helado with heladoid="
 						+ heladoid);
