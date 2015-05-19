@@ -16,7 +16,6 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.ServerErrorException;
 import javax.ws.rs.core.CacheControl;
 import javax.ws.rs.core.Context;
@@ -153,7 +152,7 @@ public class HeladoResource {
 	
 	private String GET_HELADO_BY_AUTOR_QUERY ="select * from helado where autor_id = (select usuario_id from usuario where username = ? ) order by helado_id asc";
 	@GET
-	@Path("/{username}")
+	@Path("/user/{username}")
 	@Produces(MediaType.GELAPP_API_HELADO_COLLECTION)
 		public HeladoCollection getHelados(@PathParam("username") String username) {
 		HeladoCollection helados = new HeladoCollection();
@@ -303,7 +302,7 @@ public class HeladoResource {
 				helado.setLastModified(rs.getTimestamp("last_modified").getTime());
 				helado.setCreationTimestamp(rs.getTimestamp("creation_timestamp").getTime());
 			} else {
-				throw new NotFoundException("There's no helado with stingid="
+				throw new NotFoundException("There's no helado with heladoid="
 						+ heladoid);
 			}
 		} catch (SQLException e) {
@@ -340,7 +339,7 @@ public class HeladoResource {
 		try {
 			stmt = conn.prepareStatement(DELETE_HELADO_QUERY);
 			stmt.setInt(1, Integer.valueOf(helado_id));
-	 
+			
 			int rows = stmt.executeUpdate();
 			if (rows == 0)
 				;
