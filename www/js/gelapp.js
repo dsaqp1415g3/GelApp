@@ -204,8 +204,8 @@ $("#top1_chocolate_blanco").click(function(e) {
 });
 $("#top1_sirope_fresa").click(function(e) {
 	e.preventDefault();
-	$("topping_1").val('sirope_fresa');
-    $("topping_1").text('Sirope de Fresa');
+	$("#topping_1").val('sirope_fresa');
+    $("#topping_1").text('Sirope de Fresa');
 });
 $("#top1_multicolor").click(function(e) {
 	e.preventDefault();
@@ -295,27 +295,31 @@ $("#capa4_turron").click(function(e) {
 
 
 $("#top5_caramelo").click(function(e) {
-	e.preventDefault();
-	$("#topping_5").val('caramelo');
+	e.preventDefault();   
+    $("#topping_5").val('caramelo');
     $("#topping_5").text('Caramelo');
 });
-$("#top1_chocolate_negro").click(function(e) {
+$("#top5_chocolate_negro").click(function(e) {
 	e.preventDefault();
 	$("#topping_5").val('chocolate_negro');
-    $("#topping_5").text('chocolate_negro');
+    $("#topping_5").text('Chocolate Negro');
 });
 $("#top5_chocolate_blanco").click(function(e) {
 	e.preventDefault();
 	$("#topping_5").val('chocolate_blanco');
+    $("#topping_5").text('Chocolate Blanco');
 });
 $("#top5_sirope_fresa").click(function(e) {
 	e.preventDefault();
 	$("#topping_5").val('sirope_fresa');
+    $("#topping_5").text('Sirope de Fresa');
 });
 $("#top5_multicolor").click(function(e) {
 	e.preventDefault();
 	$("#topping_5").val('multicolor');
+    $("#topping_5").text('Multicolor');
 });
+
 
 
 
@@ -340,7 +344,7 @@ function createIce(newIce) {
     
 	var url = API_BASE_URL + '/helados';
 	var data = JSON.stringify(newIce);
-
+    $("#create_result").empty("#create_result");
 	$("#create_result").text('');
 
 	$.ajax({
@@ -349,9 +353,10 @@ function createIce(newIce) {
 		crossDomain : true,
 		dataType : 'json',
 		data : data,
-        contentType : 'application/vnd.GelApp.helado+json',
+        contentType : 'application/vnd.gelapp.api.helado+json',
 	}).done(function(data, status, jqxhr) {
-		$('<div class="alert alert-success"> <strong>Ok!</strong> Helado con nombre: '+ newIce.nombreHelado +' creado correctamente. </div>').appendTo($("#create_result"));				
+        $("#create_result").empty("#create_result");
+		$('<div class="alert alert-success"> <strong>Ok!</strong> Helado con nombre: creado correctamente. </div>').appendTo($("#create_result"));				
   	}).fail(function() {
         $("#create_result").empty("#create_result");
 		$('<div class="alert alert-danger"> <strong>Oh!</strong> Error </div>').appendTo($("#create_result"));
