@@ -5,11 +5,6 @@ import java.util.List;
 
 import javax.ws.rs.core.Link;
 
-import org.glassfish.jersey.linking.InjectLink.Style;
-
-import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.MediaType;
-import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.SaboresResource;
-
 
 public class SaboresCollection {	
 	
@@ -19,6 +14,7 @@ public class SaboresCollection {
 	private List<Sabor> sabores;
 	private long newestTimestamp;
 	private long oldestTimestamp;
+	
 	
 	
 

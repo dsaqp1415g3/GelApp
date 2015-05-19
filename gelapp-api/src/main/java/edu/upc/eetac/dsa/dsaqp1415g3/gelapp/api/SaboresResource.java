@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 
 import javax.sql.DataSource;
 import javax.ws.rs.GET;
@@ -12,7 +11,6 @@ import javax.ws.rs.NotFoundException;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.ServerErrorException;
 import javax.ws.rs.core.CacheControl;
 import javax.ws.rs.core.Context;
@@ -49,14 +47,19 @@ public class SaboresResource {
 		try {
 			stmt = conn.prepareStatement(GET_SABORES_QUERY);
 			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				while (rs.next()) {
+					Sabor sabor = new Sabor();
+					sabor.setSaborid(rs.getInt("sabor_id"));
+					sabor.setName(rs.getString("nombre"));
+					sabor.setCode_color(rs.getString("codigo_color"));
+					sabores.addSabor(sabor);
+				}
+			} else {
+				throw new NotFoundException("There's no sabor");
+			}
 			while (rs.next()) {
-				Sabor sabor = new Sabor();
-				sabor.setSaborid(rs.getInt("sabor_id"));
-				sabor.setName(rs.getString("nombre"));
-				sabor.setCode_color(rs.getString("codigo_color"));
-				sabor.setLastModified(rs.getTimestamp("last_modified").getTime());
-				sabor.setCreationTimestamp(rs.getTimestamp("creation_timestamp").getTime());
-				sabores.addSabor(sabor);
+				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

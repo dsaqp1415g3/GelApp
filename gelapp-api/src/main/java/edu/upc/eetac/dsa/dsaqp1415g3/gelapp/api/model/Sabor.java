@@ -1,7 +1,9 @@
 package edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model;
 
 import java.util.List;
+
 import javax.ws.rs.core.Link;
+
 
 public class Sabor {
 	

@@ -36,13 +36,14 @@ public class HeladoResource {
 	
 	//private String GET_HELADOS_QUERY = "select * from helado where creation_timestamp < ifnull(?, now())  order by creation_timestamp desc limit ?";
 	//private String GET_HELADOS_QUERY_FROM_LAST = "select * from helado where creation_timestamp > ? order by creation_timestamp desc";
-	private String GET_HELADOS_QUERY = "select * from helado order by helado_id asc limit 5 offset ?";
+	//private String GET_HELADOS_QUERY = "select * from helado order by helado_id asc limit 5 offset ?";
+	private String GET_HELADOS_QUERY = "select * from helado order by helado_id asc";
 	//private String GET_COUNT_HELADOS_QUERY = "select count(*) as helado_id from helado";
 	
 	//@SuppressWarnings("resource")
 	@GET
 	@Produces(MediaType.GELAPP_API_HELADO_COLLECTION)
-	public HeladoCollection getHelados(@QueryParam ("page") int page) {
+	public HeladoCollection getHelados(/*@QueryParam ("page") int page*/) {
 		HeladoCollection helados = new HeladoCollection();
 		
 		Connection conn = null;
@@ -55,10 +56,11 @@ public class HeladoResource {
 
 		PreparedStatement stmt = null;
 		try {
+			
 			stmt = conn.prepareStatement(GET_HELADOS_QUERY);
-			stmt.setInt(1, page);
+			//stmt.setInt(1, page);
 			ResultSet rs = stmt.executeQuery();
-			if (rs.next()) {
+			if (rs.next()) {			
 				while (rs.next()) {
 					Helado helado = new Helado();
 					helado.setHeladoid(rs.getInt("helado_id"));
@@ -75,8 +77,8 @@ public class HeladoResource {
 					helados.addHelado(helado);
 				}
 				
-				helados.setNextPage(page + 10);
-				helados.setPreviousPage(page - 10);
+				/*helados.setNextPage(page + 10);
+				helados.setPreviousPage(page - 10);*/
 				
 				/*stmt = conn.prepareStatement(GET_COUNT_HELADOS_QUERY);
 				rs = stmt.executeQuery();
@@ -341,7 +343,7 @@ public class HeladoResource {
 	 
 			int rows = stmt.executeUpdate();
 			if (rows == 0)
-				;// Deleting inexistent sting
+				;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
