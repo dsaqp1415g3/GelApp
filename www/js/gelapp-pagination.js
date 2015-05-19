@@ -1,4 +1,4 @@
-var API_BASE_URL = "http://147.83.7.157:8080/gelapp";
+var API_BASE_URL = "http://147.83.7.157:8080/GelApp";
 var USERNAME = "";
 var PASSWORD = "";
 

@@ -2,10 +2,13 @@ package edu.upc.eetac.dsa.dsaqp1415g3.gelapp;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.net.Authenticator;
 import java.net.PasswordAuthentication;
@@ -18,16 +21,13 @@ import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.HeladoCollection;
 
 public class GelappMainActivity extends ListActivity {
     private final static String TAG = GelappMainActivity.class.toString();
-    private static final String[] items = { "lorem", "ipsum", "dolor", "sit",
+    /*private static final String[] items = { "lorem", "ipsum", "dolor", "sit",
             "amet", "consectetuer", "adipiscing", "elit", "morbi", "vel",
             "ligula", "vitae", "arcu", "aliquet", "mollis", "etiam", "vel",
             "erat", "placerat", "ante", "porttitor", "sodales", "pellentesque",
-            "augue", "purus" };
-
-    private ArrayAdapter<String> adapter;
-
-  /*  private HeladoAdapter adapter;
-   ArrayList<Helado> heladosList; */
+            "augue", "purus" };*/
+    private HeladoAdapter adapter;
+    ArrayList<Helado> heladosList;
 
 /** Called when the activity is first created. */
     @Override
@@ -35,17 +35,17 @@ public class GelappMainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gelapp_main);
 
+        heladosList = new ArrayList<Helado>();
+        adapter = new HeladoAdapter(this, heladosList);
+        setListAdapter(adapter);
+
+        /*
         Authenticator.setDefault(new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication("oriol", "oriol".toCharArray());
             }
         });
-
-        adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, items);
-        setListAdapter(adapter);
-
-
+        */
         (new FetchHeladosTask()).execute();
     }
 
@@ -67,10 +67,7 @@ public class GelappMainActivity extends ListActivity {
 
         @Override
         protected void onPostExecute(HeladoCollection result) {
-            ArrayList<Helado> helados = new ArrayList<Helado>(result.getHelados());
-            for (Helado h : helados) {
-                Log.d(TAG, h.getHeladoid() + "-" + h.getNombreHelado());
-            }
+            addHelados(result);
             if (pd != null) {
                 pd.dismiss();
             }
@@ -85,14 +82,23 @@ public class GelappMainActivity extends ListActivity {
             pd.show();
         }
 
-
+        private void addHelados(HeladoCollection helados){
+            heladosList.addAll(helados.getHelados());
+            adapter.notifyDataSetChanged();
+        }
 
     }
 
-   /* private void addHelados(HeladoCollection helados){
-        heladosList.addAll(helados.getHelados());
-        adapter.notifyDataSetChanged();
+    //Si pulsamos un objeto de la lista se nos abre el helado_detail_layout
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        Helado helado = heladosList.get(position);
+        Log.d(TAG, helado.getLinks().get("self").getTarget());
+
+        Intent intent = new Intent(this, HeladoDetailActivity.class);
+        intent.putExtra("url", helado.getLinks().get("self").getTarget());
+        startActivity(intent);
     }
-*/
+
 
 }

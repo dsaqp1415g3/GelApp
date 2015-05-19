@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.Helado;
@@ -24,6 +23,7 @@ public class HeladoAdapter extends BaseAdapter {
         super();
         inflater = LayoutInflater.from(context);
         this.data = data;
+
     }
 
     @Override
@@ -65,6 +65,7 @@ public class HeladoAdapter extends BaseAdapter {
             viewHolder.tvCapa3 = (TextView) convertView.findViewById(R.id.tvCapa3);
             viewHolder.tvCapa4 = (TextView) convertView.findViewById(R.id.tvCapa4);
             viewHolder.tvCapa5 = (TextView) convertView.findViewById(R.id.tvCapa5);
+            //viewHolder.tvContador = (TextView) convertView.findViewById(R.id.tvContador);
 
             convertView.setTag(viewHolder);
         } else {
@@ -76,6 +77,7 @@ public class HeladoAdapter extends BaseAdapter {
         String capa3 = data.get(position).getCapa3Topping();
         String capa4 = data.get(position).getCapa4Helado();
         String capa5 = data.get(position).getCapa5Topping();
+        //int contador = position;
         //String creation_time = SimpleDateFormat.getInstance().format(data.get(position).getLastModified());
 
         viewHolder.tvNombreHelado.setText(nombreHelado);
@@ -84,7 +86,15 @@ public class HeladoAdapter extends BaseAdapter {
         viewHolder.tvCapa3.setText(capa3);
         viewHolder.tvCapa4.setText(capa4);
         viewHolder.tvCapa5.setText(capa5);
+        //viewHolder.tvContador.setText(contador);
         //viewHolder.tvCreationTime.setText(creation_time);
+        /*
+        int contador = 1 ;
+        TextView cont = (TextView) convertView.findViewById(R.id.tvContador);
+        cont.setText(contador);
+        */
         return convertView;
     }
+
+
 }
