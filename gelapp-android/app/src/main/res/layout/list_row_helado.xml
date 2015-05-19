@@ -4,7 +4,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip" >
+
+        <TextView
+            android:id="@+id/tvContador"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dip"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            />
+
+        <TextView
         android:id="@+id/tvNombreHelado"
         android:textStyle="bold"
         android:layout_width="match_parent"
@@ -12,6 +28,7 @@
         android:layout_margin="5dip"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,12 +44,31 @@
             android:layout_weight="0.5"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip" >
+
         <TextView
             android:id="@+id/tvCapa2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip" >
 
         <TextView
             android:id="@+id/tvCapa3"
@@ -41,12 +77,29 @@
             android:layout_weight="0.5"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip" >
+
         <TextView
             android:id="@+id/tvCapa4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip" >
 
         <TextView
             android:id="@+id/tvCapa5"

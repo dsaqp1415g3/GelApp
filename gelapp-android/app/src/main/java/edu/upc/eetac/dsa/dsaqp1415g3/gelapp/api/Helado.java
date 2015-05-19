@@ -18,8 +18,8 @@ public class Helado {
     private String capa5Topping;
     private String nombreHelado;
     private int autorid;
+    private String eTag;
 
-    //private String eTag;
     private Map<String, Link> links = new HashMap<String, Link>();
 
 
@@ -108,7 +108,7 @@ public class Helado {
         this.nombreHelado = nombreHelado;
     }
 
-/*
+
     public String getETag() {
         return eTag;
     }
@@ -117,5 +117,5 @@ public class Helado {
         this.eTag = eTag;
     }
 
-*/
+
 }
