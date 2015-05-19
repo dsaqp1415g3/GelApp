@@ -9,12 +9,12 @@
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="85"/>
+        android:layout_weight="90"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="15"
+        android:layout_weight="10"
         android:onClick="clickMe"
         android:text="@string/button_label" />
 
