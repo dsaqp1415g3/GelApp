@@ -97,8 +97,9 @@ function getHelado(helado_id) {
                 $('<strong> Capa 3 (Topping): </strong> ' + helado.capa3Topping + '<br>').appendTo($('#result_5'));
                 $('<strong> Capa 4 (Helado): </strong> ' + helado.capa4Helado + '<br>').appendTo($('#result_6'));
                 $('<strong> Capa 5 (Topping): </strong> ' + helado.capa5Topping + '<br>').appendTo($('#result_7'));
-                $('<strong> Fecha de creación: </strong> ' + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+'<br>').appendTo($('#result_8'));              
-                $('<strong> Última modificación: </strong> '+ dia_+"-"+mes_+"-"+anyo_ +" a las "+hora_+":"+minuto_+":"+segundo_+ '<br>').appendTo($('#result_9'));
+                $('<strong> Fecha de creación: </strong> ' + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+'<br>').appendTo($('#result_8'));
+              
+        $('<strong> Última modificación: </strong> '+ dia_+"-"+mes_+"-"+anyo_ +" a las "+hora_+":"+minuto_+":"+segundo_+ '<br>').appendTo($('#result_9'));
                 
         
 			}).fail(function() {
@@ -119,49 +120,6 @@ function getHelado(helado_id) {
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
-$("#get_mis_helados").click(function(e) {
-	e.preventDefault();
-	getHelados();
-});
-
-function getHelados() {
-	var url = API_BASE_URL + '/helados/user/oriol';
-	$("#mis_helados_result").text('');
-	
-	$.ajax({
-		url : url,
-		type : 'GET',
-		crossDomain : true,
-		dataType : 'json',
-	}).done(function(data, status, jqxhr) {
-				var repos = data.helados;
-				
-				$.each(repos, function(i, v) {
-					var repo = v;
-                    
-                    var dc = new Date(repo.creationTimestamp);        
-                    var _mes=dc.getMonth()+1;
-                    var _dia=dc.getDate();
-                    var _anyo=dc.getFullYear();
-                    var _hora = dc.getHours();
-                    var _minuto = dc.getMinutes();
-                    var _segundo = dc.getSeconds();
-
-					$('<br><strong> Nombre: ' + repo.nombreHelado + '</strong><br>').appendTo($('#mis_helados_result'));
-					$('<strong> ID: </strong> ' + repo.heladoid + '<br>').appendTo($('#mis_helados_result'));
-					$('<strong> Votos: </strong> ' + repo.html_url + '<br>').appendTo($('#mis_helados_result'));
-                    $('<strong> Creado el: </strong> ' + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+'<br>').appendTo($('#mis_helados_result'));
-				});
-				
-
-	}).fail(function() {
-		$("#mis_helados_result").text("¡Todavía no has creado helados!");
-	});
-
-}
-
-
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
 $("#button_to_delete").click(function(e) {
 	e.preventDefault();	
@@ -170,8 +128,6 @@ $("#button_to_delete").click(function(e) {
 
 
 function deleteHelado(id_helado_a_eliminar) {
-    
-    console.log("trying to delete...");
 	var url = API_BASE_URL + '/helados/' + id_helado_a_eliminar;
 	
 	$("#delete_helado_result").text('');
@@ -377,14 +333,15 @@ function createIce(newIce) {
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
-$("#button_to_list_todoshelados").click(function(e) {
+$("#button_get_mis_helados").click(function(e) {
 	e.preventDefault();
-	getList();
-})
+	getMisHelados();
+});
 
-function getList() {
-	var url = API_BASE_URL + '/helados';
-	$("#helados_result").text('');
+
+function getMisHelados() {
+	var url = API_BASE_URL + '/helados/user/oriol';
+	$("#mis_helados_result").text('');
 	
 	$.ajax({
 		url : url,
@@ -392,9 +349,9 @@ function getList() {
 		crossDomain : true,
 		dataType : 'json',
 	}).done(function(data, status, jqxhr) {
-				var datos = data.helados;
+				var bigdata = data.helados;
 				
-				$.each(datos, function(i, h) {
+				$.each(bigdata, function(i, h) {
 					var helado = h;
                     
                     var dc = new Date(helado.creationTimestamp);        
@@ -405,22 +362,59 @@ function getList() {
                     var _minuto = dc.getMinutes();
                     var _segundo = dc.getSeconds();    
                     
-                    $("#helados_result_1").empty("#helados_result_1");
-                    $("#helados_result_2").empty("#helados_result_2");
-                    $("#helados_result_3").empty("#helados_result_3");
-                    $("#helados_result_4").empty("#helados_result_4");
-
-                    $("#helados_result").text('');
-                    $('<strong> Nombre: </strong> ' + helado.nombreHelado + '<br>').appendTo($('#helados_result_1'));
-                    $('<strong> Autor ID: </strong> ' + helado.autorid + '<br>').appendTo($('#helados_result_2'));
-                    $('<strong> Autor: </strong> ' + helado.capa1Topping + '<br>').appendTo($('#helados_result_3'));
-                    $('<strong> Fecha de creación: </strong> ' + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+'<br>').appendTo($('#helados_result_4'));   
-                    
+					$('<br><strong> Nombre: ' + helado.nombreHelado + '</strong><br>').appendTo($('#mis_helados_result'));
+					$('<strong> Identificador: </strong> ' + helado.heladoid + '<br>').appendTo($('#mis_helados_result'));
+                    $('<strong> Votos: </strong> ' + helado.a + '<br>').appendTo($('#mis_helados_result'));
+                    $('<weak> Creado el ' + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+'<br>').appendTo($('#mis_helados_result'));
 				});
 				
 
 	}).fail(function() {
-		$("#helados_result").text("No tenemos helados en nuestra base de datos");
+		$("#mis_helados_result").text("¡Todavía no has creado ningún helado!");
+	});
+
+}
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+$("#button_to_get_helados").click(function(e) {
+	e.preventDefault();
+	getHelados();
+});
+
+
+function getHelados() {
+	var url = API_BASE_URL + '/helados';
+	$("#helados_result").text('');
+	
+	$.ajax({
+		url : url,
+		type : 'GET',
+		crossDomain : true,
+		dataType : 'json',
+	}).done(function(data, status, jqxhr) {
+				var bigdata = data.helados;
+				
+				$.each(bigdata, function(i, h) {
+					var helado = h;
+                    
+                    var dc = new Date(helado.creationTimestamp);        
+                    var _mes=dc.getMonth()+1;
+                    var _dia=dc.getDate();
+                    var _anyo=dc.getFullYear();
+                    var _hora = dc.getHours();
+                    var _minuto = dc.getMinutes();
+                    var _segundo = dc.getSeconds();    
+                    
+					$('<br><strong> Nombre: ' + helado.nombreHelado + '</strong><br>').appendTo($('#helados_result'));
+                    $('<strong> Autor </strong>: ' + helado.autor + '<br>').appendTo($('#helados_result'));
+					$('<strong> Identificador: </strong> ' + helado.heladoid + '<br>').appendTo($('#helados_result'));
+                    $('<strong> Votos: </strong> ' + helado.a + '<br>').appendTo($('#helados_result'));
+                    $('<weak> Creado el ' + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+'<br>').appendTo($('#helados_result'));
+				});
+				
+
+	}).fail(function() {
+		$("#helados_result").text("¡Todavía no has creado ningún helado!");
 	});
 
 }
@@ -428,7 +422,82 @@ function getList() {
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
 
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+$("#button_to_list_pagination").click(function(e) {
+	e.preventDefault();
+	getRepos();
+});
+
+
+
+function RepoCollection(repoCollection){
+	this.repos = repoCollection;
+        var href = {};
+
+	var instance = this;
+
+	this.buildLinks = function(header){
+		this.links = weblinking.parseHeader(header);
+	}
+
+	this.getLink = function(rel){
+                return this.links.getLinkValuesByRel(rel);
+	}
+
+	this.toHTML = function(){
+		var html = '';
+		$.each(this.repos, function(i, v) {
+			var repo = v.helados;
+			console.log(repo);
+			html = html.concat('<br><strong> Name: ' + repo.nombreHelado + '</strong><br>');
+			
+		});
+		
+		html = html.concat(' <br> ');
+
+                var prev = this.getLink('prev');
+		if (prev.length == 1) {
+			console.log(prev[0].href);
+			html = html.concat(' <a onClick="getRepos(\'' + prev[0].href + '\');" style="cursor: pointer; cursor: hand;">[Prev]</a> ');
+		}
+                var next = this.getLink('next');
+		if (next.length == 1) {
+			html = html.concat(' <a onClick="getRepos(\'' + next[0].href + '\');" style="cursor: pointer; cursor: hand;">[Next]</a> ');
+		}
+
+ 		return html;	
+	}
+
+}
+
+
+function getRepos() {
+
+    var url = API_BASE_URL + '/helados';
+    $("#helados_result_pagination").text('');
+    
+	$.ajax({
+		url : url,
+		type : 'GET',
+		crossDomain : true,
+		dataType : 'json',
+	}).done(function(data, status, jqxhr) {
+        	var response = data;
+		var repoCollection = new RepoCollection(response);
+                var linkHeader = jqxhr.getResponseHeader('Link');
+                repoCollection.buildLinks(linkHeader);
+				console.log(linkHeader);
+
+		var html = repoCollection.toHTML();
+		$("#helados_result_pagination").html(html);
+
+	}).fail(function(jqXHR, textStatus) {
+		console.log(textStatus);
+	});
+
+}
+
+
 
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
@@ -497,4 +566,3 @@ function comprarHelado(helado_id) {
 }
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
-
