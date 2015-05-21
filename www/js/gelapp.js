@@ -120,40 +120,6 @@ function getHelado(helado_id) {
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
-$("#button_to_list").click(function(e) {
-	e.preventDefault();
-	getList();
-})
-
-function getList() {
-	var url = API_BASE_URL + '/helados';
-	$("#helados_result").text('');
-	
-	$.ajax({
-		url : url,
-		type : 'GET',
-		crossDomain : true,
-		dataType : 'json',
-	}).done(function(data, status, jqxhr) {
-				var files = data.helados;
-				
-				$.each(files, function(i, v) {
-					var file = v;
-	
-				        $('<br><strong> Name: </strong>' + file.heladoid + '<br>').appendTo($('#helados_result'));
-					$('<br><strong> Description: </strong>' + file.creationTimestamp + '<br>').appendTo($('#helados_result'));
-                                        
-					
-				});
-				
-
-	}).fail(function() {
-		$("#helados_result").text("No data to show.");
-	});
-
-}
-
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
 $("#button_to_delete").click(function(e) {
 	e.preventDefault();	
@@ -204,8 +170,8 @@ $("#top1_chocolate_blanco").click(function(e) {
 });
 $("#top1_sirope_fresa").click(function(e) {
 	e.preventDefault();
-	$("topping_1").val('sirope_fresa');
-    $("topping_1").text('Sirope de Fresa');
+	$("#topping_1").val('sirope_fresa');
+    $("#topping_1").text('Sirope de Fresa');
 });
 $("#top1_multicolor").click(function(e) {
 	e.preventDefault();
@@ -295,27 +261,31 @@ $("#capa4_turron").click(function(e) {
 
 
 $("#top5_caramelo").click(function(e) {
-	e.preventDefault();
-	$("#topping_5").val('caramelo');
+	e.preventDefault();   
+    $("#topping_5").val('caramelo');
     $("#topping_5").text('Caramelo');
 });
-$("#top1_chocolate_negro").click(function(e) {
+$("#top5_chocolate_negro").click(function(e) {
 	e.preventDefault();
 	$("#topping_5").val('chocolate_negro');
-    $("#topping_5").text('chocolate_negro');
+    $("#topping_5").text('Chocolate Negro');
 });
 $("#top5_chocolate_blanco").click(function(e) {
 	e.preventDefault();
 	$("#topping_5").val('chocolate_blanco');
+    $("#topping_5").text('Chocolate Blanco');
 });
 $("#top5_sirope_fresa").click(function(e) {
 	e.preventDefault();
 	$("#topping_5").val('sirope_fresa');
+    $("#topping_5").text('Sirope de Fresa');
 });
 $("#top5_multicolor").click(function(e) {
 	e.preventDefault();
 	$("#topping_5").val('multicolor');
+    $("#topping_5").text('Multicolor');
 });
+
 
 
 
@@ -340,7 +310,7 @@ function createIce(newIce) {
     
 	var url = API_BASE_URL + '/helados';
 	var data = JSON.stringify(newIce);
-
+    $("#create_result").empty("#create_result");
 	$("#create_result").text('');
 
 	$.ajax({
@@ -349,9 +319,10 @@ function createIce(newIce) {
 		crossDomain : true,
 		dataType : 'json',
 		data : data,
-        contentType : 'application/vnd.GelApp.helado+json',
+        contentType : 'application/vnd.gelapp.api.helado+json',
 	}).done(function(data, status, jqxhr) {
-		$('<div class="alert alert-success"> <strong>Ok!</strong> Helado con nombre: '+ newIce.nombreHelado +' creado correctamente. </div>').appendTo($("#create_result"));				
+        $("#create_result").empty("#create_result");
+		$('<div class="alert alert-success"> <strong>Ok!</strong> Helado con nombre: creado correctamente. </div>').appendTo($("#create_result"));				
   	}).fail(function() {
         $("#create_result").empty("#create_result");
 		$('<div class="alert alert-danger"> <strong>Oh!</strong> Error </div>').appendTo($("#create_result"));
@@ -362,11 +333,171 @@ function createIce(newIce) {
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
+$("#button_get_mis_helados").click(function(e) {
+	e.preventDefault();
+	getMisHelados();
+});
+
+
+function getMisHelados() {
+	var url = API_BASE_URL + '/helados/user/oriol';
+	$("#mis_helados_result").text('');
+	
+	$.ajax({
+		url : url,
+		type : 'GET',
+		crossDomain : true,
+		dataType : 'json',
+	}).done(function(data, status, jqxhr) {
+				var bigdata = data.helados;
+				
+				$.each(bigdata, function(i, h) {
+					var helado = h;
+                    
+                    var dc = new Date(helado.creationTimestamp);        
+                    var _mes=dc.getMonth()+1;
+                    var _dia=dc.getDate();
+                    var _anyo=dc.getFullYear();
+                    var _hora = dc.getHours();
+                    var _minuto = dc.getMinutes();
+                    var _segundo = dc.getSeconds();    
+                    
+					$('<br><strong> Nombre: ' + helado.nombreHelado + '</strong><br>').appendTo($('#mis_helados_result'));
+					$('<strong> Identificador: </strong> ' + helado.heladoid + '<br>').appendTo($('#mis_helados_result'));
+                    $('<strong> Votos: </strong> ' + helado.a + '<br>').appendTo($('#mis_helados_result'));
+                    $('<weak> Creado el ' + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+'<br>').appendTo($('#mis_helados_result'));
+				});
+				
+
+	}).fail(function() {
+		$("#mis_helados_result").text("¡Todavía no has creado ningún helado!");
+	});
+
+}
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+$("#button_to_get_helados").click(function(e) {
+	e.preventDefault();
+	getHelados();
+});
+
+
+function getHelados() {
+	var url = API_BASE_URL + '/helados';
+	$("#helados_result").text('');
+	
+	$.ajax({
+		url : url,
+		type : 'GET',
+		crossDomain : true,
+		dataType : 'json',
+	}).done(function(data, status, jqxhr) {
+				var bigdata = data.helados;
+				
+				$.each(bigdata, function(i, h) {
+					var helado = h;
+                    
+                    var dc = new Date(helado.creationTimestamp);        
+                    var _mes=dc.getMonth()+1;
+                    var _dia=dc.getDate();
+                    var _anyo=dc.getFullYear();
+                    var _hora = dc.getHours();
+                    var _minuto = dc.getMinutes();
+                    var _segundo = dc.getSeconds();    
+                    
+					$('<br><strong> Nombre: ' + helado.nombreHelado + '</strong><br>').appendTo($('#helados_result'));
+                    $('<strong> Autor </strong>: ' + helado.autor + '<br>').appendTo($('#helados_result'));
+					$('<strong> Identificador: </strong> ' + helado.heladoid + '<br>').appendTo($('#helados_result'));
+                    $('<strong> Votos: </strong> ' + helado.a + '<br>').appendTo($('#helados_result'));
+                    $('<weak> Creado el ' + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+'<br>').appendTo($('#helados_result'));
+				});
+				
+
+	}).fail(function() {
+		$("#helados_result").text("¡Todavía no has creado ningún helado!");
+	});
+
+}
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
 
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+$("#button_to_list_pagination").click(function(e) {
+	e.preventDefault();
+	getRepos();
+});
+
+
+
+function RepoCollection(repoCollection){
+	this.repos = repoCollection;
+        var href = {};
+
+	var instance = this;
+
+	this.buildLinks = function(header){
+		this.links = weblinking.parseHeader(header);
+	}
+
+	this.getLink = function(rel){
+                return this.links.getLinkValuesByRel(rel);
+	}
+
+	this.toHTML = function(){
+		var html = '';
+		$.each(this.repos, function(i, v) {
+			var repo = v.helados;
+			console.log(repo);
+			html = html.concat('<br><strong> Name: ' + repo.nombreHelado + '</strong><br>');
+			
+		});
+		
+		html = html.concat(' <br> ');
+
+                var prev = this.getLink('prev');
+		if (prev.length == 1) {
+			console.log(prev[0].href);
+			html = html.concat(' <a onClick="getRepos(\'' + prev[0].href + '\');" style="cursor: pointer; cursor: hand;">[Prev]</a> ');
+		}
+                var next = this.getLink('next');
+		if (next.length == 1) {
+			html = html.concat(' <a onClick="getRepos(\'' + next[0].href + '\');" style="cursor: pointer; cursor: hand;">[Next]</a> ');
+		}
+
+ 		return html;	
+	}
+
+}
+
+
+function getRepos() {
+
+    var url = API_BASE_URL + '/helados';
+    $("#helados_result_pagination").text('');
+    
+	$.ajax({
+		url : url,
+		type : 'GET',
+		crossDomain : true,
+		dataType : 'json',
+	}).done(function(data, status, jqxhr) {
+        	var response = data;
+		var repoCollection = new RepoCollection(response);
+                var linkHeader = jqxhr.getResponseHeader('Link');
+                repoCollection.buildLinks(linkHeader);
+				console.log(linkHeader);
+
+		var html = repoCollection.toHTML();
+		$("#helados_result_pagination").html(html);
+
+	}).fail(function(jqXHR, textStatus) {
+		console.log(textStatus);
+	});
+
+}
+
+
 
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
@@ -435,178 +566,3 @@ function comprarHelado(helado_id) {
 }
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
-
-
-
-
-
-
-
-
-$("#button_get_repos").click(function(e) {
-	e.preventDefault();
-	getRepos();
-});
-
-$("#button_get_repo").click(function(e) {
-	e.preventDefault();
-	getRepo($("#repository_name").val());
-});
-
-$("#button_get_repo_to_edit").click(function(e) {
-	e.preventDefault();
-	getRepoToEdit($("#repository_name_get_to_edit").val());
-});
-
-$("#button_edit_repo").click(function(e) {
-	e.preventDefault();
-
-    var newRepo = new Object();
-	newRepo.name = $("#repository_name_to_edit").val()
-	newRepo.description = $("#description_to_edit").val()
-	
-	updateRepo(newRepo);
-});
-
-$("#button_to_create").click(function(e) {
-	e.preventDefault();
-
-    var newRepo = new Object();
-	newRepo.name = $("#repository_name_to_create").val();
-	newRepo.description = $("#description_to_create").val();
- 	newRepo.homepage = "https://github.com";
- 	newRepo.private = false;
-	newRepo.has_issues = true;
-	newRepo.has_wiki = true;
-	newRepo.has_downloads = true;
-
-	createRepo(newRepo);
-});
-
-
-
-
-
-function getRepos() {
-	var url = API_BASE_URL + '/users/' + USERNAME + '/repos';
-	$("#repos_result").text('');
-	
-	$.ajax({
-		url : url,
-		type : 'GET',
-		crossDomain : true,
-		dataType : 'json',
-	}).done(function(data, status, jqxhr) {
-				var repos = data;
-				
-				$.each(repos, function(i, v) {
-					var repo = v;
-
-					$('<br><strong> Name: ' + repo.name + '</strong><br>').appendTo($('#repos_result'));
-					$('<strong> ID: </strong> ' + repo.id + '<br>').appendTo($('#repos_result'));
-					$('<strong> URL: </strong> ' + repo.html_url + '<br>').appendTo($('#repos_result'));
-					$('<strong> Description: </strong> ' + repo.description + '<br>').appendTo($('#repos_result'));
-				});
-				
-
-	}).fail(function() {
-		$("#repos_result").text("No repositories.");
-	});
-
-}
-
-function getRepo(repository_name) {
-	var url = API_BASE_URL + '/repos/' + USERNAME + '/' + repository_name;
-	$("#get_repo_result").text('');
-
-	$.ajax({
-		url : url,
-		type : 'GET',
-		crossDomain : true,
-		dataType : 'json',
-	}).done(function(data, status, jqxhr) {
-
-				var repo = data;
-
-				$("#get_repo_result").text('');
-				$('<strong> Name: ' + repo.name + '</strong>').appendTo($('#get_repo_result'));
-				$('<strong> ID: </strong> ' + repo.id + '<br>').appendTo($('#get_repo_result'));
-				$('<strong> URL: </strong> ' + repo.html_url + '<br>').appendTo($('#get_repo_result'));
-				$('<strong> Description: </strong> ' + repo.description + '<br>').appendTo($('#get_repo_result'));
-				$('<strong> Size: </strong> ' + repo.size + ' <br>').appendTo($('#get_repo_result'));
-
-			}).fail(function() {
-				$('<div class="alert alert-danger"> <strong>Oh!</strong> Repository not found </div>').appendTo($("#get_repo_result"));
-	});
-}
-
-
-
-function getRepoToEdit(repository_name) {
-	var url = API_BASE_URL + '/repos/' + USERNAME + '/' + repository_name;
-	$("#update_result").text('');
-
-	$.ajax({
-		url : url,
-		type : 'GET',
-		crossDomain : true,
-		dataType : 'json',
-	}).done(function(data, status, jqxhr) {
-		
-				var repo = data;
-				
-
-				$("#update_result").text('');
-				$("#repository_name_to_edit").val(repo.name);
-				$("#description_to_edit").val(repo.description);
-
-	}).fail(function() {
-		$('<div class="alert alert-danger"> <strong>Oh!</strong> Repository not found </div>').appendTo($("#update_result"));
-	});
-
-}
-
-function updateRepo(repository) {
-	var url = API_BASE_URL + '/repos/' + USERNAME + '/' + repository.name;
-	var data = JSON.stringify(repository);
-
-	$("#update_result").text('');
-
-	$.ajax({
-		url : url,
-		type : 'PATCH',
-		crossDomain : true,
-		dataType : 'json',
-		data : data, <!--Afegeix dades al servidor--!-->
-		statusCode: {
-    		404: function() {$('<div class="alert alert-danger"> <strong>Oh!</strong> Page not found </div>').appendTo($("#update_result"));}
-    	}
-	}).done(function(data, status, jqxhr) {
-		$('<div class="alert alert-success"> <strong>Ok!</strong> Repository Updated</div>').appendTo($("#update_result"));				
-  	}).fail(function() {
-		$('<div class="alert alert-danger"> <strong>Oh!</strong> Error </div>').appendTo($("#update_result"));
-	});
-
-}
-
-
-
-function createRepo(repository) {
-	var url = API_BASE_URL + '/user/repos';
-	var data = JSON.stringify(repository);
-
-	$("#create_result").text('');
-
-	$.ajax({
-		url : url,
-		type : 'POST',
-		crossDomain : true,
-		dataType : 'json',
-		data : data, <!--Afegeix dades al servidor--!-->
-	}).done(function(data, status, jqxhr) {
-		$('<div class="alert alert-success"> <strong>Ok!</strong> Repository Created</div>').appendTo($("#create_result"));				
-  	}).fail(function() {
-		$('<div class="alert alert-danger"> <strong>Oh!</strong> Error </div>').appendTo($("#create_result"));
-	});
-
-}
