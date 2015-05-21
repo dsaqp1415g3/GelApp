@@ -7,11 +7,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import java.net.Authenticator;
-import java.net.PasswordAuthentication;
 import java.util.ArrayList;
 
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.AppException;
@@ -93,10 +90,10 @@ public class GelappMainActivity extends ListActivity {
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         Helado helado = heladosList.get(position);
-        Log.d(TAG, helado.getLinks().get("self").getTarget());
+        Log.d(TAG, helado.getLinks().get("heladoid").getTarget()); //pones el "rel" del link para seleccionar el link correcto
 
         Intent intent = new Intent(this, HeladoDetailActivity.class);
-        intent.putExtra("url", helado.getLinks().get("self").getTarget());
+        intent.putExtra("url", helado.getLinks().get("heladoid").getTarget());
         startActivity(intent);
     }
 
