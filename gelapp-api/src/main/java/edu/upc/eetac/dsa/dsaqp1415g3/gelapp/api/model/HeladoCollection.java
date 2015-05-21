@@ -10,11 +10,13 @@ import org.glassfish.jersey.linking.InjectLink;
 import org.glassfish.jersey.linking.InjectLinks;
 import org.glassfish.jersey.linking.InjectLink.Style;
 
+import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.HeladoResource;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.MediaType;
 
 
 public class HeladoCollection {
 	@InjectLinks({
+		@InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "create-helado", title = "Create new helado", type = MediaType.GELAPP_API_HELADO),
 		@InjectLink(value = "/helados?page={previous}", style = Style.ABSOLUTE, rel = "previous", title = "Previous helados", type = MediaType.GELAPP_API_HELADO_COLLECTION, bindings = { @Binding(name = "previous", value = "${instance.previousPage}") }),
 		@InjectLink(value = "/helados?page={next}", style = Style.ABSOLUTE, rel = "next", title = "Next helados", type = MediaType.GELAPP_API_HELADO_COLLECTION, bindings = { @Binding(name = "next", value = "${instance.nextPage}") }) })
 	

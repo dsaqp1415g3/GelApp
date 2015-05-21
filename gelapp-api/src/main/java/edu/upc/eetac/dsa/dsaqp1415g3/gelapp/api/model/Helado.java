@@ -25,12 +25,14 @@ public class Helado {
 	private String capa4Helado;
 	private String capa5Topping;
 	private String autor;
+	private int votos;
 	private long lastModified;
 	private long creationTimestamp;
 	@InjectLinks({
         @InjectLink(resource = GelAppRootAPIResource.class, style = Style.ABSOLUTE, rel = "self bookmark home", title = "GelApp Root API"),
         @InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "collection", title = "Latest helado", type = MediaType.GELAPP_API_HELADO_COLLECTION),
-        @InjectLink(value = "/helados/{heladoid}", style = Style.ABSOLUTE, rel = "heladoid", title = "helado", type = MediaType.GELAPP_API_HELADO, bindings = { @Binding(name = "heladoid", value = "${instance.heladoid}") }) })
+        @InjectLink(value = "/helados/{heladoid}", style = Style.ABSOLUTE, rel = "heladoid", title = "helado", type = MediaType.GELAPP_API_HELADO, bindings = { @Binding(name = "heladoid", value = "${instance.heladoid}") }),
+        @InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "create-helado", title = "Create new helado", type = MediaType.GELAPP_API_HELADO)})
 	
 	private List<Link> links;
 	
@@ -151,5 +153,15 @@ public class Helado {
 
 	public void setAutor(String autor) {
 		this.autor = autor;
+	}
+
+
+	public int getVotos() {
+		return votos;
+	}
+
+
+	public void setVotos(int votos) {
+		this.votos = votos;
 	}	
 }

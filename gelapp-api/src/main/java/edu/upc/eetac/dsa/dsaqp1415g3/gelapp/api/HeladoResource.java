@@ -204,6 +204,59 @@ public class HeladoResource {
 		return helados;
 	}
 	
+	/*		RANKING HELADOS				*/////////////////////////////////////////////////////////////////////////////////////////////////
+	
+private String GET_RANKING_HELADOS_QUERY ="select h.*, usuario.username, (select count(id_helado) from votos v where v.id_helado=h.helado_id) votos from helado h inner join usuario on h.autor_id = usuario.usuario_id order by votos desc";
+	
+	@GET
+	@Path("/ranking")
+	@Produces(MediaType.GELAPP_API_HELADO_COLLECTION)
+	public HeladoCollection getRankingHelados() {
+		HeladoCollection helados = new HeladoCollection();
+		
+		Connection conn = null;
+		try {
+			conn = ds.getConnection();
+		} catch (SQLException e) {
+			throw new ServerErrorException("Could not connect to the database",
+					Response.Status.SERVICE_UNAVAILABLE);
+		}
+
+		PreparedStatement stmt = null;
+		try {
+			
+			stmt = conn.prepareStatement(GET_RANKING_HELADOS_QUERY);
+			ResultSet rs = stmt.executeQuery();		
+			while (rs.next()) {
+				Helado helado = new Helado();
+				helado.setHeladoid(rs.getInt("helado_id"));
+				helado.setAutorid(rs.getInt("autor_id"));
+				helado.setNombreHelado(rs.getString("nombre_helado"));
+				helado.setCapa1Topping(rs.getString("capa_1_topping"));
+				helado.setCapa2Helado(rs.getString("capa_2_helado"));
+				helado.setCapa3Topping(rs.getString("capa_3_topping"));
+				helado.setCapa4Helado(rs.getString("capa_4_helado"));
+				helado.setCapa5Topping(rs.getString("capa_5_topping"));
+				helado.setLastModified(rs.getTimestamp("last_modified").getTime());
+				helado.setCreationTimestamp(rs.getTimestamp("creation_timestamp").getTime());
+				helado.setAutor(rs.getString("username"));
+				helado.setVotos(rs.getInt("votos"));
+				helados.addHelado(helado);
+				}			
+		} catch (SQLException e) {
+			throw new ServerErrorException(e.getMessage(),
+					Response.Status.INTERNAL_SERVER_ERROR);
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+				conn.close();
+			} catch (SQLException e) {
+			}
+		}
+		return helados;
+	}
+	
 	
 	/*		HELADO POR NOMBRE AUTOR		*////////////////////////////////////////////////////////////////////////////////////////////////
 	
