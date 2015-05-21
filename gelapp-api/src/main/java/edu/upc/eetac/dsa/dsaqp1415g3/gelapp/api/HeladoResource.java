@@ -147,6 +147,64 @@ public class HeladoResource {
 	}
 	
 	
+	/*		BUSCAR POR SABORES			*//////////////////////////////////////////////////////////////////////
+	
+	private String GET_HELADOS_BY_SABOR_QUERY ="select helado.*, usuario.username from helado inner join usuario on helado.autor_id = usuario.usuario_id where capa_1_topping = ? or capa_2_helado = ? or capa_3_topping = ? or capa_4_helado = ? or capa_5_topping = ? order by helado_id asc";
+	
+	@GET
+	@Path("/missabores/{sabor}")
+	@Produces(MediaType.GELAPP_API_HELADO_COLLECTION)
+	public HeladoCollection getHeladoBySabor(@PathParam ("sabor") String sabor) {
+		HeladoCollection helados = new HeladoCollection();
+		
+		Connection conn = null;
+		try {
+			conn = ds.getConnection();
+		} catch (SQLException e) {
+			throw new ServerErrorException("Could not connect to the database",
+					Response.Status.SERVICE_UNAVAILABLE);
+		}
+
+		PreparedStatement stmt = null;
+		try {
+			
+			stmt = conn.prepareStatement(GET_HELADOS_BY_SABOR_QUERY);
+			stmt.setString(1, sabor);
+			stmt.setString(2, sabor);
+			stmt.setString(3, sabor);
+			stmt.setString(4, sabor);
+			stmt.setString(5, sabor);
+			ResultSet rs = stmt.executeQuery();		
+			while (rs.next()) {
+				Helado helado = new Helado();
+				helado.setHeladoid(rs.getInt("helado_id"));
+				helado.setAutorid(rs.getInt("autor_id"));
+				helado.setNombreHelado(rs.getString("nombre_helado"));
+				helado.setCapa1Topping(rs.getString("capa_1_topping"));
+				helado.setCapa2Helado(rs.getString("capa_2_helado"));
+				helado.setCapa3Topping(rs.getString("capa_3_topping"));
+				helado.setCapa4Helado(rs.getString("capa_4_helado"));
+				helado.setCapa5Topping(rs.getString("capa_5_topping"));
+				helado.setLastModified(rs.getTimestamp("last_modified").getTime());
+				helado.setCreationTimestamp(rs.getTimestamp("creation_timestamp").getTime());
+				helado.setAutor(rs.getString("username"));
+				helados.addHelado(helado);
+				}			
+		} catch (SQLException e) {
+			throw new ServerErrorException(e.getMessage(),
+					Response.Status.INTERNAL_SERVER_ERROR);
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+				conn.close();
+			} catch (SQLException e) {
+			}
+		}
+		return helados;
+	}
+	
+	
 	/*		HELADO POR NOMBRE AUTOR		*////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	private String GET_HELADO_BY_AUTOR_QUERY ="select * from helado where autor_id = (select usuario_id from usuario where username = ? ) order by helado_id asc";

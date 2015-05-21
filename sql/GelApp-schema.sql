@@ -29,18 +29,17 @@ create table topping (
 );
 
 create table helado (
-	helado_id			int not null auto_increment,
+	helado_id			int not null auto_increment primary hey,
 	autor_id			int not null,
 	foreign key (autor_id) references usuario(usuario_id),
-	nombre_helado			varchar(20) not null,
+	nombre_helado			varchar(20) not null unique,
 	creation_timestamp		datetime not null default current_timestamp,
 	last_modified			timestamp default current_timestamp ON UPDATE CURRENT_TIMESTAMP,
 	capa_1_topping			varchar(20) not null,
 	capa_2_helado			varchar(20) not null,
 	capa_3_topping			varchar(20) not null,
 	capa_4_helado			varchar(20) not null,
-	capa_5_topping			varchar(20) not null,
-	primary key (helado_id, nombre_helado)
+	capa_5_topping			varchar(20) not null
 );
 
 create table votos (
