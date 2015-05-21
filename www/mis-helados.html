@@ -184,17 +184,17 @@
   	
    <div class="col-md-4 text-center">
       <img class="img-circle" src="images/mishelados.png">
-      <h2>Ver mis helados</h2>
+      <h2>Mis helados</h2>
       <p>A continuación podrás ver todos los helados que has creado</p>	
-      <p><a class="btn btn-info" id="button_to_list_pagination_mishelados"> Ver » </a></p>      
-	  <span class="output-group-addon" id="mishelados_result"></span>	  
+      <p><a class="btn btn-info" id="button_get_mis_helados"> Ver » </a></p>      
+	  <span class="output-group-addon" id="mis_helados_result"></span>	  
     </div>      
       
     <div class="col-md-4 text-center">
       <img class="img-circle" src="images/ranking1.jpg">
-      <h2>Comprar helado</h2>
-      <p>Introduce el nombre de uno de tus helados para obtener sus sabores y/o comprarlo</p>
-	  <span class="input-group-addon">ID: </span> <!--Etiqueta--!-->
+      <h2>Sabores de mis helados</h2>
+      <p>Introduce el identificador de alguno de tus helados para ver su sabores y poder comprarlo</p>
+	  <span class="input-group-addon">Introduce aquí el Identificador: </span> <!--Etiqueta--!-->
 	  <input class="form-control" id="helado_id" type="text"> <!--Caixa--!-->
       <p><a type="button" class="btn btn-default" id="get_helado"> Consultar helado » </a></p>      
 	  
@@ -233,7 +233,7 @@
       <img class="img-circle" src="images/ranking2.jpg">
       <h2>Elimina un helado</h2>
       <p>¿Te aburre el gusto de algún helado? Bórralo de tu lista, pero recuerda que no podrás recuperarlo</p>
-	   <span class="input-group-addon">Introduce aquí la ID: </span>       
+	   <span class="input-group-addon">Introduce aquí el Identificador: </span>       
 	   <input class="form-control" id="id_helado_a_eliminar" type="text">
 	   <button title="Borrar un repositorio" type="button" class="btn btn-info" id="button_to_delete">Borrar »</button>
 	   <div class="panel-body"> 
@@ -260,7 +260,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script type="text/javascript" src="js/gelapp.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/jquery.cookie.js"></script>		
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>	
+        <script src="js/weblinking.js"></script>   
 		
 	</body>
 <style> body {background-color:lightgray} </style>

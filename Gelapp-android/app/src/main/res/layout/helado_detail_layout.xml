@@ -27,7 +27,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingBottom="10dip"
@@ -37,7 +37,7 @@
 
         <TextView
             android:id="@+id/tvLabelAutor"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Autor:"/>
@@ -51,7 +51,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingBottom="10dip"
@@ -61,7 +61,7 @@
 
         <TextView
             android:id="@+id/tvLabelCapa1"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Topping1:"/>
@@ -75,7 +75,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingBottom="10dip"
@@ -85,7 +85,7 @@
 
         <TextView
             android:id="@+id/tvLabelCapa2"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Helado1:"/>
@@ -99,7 +99,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingBottom="10dip"
@@ -109,7 +109,7 @@
 
         <TextView
             android:id="@+id/tvLabelCapa3"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Topping2:"/>
@@ -117,13 +117,13 @@
 
         <TextView
             android:id="@+id/tvDetailCapa3"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:paddingBottom="10dip"
@@ -133,7 +133,7 @@
 
         <TextView
             android:id="@+id/tvLabelCapa4"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Helado2:"/>
@@ -141,7 +141,31 @@
 
         <TextView
             android:id="@+id/tvDetailCapa4"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dip"
+        android:paddingLeft="5dip"
+        android:paddingRight="5dip"
+        >
+
+        <TextView
+            android:id="@+id/tvLabelCapa5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Topping3:"/>
+
+
+        <TextView
+            android:id="@+id/tvDetailCapa5"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall" />
     </LinearLayout>
@@ -153,31 +177,6 @@
         android:paddingBottom="10dip"
         android:paddingLeft="5dip"
         android:paddingRight="5dip"
-        >
-
-        <TextView
-            android:id="@+id/tvLabelCapa5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Topping3:"/>
-
-
-        <TextView
-            android:id="@+id/tvDetailCapa5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:paddingBottom="10dip"
-        android:paddingLeft="5dip"
-        android:paddingRight="5dip"
-        android:layout_weight="10"
         >
         <Button
             android:id="@+id/bReturn"
