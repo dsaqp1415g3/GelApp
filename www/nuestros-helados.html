@@ -55,11 +55,9 @@
      <div class="carousel-caption">
           <h1> ¡Prueba nuestros helados!</h1>
           <p> En ésta página te mostramos todos los helados creados por nuestros usuarios, ¡prueba el que más te guste y VÓTALO!</p>
-            
+          <a href="#lista_helados" class="btn btn-lg btn-primary" id="get_ranking"> Bajar >> </a>  
 	
-         
 
-         
         </div>
           
       </div>
@@ -95,60 +93,64 @@
 <!-- Wrap the rest of the page in another container to center all the content. -->
 <div class="container marketing">
     
+    
   
   <!-- Three columns of text below the carousel -->
   <div class="row">
-  	<h1 align="center">Filtrar Helados</h1>
-    <p align="center"> ¿Quieres buscar los helados creados por un usuario o los que contengan un sabor determiando? </p>
-    <input type="text" class="form-control" placeholder="Usuario..." id="user_helado">
-    <p><a class="btn btn-default" id="button_to_get_helados_por_usuario"> Ver » </a></p>
-    <input type="text" class="form-control" placeholder="Sabor..." id="sabor_helado">
-    <p><a class="btn btn-default" id="button_to_get_helados_por_sabor"> Ver » </a></p>  
-    <hr class="featurette-divider">
-   <!-- AQUÍ COMENÇA EL RESULTAT DELS MEUS GELATS -->
       
+      <div class="col-md-4 text-center">
+      <img class="img-circle" src="images/pulgar.jpg">
+      <h2> Buscar por sabor </h2>
+      <p>¿Quieres buscar helados que contengan su sabor favorito? </p>
+      <input type="text" class="form-control" placeholder="fresa, nata, vainilla, chocolate, turron, caramelo  " id="sabor_helado">  
+      <p><a>  </a></p>
+      <a href="#lista_helados" class="btn btn-lg btn-default" id="button_to_get_helados_por_sabor"> Ver helados » </a>        
+      <hr class="featurette-divider"> 
+      </div>
       
-  <span id="helados_result"></span>
+      <div class="col-md-4 text-center">
+      <img class="img-circle" src="images/pulgar.jpg">
+      <h2> Buscar por autor </h2>
+      <p> Consulta los helados que ha creado un autor </p></br>
+      <input type="text" class="form-control" placeholder="Usuario..." id="user_helado">
+      <p><a>  </a></p>
+      <p><a href="#lista_helados" class="btn btn-lg btn-default" id="button_to_get_helados_por_usuario"> Ver helados » </a></p>     
+      <hr class="featurette-divider">     
+      </div>
+      
+      <div class="col-md-4 text-center">
+      <img class="img-circle" src="images/pulgar.jpg">
+      <h2> Votar helado </h2>
+      <p>¡Vota tu helado favorito! Introduce su ID, consulta su información y vótalo </p>
+      <input class="form-control" id="helado_id" type="textbox">        
+      <p><a>  </a></p>    
+      <p><a type="button" class="btn btn-lg btn-default" id="get_helado"> Consultar helado » </a></p>      
+      <hr class="featurette-divider">       
+      </div>
       
      
+         
+      
+   <!-- AQUÍ COMENÇA EL RESULTAT DELS MEUS GELATS -->
     
+    <a name="lista_helados">  </a>  
+    <span id="helados_result"></span>
+  
+      
     
       
- <!-- 
-
-  <div class="col-md-4 text-center">
-      <img class="img-circle" src="images/ranking1.jpg">
-      <h2> PLANTILLA PREDEFINIDA </h2>
-      <p> Breve descripción del helado </p>
-	  
-      <div class="panel-body">
-          
-          <div class="list-group"> 
-            <a class="list-group-item active" id="result_1"> </a>
-            <a class="list-group-item disabled" id="result_3"> </a>
-            <a class="list-group-item disabled" id="result_4"> </a>
-            <a class="list-group-item disabled" id="result_5"> </a>
-            <a class="list-group-item disabled" id="result_6"> </a>
-            <a class="list-group-item disabled" id="result_7"> </a>
-            <a class="list-group-item disabled" id="result_8"> </a>
-            <a class="list-group-item disabled" id="result_9"> </a>  
-
-        </div>       
-          
-	  </div>	
-        <button type="button" class="btn btn-info" id="comprar_en_mis_helados">Comprar »</button>
-        <span class="output-group-addon" id="mishelados_comprar"></span>    
-         
-    </div>    
--->
-   
-  </div><!-- /.row -->
-
- 
+  </div>
+        
+      
+<hr class="featurette-divider">   
     
-  <hr class="featurette-divider">
+    
+    
+<!-- /.row -->
+
+
   <!-- /END THE FEATURETTES -->
-  
+
   <!-- FOOTER -->
   <footer>
     <p class="pull-right"><a href="#">Back to top</a></p>
@@ -158,6 +160,7 @@
   </footer>
 
 </div><!-- /.container -->
+     
 	<!-- script references -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script type="text/javascript" src="js/gelapp.js"></script>
