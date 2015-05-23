@@ -146,6 +146,58 @@ public class HeladoResource {
 		return rb.build();
 	}
 	
+	/*		HELADO POR INDICIO NOMBRE HELADO		*////////////////////////////////////////////////////////////////////////
+	
+private String GET_HELADOS_BY_NAME_HELADO_QUERY ="select helado.*, usuario.username from helado inner join usuario on helado.autor_id = usuario.usuario_id where nombre_helado like ? order by helado_id asc";
+	
+	@GET
+	@Path("/nombre-helado/{nombre}")
+	@Produces(MediaType.GELAPP_API_HELADO_COLLECTION)
+	public HeladoCollection getHeladoByName(@PathParam ("nombre") String nombre) {
+		HeladoCollection helados = new HeladoCollection();
+		
+		Connection conn = null;
+		try {
+			conn = ds.getConnection();
+		} catch (SQLException e) {
+			throw new ServerErrorException("Could not connect to the database",
+					Response.Status.SERVICE_UNAVAILABLE);
+		}
+
+		PreparedStatement stmt = null;
+		try {
+			
+			stmt = conn.prepareStatement(GET_HELADOS_BY_NAME_HELADO_QUERY);
+			stmt.setString(1, nombre);
+			ResultSet rs = stmt.executeQuery();		
+			while (rs.next()) {
+				Helado helado = new Helado();
+				helado.setHeladoid(rs.getInt("helado_id"));
+				helado.setAutorid(rs.getInt("autor_id"));
+				helado.setNombreHelado(rs.getString("nombre_helado"));
+				helado.setCapa1Topping(rs.getString("capa_1_topping"));
+				helado.setCapa2Helado(rs.getString("capa_2_helado"));
+				helado.setCapa3Topping(rs.getString("capa_3_topping"));
+				helado.setCapa4Helado(rs.getString("capa_4_helado"));
+				helado.setCapa5Topping(rs.getString("capa_5_topping"));
+				helado.setLastModified(rs.getTimestamp("last_modified").getTime());
+				helado.setCreationTimestamp(rs.getTimestamp("creation_timestamp").getTime());
+				helado.setAutor(rs.getString("username"));
+				helados.addHelado(helado);
+				}			
+		} catch (SQLException e) {
+			throw new ServerErrorException(e.getMessage(),
+					Response.Status.INTERNAL_SERVER_ERROR);
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+				conn.close();
+			} catch (SQLException e) {
+			}
+		}
+		return helados;
+	}
 	
 	/*		BUSCAR POR SABORES			*//////////////////////////////////////////////////////////////////////
 	
