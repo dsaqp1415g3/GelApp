@@ -200,12 +200,12 @@ private String GET_HELADOS_BY_NAME_HELADO_QUERY ="select helado.*, usuario.usern
 	
 	/*		BUSCAR POR SABORES			*//////////////////////////////////////////////////////////////////////
 	
-	private String GET_HELADOS_BY_SABOR_QUERY ="select helado.*, usuario.username from helado inner join usuario on helado.autor_id = usuario.usuario_id where capa_1_topping = ? or capa_2_helado = ? or capa_3_topping = ? or capa_4_helado = ? or capa_5_topping = ? order by helado_id asc";
+	private String GET_HELADOS_BY_SABOR_QUERY ="select helado.*, usuario.username from helado inner join usuario on helado.autor_id = usuario.usuario_id where capa_1_topping like ? or capa_2_helado like ? or capa_3_topping like ? or capa_4_helado like ? or capa_5_topping like ? order by helado_id asc";
 	
 	@GET
-	@Path("/missabores/{sabor}")
+	@Path("/missabores/{sabors}")
 	@Produces(MediaType.GELAPP_API_HELADO_COLLECTION)
-	public HeladoCollection getHeladoBySabor(@PathParam ("sabor") String sabor) {
+	public HeladoCollection getHeladoBySabor(@PathParam ("sabors") String sabors) {
 		HeladoCollection helados = new HeladoCollection();
 		
 		Connection conn = null;
@@ -220,6 +220,7 @@ private String GET_HELADOS_BY_NAME_HELADO_QUERY ="select helado.*, usuario.usern
 		try {
 			
 			stmt = conn.prepareStatement(GET_HELADOS_BY_SABOR_QUERY);
+			String sabor = "%"+sabors+"%";
 			stmt.setString(1, sabor);
 			stmt.setString(2, sabor);
 			stmt.setString(3, sabor);
