@@ -24,9 +24,10 @@ import javax.ws.rs.core.EntityTag;
 import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
 
-import edu.upc.eetac.dsa.afava.beeter.api.model.Sting;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.Helado;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.HeladoCollection;
+
+
 
 
 @Path("/helados")
@@ -166,7 +167,8 @@ private String GET_HELADOS_BY_NAME_HELADO_QUERY ="select helado.*, usuario.usern
 		try {
 			
 			stmt = conn.prepareStatement(GET_HELADOS_BY_NAME_HELADO_QUERY);
-			stmt.setString(1, nombre);
+			String nom = "%"+nombre+"%";
+			stmt.setString(1, nom);
 			ResultSet rs = stmt.executeQuery();		
 			while (rs.next()) {
 				Helado helado = new Helado();
@@ -515,9 +517,9 @@ private String GET_RANKING_HELADOS_QUERY ="select h.*, usuario.username, (select
 	
 	private void validateUser(String heladoid) {
 	    Helado helado = getHeladoFromDatabase(heladoid);
-	    Integer usuarioid = helado.getAutorid();
+	    String autor = helado.getAutor();
 		if (!security.getUserPrincipal().getName()
-				.equals(usuarioid))
+				.equals(autor))
 			throw new ForbiddenException(
 					"You are not allowed to modify this sting.");
 	}
