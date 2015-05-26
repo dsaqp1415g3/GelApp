@@ -10,6 +10,7 @@ import javax.sql.DataSource;
 import javax.ws.rs.BadRequestException;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
+import javax.ws.rs.ForbiddenException;
 import javax.ws.rs.GET;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.POST;
@@ -23,6 +24,7 @@ import javax.ws.rs.core.EntityTag;
 import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
 
+import edu.upc.eetac.dsa.afava.beeter.api.model.Sting;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.Helado;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.HeladoCollection;
 
@@ -510,5 +512,14 @@ private String GET_RANKING_HELADOS_QUERY ="select h.*, usuario.username, (select
 		}
 	}
 	
+	
+	private void validateUser(String heladoid) {
+	    Helado helado = getHeladoFromDatabase(heladoid);
+	    Integer usuarioid = helado.getAutorid();
+		if (!security.getUserPrincipal().getName()
+				.equals(usuarioid))
+			throw new ForbiddenException(
+					"You are not allowed to modify this sting.");
+	}
 	
 }
