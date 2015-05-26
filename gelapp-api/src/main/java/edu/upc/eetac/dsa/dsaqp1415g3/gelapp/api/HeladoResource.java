@@ -10,7 +10,6 @@ import javax.sql.DataSource;
 import javax.ws.rs.BadRequestException;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
-import javax.ws.rs.ForbiddenException;
 import javax.ws.rs.GET;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.POST;
@@ -515,13 +514,13 @@ private String GET_RANKING_HELADOS_QUERY ="select h.*, usuario.username, (select
 	}
 	
 	
-	private void validateUser(String heladoid) {
+	/*private void validateUser(String heladoid) {
 	    Helado helado = getHeladoFromDatabase(heladoid);
 	    String autor = helado.getAutor();
 		if (!security.getUserPrincipal().getName()
 				.equals(autor))
 			throw new ForbiddenException(
 					"You are not allowed to modify this sting.");
-	}
+	}*/
 	
 }
