@@ -13,5 +13,7 @@ public class MediaType {
 	public final static String GELAPP_API_HELADO = "application/vnd.gelapp.api.helado+json";
 	public final static String GELAPP_API_HELADO_COLLECTION = "application/vnd.gelapp.api.helado.collection+json";
 	
+	public final static String GELAPP_API_VOTOS = "application/vnd.gelapp.api.votos+json";
+	
 	public final static String GELAPP_API_ERROR = "application/vnd.dsa.GelApp.error+json";
 }

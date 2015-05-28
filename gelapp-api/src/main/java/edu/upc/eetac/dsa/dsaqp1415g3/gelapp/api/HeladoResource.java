@@ -10,6 +10,7 @@ import javax.sql.DataSource;
 import javax.ws.rs.BadRequestException;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
+import javax.ws.rs.ForbiddenException;
 import javax.ws.rs.GET;
 import javax.ws.rs.NotFoundException;
 import javax.ws.rs.POST;
@@ -22,9 +23,11 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.EntityTag;
 import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.SecurityContext;
 
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.Helado;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.HeladoCollection;
+import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.User;
 
 
 
@@ -33,6 +36,8 @@ import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.HeladoCollection;
 public class HeladoResource {
 	private DataSource ds = DataSourceSPA.getInstance().getDataSource();
 	
+	@Context
+	private SecurityContext security;
 	/*			LISTA HELADOS		*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	//private String GET_HELADOS_QUERY = "select * from helado order by helado_id asc limit 5 offset ?";
@@ -370,6 +375,7 @@ private String GET_RANKING_HELADOS_QUERY ="select h.*, usuario.username, (select
 	public Helado createHelado(Helado helado) {
 		Connection conn = null;
 		validateHelado(helado);
+		validateAutor(helado.getAutorid());
 		try {
 			conn = ds.getConnection();
 		} catch (SQLException e) {
@@ -487,6 +493,7 @@ private String GET_RANKING_HELADOS_QUERY ="select h.*, usuario.username, (select
 	@DELETE
 	@Path("/{helado_id}")
 	public void deleteHelado(@PathParam("helado_id") String helado_id) {
+		validateUser(helado_id);
 		Connection conn = null;
 		try {
 			conn = ds.getConnection();
@@ -514,14 +521,62 @@ private String GET_RANKING_HELADOS_QUERY ="select h.*, usuario.username, (select
 		}
 	}
 	
+	private String GET_USER_HELADO_QUERY = "select * from usuario where usuario_id=?";
 	
-	/*private void validateUser(String heladoid) {
+	private User getUserFromDatabase(Integer userid) {
+		User user = new User();
+
+		Connection conn = null;
+		try {
+			conn = ds.getConnection();
+		} catch (SQLException e) {
+			throw new ServerErrorException("Could not connect to the database",
+					Response.Status.SERVICE_UNAVAILABLE);
+		}
+
+		PreparedStatement stmt = null;
+		try {
+			stmt = conn.prepareStatement(GET_USER_HELADO_QUERY);
+			stmt.setInt(1, userid);
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				user.setUsuarioid(rs.getInt("usuario_id"));
+				user.setUsername(rs.getString("username"));
+			} else {
+				throw new NotFoundException("There's no username with userid ="
+						+ userid);
+			}
+		} catch (SQLException e) {
+			throw new ServerErrorException(e.getMessage(),
+					Response.Status.INTERNAL_SERVER_ERROR);
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+				conn.close();
+			} catch (SQLException e) {
+			}
+		}
+
+		return user;
+	}
+	
+	private void validateUser(String heladoid) {
 	    Helado helado = getHeladoFromDatabase(heladoid);
 	    String autor = helado.getAutor();
 		if (!security.getUserPrincipal().getName()
 				.equals(autor))
 			throw new ForbiddenException(
-					"You are not allowed to modify this sting.");
-	}*/
+					"You are not allowed to delete this Helado.");
+	}
+	
+	private void validateAutor(Integer autorid) {
+	    User user = getUserFromDatabase(autorid);
+	    String autor = user.getUsername();	    
+		if (!security.getUserPrincipal().getName()
+				.equals(autor))
+			throw new ForbiddenException(
+					"You are not allowed to create this Helado.");
+	}
 	
 }

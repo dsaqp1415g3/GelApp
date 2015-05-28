@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/ContenedorPrincipal"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+
+    <!-- Contenido principal-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ContenedorFrame"
     android:layout_width="match_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_weight="100">
+    android:background = "#FFFFFF"
+    >
+
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="90"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10"
-        android:onClick="clickMe"
-        android:text="@string/button_label" />
-
-
-
+        android:layout_height="match_parent"
+        />
 
 </LinearLayout>
+
+<!-- The navigation drawer (menú lateral)-->
+<ListView android:id="@+id/menu_lateral"
+android:layout_width="240dp"
+android:layout_height="match_parent"
+android:layout_gravity="start"
+android:choiceMode="singleChoice"
+android:divider="@android:color/transparent"
+android:dividerHeight="0dp"
+android:background="#FFFFFF"/>
+</android.support.v4.widget.DrawerLayout>
+

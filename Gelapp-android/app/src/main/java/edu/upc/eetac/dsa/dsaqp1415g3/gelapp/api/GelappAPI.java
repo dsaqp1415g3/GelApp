@@ -127,6 +127,7 @@ public class GelappAPI {
                 Helado helado = new Helado();
                 JSONObject jsonHelado = jsonHelados.getJSONObject(i);
 
+                helado.setAutor(jsonHelado.getString("autor"));
                 helado.setAutorid(jsonHelado.getInt("autorid"));
                 helado.setCapa1Topping(jsonHelado.getString("capa1Topping"));
                 helado.setCapa2Helado(jsonHelado.getString("capa2Helado"));
@@ -137,6 +138,7 @@ public class GelappAPI {
                 helado.setHeladoid(jsonHelado.getInt("heladoid"));
                 helado.setLastModified(jsonHelado.getLong("lastModified"));
                 helado.setNombreHelado(jsonHelado.getString("nombreHelado"));
+                helado.setVotos(jsonHelado.getInt("votos"));
 
                 jsonLinks = jsonHelado.getJSONArray("links");
                 parseLinks(jsonLinks, helado.getLinks());
@@ -204,6 +206,7 @@ public class GelappAPI {
             }
             JSONObject jsonHelado = new JSONObject(sb.toString());
 
+            helado.setAutor(jsonHelado.getString("autor"));
             helado.setAutorid(jsonHelado.getInt("autorid"));
             helado.setCapa1Topping(jsonHelado.getString("capa1Topping"));
             helado.setCapa2Helado(jsonHelado.getString("capa2Helado"));
@@ -214,6 +217,7 @@ public class GelappAPI {
             helado.setHeladoid(jsonHelado.getInt("heladoid"));
             helado.setLastModified(jsonHelado.getLong("lastModified"));
             helado.setNombreHelado(jsonHelado.getString("nombreHelado"));
+            helado.setVotos(jsonHelado.getInt("votos"));
 
             JSONArray jsonLinks = jsonHelado.getJSONArray("links");
             parseLinks(jsonLinks, helado.getLinks());
@@ -246,8 +250,10 @@ public class GelappAPI {
         HttpURLConnection urlConnection = null;
         try {
             JSONObject jsonHelado = createJsonHelado(helado);
-            URL urlPostHelados = new URL(rootAPI.getLinks().get("create-helados")
-                    .getTarget());
+
+
+            URL urlPostHelados = new URL(rootAPI.getLinks().get("crear-helado").getTarget());
+
             urlConnection = (HttpURLConnection) urlPostHelados.openConnection();
             urlConnection.setRequestProperty("Accept",
                     MediaType.GELAPP_API_HELADO);
@@ -261,6 +267,8 @@ public class GelappAPI {
                     urlConnection.getOutputStream());
             writer.println(jsonHelado.toString());
             writer.close();
+
+            int rc = urlConnection.getResponseCode();
             BufferedReader reader = new BufferedReader(new InputStreamReader(
                     urlConnection.getInputStream()));
             StringBuilder sb = new StringBuilder();
@@ -270,16 +278,17 @@ public class GelappAPI {
             }
             jsonHelado = new JSONObject(sb.toString());
 
+            helado.setAutor(jsonHelado.getString("autor"));
             helado.setAutorid(jsonHelado.getInt("autorid"));
             helado.setCapa1Topping(jsonHelado.getString("capa1Topping"));
             helado.setCapa2Helado(jsonHelado.getString("capa2Helado"));
             helado.setCapa3Topping(jsonHelado.getString("capa3Topping"));
             helado.setCapa4Helado(jsonHelado.getString("capa4Helado"));
             helado.setCapa5Topping(jsonHelado.getString("capa5Topping"));
-            helado.setCreationTimestamp(jsonHelado.getLong("creationTimestamp"));
             helado.setHeladoid(jsonHelado.getInt("heladoid"));
             helado.setLastModified(jsonHelado.getLong("lastModified"));
             helado.setNombreHelado(jsonHelado.getString("nombreHelado"));
+            helado.setVotos(jsonHelado.getInt("votos"));
 
             JSONArray jsonLinks = jsonHelado.getJSONArray("links");
             parseLinks(jsonLinks, helado.getLinks());

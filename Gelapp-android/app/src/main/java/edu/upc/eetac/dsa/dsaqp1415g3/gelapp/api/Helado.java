@@ -8,6 +8,7 @@ import java.util.Map;
 
 public class Helado {
 
+    private String autor;
     private int heladoid;
     private long lastModified;
     private long creationTimestamp;
@@ -20,8 +21,17 @@ public class Helado {
     private int autorid;
     private String eTag;
 
+    private int votos;
+
     private Map<String, Link> links = new HashMap<String, Link>();
 
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
 
     public int getHeladoid() {
         return heladoid;
@@ -115,6 +125,14 @@ public class Helado {
 
     public void setETag(String eTag) {
         this.eTag = eTag;
+    }
+
+    public int getVotos() {
+        return votos;
+    }
+
+    public void setVotos(int votos) {
+        this.votos = votos;
     }
 
 

@@ -36,6 +36,7 @@ public class HeladoDetailActivity extends Activity {
         TextView tvCapa3 = (TextView) findViewById(R.id.tvDetailCapa3);
         TextView tvCapa4 = (TextView) findViewById(R.id.tvDetailCapa4);
         TextView tvCapa5 = (TextView) findViewById(R.id.tvDetailCapa5);
+        TextView tvDetailAutor = (TextView) findViewById(R.id.tvDetailAutor);
 
         tvNombreHelado.setText(helado.getNombreHelado());
         tvCapa1.setText(helado.getCapa1Topping());
@@ -43,6 +44,7 @@ public class HeladoDetailActivity extends Activity {
         tvCapa3.setText(helado.getCapa3Topping());
         tvCapa4.setText(helado.getCapa4Helado());
         tvCapa5.setText(helado.getCapa5Topping());
+        tvDetailAutor.setText(helado.getAutor());
 
     }
 
