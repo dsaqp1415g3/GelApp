@@ -1,4 +1,4 @@
-Instruccions:
+## Puesta en marcha de la base de datos:
 
 >>cd GelApp/sql
 >>mysql -u root -p
