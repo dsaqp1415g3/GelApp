@@ -1,2 +1,1 @@
-Abrir archivo index.html
-En esta versión se usa la API de github, pon tu usuario y contraseña en los archivos javascript.
+> Modifica la ruta del servidor en el archivo gelapp.js y sube la carpeta www en una máquina corriendo Apache
