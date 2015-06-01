@@ -375,7 +375,7 @@ private String GET_RANKING_HELADOS_QUERY ="select h.*, usuario.username, (select
 	public Helado createHelado(Helado helado) {
 		Connection conn = null;
 		validateHelado(helado);
-		validateAutor(helado.getAutorid());
+		//validateAutor(helado.getAutorid());
 		try {
 			conn = ds.getConnection();
 		} catch (SQLException e) {
@@ -493,7 +493,7 @@ private String GET_RANKING_HELADOS_QUERY ="select h.*, usuario.username, (select
 	@DELETE
 	@Path("/{helado_id}")
 	public void deleteHelado(@PathParam("helado_id") String helado_id) {
-		validateUser(helado_id);
+		//validateUser(helado_id);
 		Connection conn = null;
 		try {
 			conn = ds.getConnection();
@@ -521,9 +521,9 @@ private String GET_RANKING_HELADOS_QUERY ="select h.*, usuario.username, (select
 		}
 	}
 	
-	private String GET_USER_HELADO_QUERY = "select * from usuario where usuario_id=?";
+	//private String GET_USER_HELADO_QUERY = "select * from usuario where usuario_id=?";
 	
-	private User getUserFromDatabase(Integer userid) {
+	/*private User getUserFromDatabase(Integer userid) {
 		User user = new User();
 
 		Connection conn = null;
@@ -559,24 +559,24 @@ private String GET_RANKING_HELADOS_QUERY ="select h.*, usuario.username, (select
 		}
 
 		return user;
-	}
+	}*/
 	
-	private void validateUser(String heladoid) {
+	/*private void validateUser(String heladoid) {
 	    Helado helado = getHeladoFromDatabase(heladoid);
 	    String autor = helado.getAutor();
 		if (!security.getUserPrincipal().getName()
 				.equals(autor))
 			throw new ForbiddenException(
 					"You are not allowed to delete this Helado.");
-	}
+	}*/
 	
-	private void validateAutor(Integer autorid) {
+	/*private void validateAutor(Integer autorid) {
 	    User user = getUserFromDatabase(autorid);
 	    String autor = user.getUsername();	    
 		if (!security.getUserPrincipal().getName()
 				.equals(autor))
 			throw new ForbiddenException(
 					"You are not allowed to create this Helado.");
-	}
+	}*/
 	
 }

@@ -10,6 +10,13 @@ create table usuario (
 	primary key (usuario_id)
 );
 
+create table user_roles (
+	usuario_id			int not null,
+	rolename 			varchar(20) not null,
+	foreign key (usuario_id) references usuario(usuario_id) on delete cascade,
+	primary key (usuario_id, rolename)
+);
+
 create table sabor (
 	sabor_id		int not null auto_increment,
 	creation_timestamp	datetime not null default current_timestamp,

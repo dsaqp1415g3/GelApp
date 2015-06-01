@@ -1,7 +1,10 @@
 source GelAppdb-schema.sql;
 insert into usuario (username, userpass) values('marc', MD5('cabezas'));
+insert into user_roles values (1, 'registered');
 insert into usuario (username, userpass) values('oriol', MD5('castano'));
+insert into user_roles values (2, 'registered');
 insert into usuario (username, userpass) values('ales', MD5('fava'));
+insert into user_roles values (3, 'registered');
 
 insert into sabor (nombre, codigo_color) values('fresa', '#FE2E64');
 insert into sabor (nombre, codigo_color) values('nata', '#F2F2F2');
