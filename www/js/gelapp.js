@@ -669,7 +669,7 @@ $("#registrarse").click(function(e) {
 	{
 		var login = new Object();
 		login.username = $("#login_usuario").val();
-		login.userpass = $("#login_contrasena").val();
+		login.password = $("#login_contrasena").val();
 		register(login);
 	}
 });
@@ -688,19 +688,12 @@ function register(login)
 		dataType : 'json',
 		data : data,
 	}).done(function(data, status, jqxhr) {
-		var inf = data;
-				if(inf.loginSuccessful!= true){
-				alert("Usuario y/o contraseña erróneo. Por favor intentelo de nuevo.");		
-				}
-				else{
-					document.cookie = "username=" + $("#login_usuario").val();
-					document.cookie = "userpass=" + $("#login_contrasena").val();
-					console.log(inf.loginSuccessful);
-					window.location = "main.html"
-					}
+        var inf = data;
+		alert("¡Bienvenido "+inf.username+"! Ya puedes iniciar sesión");
+				
 
   	}).fail(function() {
-		alert("Error al registrarse: Nombre de usuario en uso");
+		alert("Error al registrarse: Nombre de usuario ya en uso");
 	});
 }
 
