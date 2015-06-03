@@ -1,4 +1,4 @@
-source GelAppdb-schema.sql;
+source GelApp-schema.sql;
 insert into usuario (username, userpass) values('marc', MD5('cabezas'));
 insert into user_roles values (1, 'marc', 'registered');
 insert into usuario (username, userpass) values('oriol', MD5('castano'));
