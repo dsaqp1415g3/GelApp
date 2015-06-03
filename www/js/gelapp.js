@@ -587,6 +587,58 @@ function createIce(newIce) {
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
+$("#button_to_get_helados_por_nombre").click(function(e) {
+	e.preventDefault();
+
+    var name = $("#helado_nombre").val();
+
+    console.log($("#helado_nombre").val());
+
+	getHelados_by_name(name);
+});
+
+function getHelados_by_name(name) {
+    
+	var url = API_BASE_URL + '/helados/nombre-helado/' +name;
+	$("#helados_result").text('');
+	
+	$.ajax({
+		url : url,
+		type : 'GET',
+		crossDomain : true,
+		dataType : 'json',
+	}).done(function(data, status, jqxhr) {
+				var bigdata = data.helados;
+				
+				$.each(bigdata, function(i, h) {
+					var helado = h;
+                    
+                    var dc = new Date(helado.creationTimestamp);        
+                    var _mes=dc.getMonth()+1;
+                    var _dia=dc.getDate();
+                    var _anyo=dc.getFullYear();
+                    var _hora = dc.getHours();
+                    var _minuto = dc.getMinutes();
+                    var _segundo = dc.getSeconds();    
+                    
+                              
+                    $('<div class="col-md-4 text-center">                                                                                                                       <img class="img-circle" src="images/ranking1.jpg">                                                                                                        <h2>' + helado.nombreHelado + '</h2>                                                                                                  <div class="panel-body"> <div class="list-group"> <a class="list-group-item active"> Sabores </a>                                                        <a class="list-group-item disabled"> Capa Topping 1: ' +helado.capa1Topping+ ' </a>                                                                <a class="list-group-item disabled"> Capa Helado 2:  ' +helado.capa2Helado+ ' </a>                                                                  <a class="list-group-item disabled"> Capa Topping 3:  ' +helado.capa3Topping+ ' </a>                                                                <a class="list-group-item disabled"> Capa Helado 4:  ' +helado.capa4Helado+ ' </a>                                                                  <a class="list-group-item disabled"> Capa Topping 5: ' +helado.capa5Topping+ ' </a>                                                                <a class="list-group-item disabled"> Identificador: ' +helado.heladoid+ ' </a>                                                                      <a class="list-group-item disabled"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>                                                                                                                                                                                                                                                                                  </div>  </div>                                                                                                                                      <button type="button" class="btn btn-info" id="#comprar_en_mis_helados">Comprar »</button>                                         <button style="background-color:green" type="button" class="btn btn-info" id="button_to_delete"> Votar »</button></br></br></br></br>                      <span class="output-group-addon" id="mishelados_comprar">  </span></br> ').appendTo($('#helados_result'));                 
+                    $('</div>').appendTo($('#helados_result'));
+                             
+				});
+				
+
+	}).fail(function() {
+		$('<div class="alert alert-danger"> <strong>Oh!</strong> Este autor todavía no ha creado helados o no existe </div>').appendTo($("#helados_result"));
+	});
+
+}
+
+
+
+/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
@@ -598,12 +650,117 @@ function createIce(newIce) {
 
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+$("#registrarse").click(function(e) {
+	e.preventDefault();
+	if($("#login_usuario").val() == "" || $("#login_contrasena").val() == "")
+	{
+		if($("#login_usuario").val() == "")
+		{
+			document.getElementById('login_usuario').style.background='#F6B5B5';
+			$('#login_usuario').attr('placeholder','Usuario...');
+		}
+		if($("#login_contrasena").val() == "")
+		{
+			document.getElementById('login_contrasena').style.background='#F6B5B5';
+			$('#login_contrasena').attr('placeholder','Contraseña...');
+		}
+	}
+	else
+	{
+		var login = new Object();
+		login.username = $("#login_usuario").val();
+		login.userpass = $("#login_contrasena").val();
+		register(login);
+	}
+});
+
+function register(login)
+{
+	console.log(login);
+	var url = API_BASE_URL + '/users';
+	var data = JSON.stringify(login);
+
+	$.ajax({
+		url : url,
+		type : 'POST',
+		crossDomain : true,
+		contentType : 'application/vnd.gelapp.api.user+json',
+		dataType : 'json',
+		data : data,
+	}).done(function(data, status, jqxhr) {
+		var inf = data;
+				if(inf.loginSuccessful!= true){
+				alert("Usuario y/o contraseña erróneo. Por favor intentelo de nuevo.");		
+				}
+				else{
+					document.cookie = "username=" + $("#login_usuario").val();
+					document.cookie = "userpass=" + $("#login_contrasena").val();
+					console.log(inf.loginSuccessful);
+					window.location = "main.html"
+					}
+
+  	}).fail(function() {
+		alert("Error al registrarse: Nombre de usuario en uso");
+	});
+}
 
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
+$("#login").click(function(e) {
+	e.preventDefault();
+	if($("#login_usuario").val() == "" || $("#login_contrasena").val() == "")
+	{
+		if($("#login_usuario").val() == "")
+		{
+			document.getElementById('login_usuario').style.background='#F6B5B5';
+			$('#login_usuario').attr('placeholder','Usuario...');
+		}
+		if($("#login_contrasena").val() == "")
+		{
+			document.getElementById('login_contrasena').style.background='#F6B5B5';
+			$('#login_contrasena').attr('placeholder','Contraseña...');
+		}
+	}
+	else
+	{
+		var login = new Object();
+		login.username = $("#login_usuario").val();
+		login.userpass = $("#login_contrasena").val();
+		getuserpass(login);
+	}
+});
 
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+function getuserpass(login)
+{
+	console.log(login);
+	var url = API_BASE_URL + '/users';
+	var data = JSON.stringify(login);
+
+	$.ajax({
+		url : url,
+		type : 'POST',
+		crossDomain : true,
+		contentType : 'application/vnd.gelapp.api.user+json',
+		dataType : 'json',
+		data : data,
+	}).done(function(data, status, jqxhr) {
+		var inf = data;
+				if(inf.loginSuccessful!= true){
+				alert("Usuario y/o contraseña erróneo. Por favor intentelo de nuevo.");		
+				}
+				else{
+					document.cookie = "username=" + $("#login_usuario").val();
+					document.cookie = "userpass=" + $("#login_contrasena").val();
+					console.log(inf.loginSuccessful);
+					window.location = "main.html"
+					}
+
+  	}).fail(function() {
+		alert("No se ha podido inicar sesión");
+	});
+}
+
 
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
