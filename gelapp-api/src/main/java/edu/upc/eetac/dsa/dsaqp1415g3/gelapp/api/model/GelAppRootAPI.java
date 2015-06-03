@@ -13,6 +13,7 @@ import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.HeladoResource;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.MediaType;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.SaboresResource;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.ToppingsResource;
+import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.UserResource;
 
 public class GelAppRootAPI {
 	@InjectLinks({
@@ -21,7 +22,9 @@ public class GelAppRootAPI {
         @InjectLink(resource = SaboresResource.class, style = Style.ABSOLUTE, rel = "sabores", title = "Get sabores", type=MediaType.GELAPP_API_SABOR_COLLECTION),
 		@InjectLink(resource = ToppingsResource.class, style = Style.ABSOLUTE, rel = "topping", title = "Get topping", type=MediaType.GELAPP_API_TOPPING),
 		@InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "create-helado", title = "Create helado", type=MediaType.GELAPP_API_HELADO),
-		@InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "helados", title = "Get helados", type=MediaType.GELAPP_API_HELADO_COLLECTION)})
+		@InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "helados", title = "Get helados", type=MediaType.GELAPP_API_HELADO_COLLECTION),
+		@InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "delete-helado", title = "Delete helado", type=MediaType.GELAPP_API_HELADO),
+		@InjectLink(resource = UserResource.class, style = Style.ABSOLUTE, rel = "usuario", title = "gelapp-profile", type=MediaType.GELAPP_API_USER)})
 		
 		
 	private List<Link> links;

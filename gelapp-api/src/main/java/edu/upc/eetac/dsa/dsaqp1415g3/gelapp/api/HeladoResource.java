@@ -27,10 +27,6 @@ import javax.ws.rs.core.SecurityContext;
 
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.Helado;
 import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.HeladoCollection;
-import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.User;
-
-
-
 
 @Path("/helados")
 public class HeladoResource {
@@ -493,7 +489,7 @@ private String GET_RANKING_HELADOS_QUERY ="select h.*, usuario.username, (select
 	@DELETE
 	@Path("/{helado_id}")
 	public void deleteHelado(@PathParam("helado_id") String helado_id) {
-		//validateUser(helado_id);
+		validateUser(helado_id);
 		Connection conn = null;
 		try {
 			conn = ds.getConnection();
@@ -561,14 +557,14 @@ private String GET_RANKING_HELADOS_QUERY ="select h.*, usuario.username, (select
 		return user;
 	}*/
 	
-	/*private void validateUser(String heladoid) {
+	private void validateUser(String heladoid) {
 	    Helado helado = getHeladoFromDatabase(heladoid);
 	    String autor = helado.getAutor();
 		if (!security.getUserPrincipal().getName()
 				.equals(autor))
 			throw new ForbiddenException(
 					"You are not allowed to delete this Helado.");
-	}*/
+	}
 	
 	/*private void validateAutor(Integer autorid) {
 	    User user = getUserFromDatabase(autorid);

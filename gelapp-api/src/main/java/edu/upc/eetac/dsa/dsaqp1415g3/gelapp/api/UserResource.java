@@ -26,9 +26,10 @@ import edu.upc.eetac.dsa.dsaqp1415g3.gelapp.api.model.User;
 public class UserResource {
 	private DataSource ds = DataSourceSPA.getInstance().getDataSource();
 	 
-	private final static String GET_USER_BY_USERNAME_QUERY = "select * from users where username=?";
-	private final static String INSERT_USER_INTO_USERS = "insert into users values(?, MD5(?), ?, ?)";
- 
+	private final static String GET_USER_BY_USERNAME_QUERY = "select * from usuario where username=?";
+	private final static String INSERT_USER_INTO_USERS = "insert into usuario (username, userpass) values (?, MD5(?))";
+	private final static String INSERT_ROLE_INTO_USERS = "insert into user_roles values (?, ?, ?)";
+	
 	@POST
 	@Consumes(MediaType.GELAPP_API_USER)
 	@Produces(MediaType.GELAPP_API_USER)
@@ -57,13 +58,15 @@ public class UserResource {
 			conn.setAutoCommit(false);
 			stmtInsertUserIntoUsers = conn
 					.prepareStatement(INSERT_USER_INTO_USERS);
-			
-			stmtInsertUserIntoUsers.setInt(1, user.getUsuarioid());
-			stmtInsertUserIntoUsers.setString(2, user.getUsername());
-			stmtInsertUserIntoUsers.setString(3, user.getPassword());
+			stmtInsertUserIntoUsers.setString(1, user.getUsername());
+			stmtInsertUserIntoUsers.setString(2, user.getPassword());
 			stmtInsertUserIntoUsers.executeUpdate();
  
 			conn.commit();
+			
+			User usuario = getUserIDFromDatabase(user.getUsername()); 
+					
+			insertRoleFromDatabase(usuario.getUsername(), usuario.getUsuarioid());
 		} catch (SQLException e) {
 			if (conn != null)
 				try {
@@ -88,8 +91,6 @@ public class UserResource {
 	}
  
 	private void validateUser(User user) {
-		if (user.getUsuarioid() == 0)
-			throw new BadRequestException("usuarioid cannot be null");
 		if (user.getUsername() == null)
 			throw new BadRequestException("username cannot be null.");
 		if (user.getPassword() == null)
@@ -113,7 +114,75 @@ public class UserResource {
 		user.setPassword(null);
 		return user;
 	}
+	
+	private User insertRoleFromDatabase(String username, int usuarioid) {
+		User user = new User();
+		Connection conn = null;
+		try {
+			conn = ds.getConnection();
+		} catch (SQLException e) {
+			throw new ServerErrorException("Could not connect to the database",
+					Response.Status.SERVICE_UNAVAILABLE);
+		}
  
+		PreparedStatement stmt = null;
+		try {
+			stmt = conn.prepareStatement(INSERT_ROLE_INTO_USERS);
+			stmt.setInt(1, usuarioid);
+			stmt.setString(2, username);
+			stmt.setString(3, "registered");
+			stmt.executeUpdate();
+		} catch (SQLException e) {
+			throw new ServerErrorException(e.getMessage(),
+					Response.Status.INTERNAL_SERVER_ERROR);
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+				conn.close();
+			} catch (SQLException e) {
+			}
+		}
+ 
+		return user;
+	}
+	
+	private User getUserIDFromDatabase(String username) {
+		User user = new User();
+		Connection conn = null;
+		try {
+			conn = ds.getConnection();
+		} catch (SQLException e) {
+			throw new ServerErrorException("Could not connect to the database",
+					Response.Status.SERVICE_UNAVAILABLE);
+		}
+ 
+		PreparedStatement stmt = null;
+		try {
+			stmt = conn.prepareStatement(GET_USER_BY_USERNAME_QUERY);
+			stmt.setString(1, username);
+ 
+			ResultSet rs = stmt.executeQuery();
+			if (rs.next()) {
+				user.setUsuarioid(rs.getInt("usuario_id"));
+				user.setUsername(rs.getString("username"));	
+			} else
+				throw new NotFoundException(username + " not found.");
+		} catch (SQLException e) {
+			throw new ServerErrorException(e.getMessage(),
+					Response.Status.INTERNAL_SERVER_ERROR);
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+				conn.close();
+			} catch (SQLException e) {
+			}
+		}
+ 
+		return user;
+	}
+	
 	private User getUserFromDatabase(String username, boolean password) {
 		User user = new User();
 		Connection conn = null;

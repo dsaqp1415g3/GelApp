@@ -12,6 +12,7 @@ create table usuario (
 
 create table user_roles (
 	usuario_id			int not null,
+	username			varchar(20) not null,
 	rolename 			varchar(20) not null,
 	foreign key (usuario_id) references usuario(usuario_id) on delete cascade,
 	primary key (usuario_id, rolename)
