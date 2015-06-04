@@ -101,7 +101,7 @@
       <div class="col-md-4 text-center">
       <img class="img-circle" src="images/pulgar.jpg">
       <h2> Buscar por sabor </h2>
-      <p>¿Quieres buscar helados que contengan su sabor favorito? </p></br>
+      <p>¿Quieres buscar helados que contengan su sabor favorito? </p>
       <input type="text" class="form-control" placeholder="fresa, nata, vainilla, chocolate, turron, caramelo  " id="sabor_helado">  
       <p><a>  </a></p>
       <a href="#lista_helados" class="btn btn-lg btn-default" id="button_to_get_helados_por_sabor"> Ver helados » </a>        
@@ -120,11 +120,11 @@
       
       <div class="col-md-4 text-center">
       <img class="img-circle" src="images/pulgar.jpg">
-      <h2> AAAAA </h2>
-      <p> AAAAAAAAAAAAAAA</p></br>
-      <input class="form-control" id="helado_id" type="textbox">        
+      <h2> Buscar por nombre </h2>
+      <p> Busca helados por su nombre </p></br>
+      <input class="form-control" id="helado_nombre" type="textbox">        
       <p><a>  </a></p>    
-      <p><a type="button" class="btn btn-lg btn-default" id="get_helado"> AAAAAAAAAA » </a></p>      
+      <p><a href="#lista_helados" type="button" class="btn btn-lg btn-default" id="button_to_get_helados_por_nombre"> Ver helados » </a></p>      
       <hr class="featurette-divider">       
       </div>
       
@@ -163,10 +163,9 @@
      
 	<!-- script references -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+        <script src="js/query.cookie.js"></script>
 		<script type="text/javascript" src="js/gelapp.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/jquery.cookie.js"></script>	
-        <script src="js/weblinking.js"></script>   
+		<script src="js/bootstrap.min.js"></script>  
 		
 	</body>
 <style> body {background-color:lightgray} </style>
