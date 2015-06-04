@@ -745,10 +745,11 @@ function log(login)
 				}
 				else{
                     
-					document.cookie = "username=" + $("#login_usuario").val();
-					document.cookie = "password=" + $("#login_contrasena").val();
+					user.cookie = $("#login_usuario").val();
+					pass.cookie = $("#login_contrasena").val();
 					console.log(inf.loginSuccessful);
-                    console.log(document.cookie);
+                    console.log(user.cookie);
+                    console.log(pass.cookie);
 					/*window.location = "index.html"*/
                     alert("Bienvenido!");
 					}
