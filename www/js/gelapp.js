@@ -748,7 +748,8 @@ function log(login)
 					document.cookie = "username=" + $("#login_usuario").val();
 					document.cookie = "password=" + $("#login_contrasena").val();
 					console.log(inf.loginSuccessful);
-					window.location = "main.html"
+                    console.log(document.cookie);
+					/*window.location = "index.html"*/
                     alert("Bienvenido!");
 					}
 
