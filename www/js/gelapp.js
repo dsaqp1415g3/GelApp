@@ -745,13 +745,26 @@ function log(login)
 				}
 				else{
                     
-					document.cookie = "username=" + $("#login_usuario").val();
+    var inputname = $('#login_usuario').val();
+    var inputpass  = $('#login_contrasena').val();
+  
+    $.cookie('username', inputname, { expires: 1 });
+    var currentusr = $.cookie('username');
+    
+    $.cookie('password', inputpass, { expires: 1 });
+    var currentpss = $.cookie('pasword');   
+                    
+                    console.log(currentusr);
+                    console.log(currentpss);
+                    
+                    
+					/*document.cookie = "username=" + $("#login_usuario").val();
 					document.cookie = "password=" + $("#login_contrasena").val();
 					console.log(inf.loginSuccessful);
                     console.log(document.cookie);
-					/*window.location = "index.html"*/
+					window.location = "index.html"*/
                     alert("Bienvenido!");
-					}
+					
 
   	}).fail(function() {
 		alert("No se ha podido inicar sesión");
