@@ -719,15 +719,15 @@ $("#login").click(function(e) {
 	{
 		var login = new Object();
 		login.username = $("#login_usuario").val();
-		login.userpass = $("#login_contrasena").val();
-		getuserpass(login);
+		login.password = $("#login_contrasena").val();
+		log(login);
 	}
 });
 
-function getuserpass(login)
+function log(login)
 {
 	console.log(login);
-	var url = API_BASE_URL + '/users';
+	var url = API_BASE_URL + '/users/login';
 	var data = JSON.stringify(login);
 
 	$.ajax({
@@ -739,14 +739,17 @@ function getuserpass(login)
 		data : data,
 	}).done(function(data, status, jqxhr) {
 		var inf = data;
-				if(inf.loginSuccessful!= true){
-				alert("Usuario y/o contraseña erróneo. Por favor intentelo de nuevo.");		
+				if(inf.loginSuccesful!= true){
+                console.log(inf.loginSuccessful);    
+				alert("Usuario y/o contraseña erróneo");		
 				}
 				else{
+                    
 					document.cookie = "username=" + $("#login_usuario").val();
-					document.cookie = "userpass=" + $("#login_contrasena").val();
+					document.cookie = "password=" + $("#login_contrasena").val();
 					console.log(inf.loginSuccessful);
 					window.location = "main.html"
+                    alert("Bienvenido!");
 					}
 
   	}).fail(function() {
