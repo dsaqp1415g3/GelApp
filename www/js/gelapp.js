@@ -658,14 +658,15 @@ function getCookie() {
 	if($.cookie('username')) {
 		console.log("logeado");
 		var user_tag = $.cookie('username');
-	    $('#login_info').html('<a href="login.html"><strong> '+user_tag+' </strong></a>');       
-    
+	    $('#login_info').html('<a href="logout.html"><strong> '+user_tag+' </strong></a>');
     }
 	else
 	{
 		console.log("no logeado")
 		$('#login_info').html('<a href="login.html"><strong> Iniciar sesión - Registrarse </strong></a>');
+		$('#create_result').html('<a href="login.html"><strong> Debes iniciar sesión antes de crear helados </strong></a>');
 		$('#mis_helados_result').html('<a align="center" href="login.html"><strong> Para ver tu lista de helados debes iniciar sesión o registrarte </strong></a>');
+		document.getElementById('button_to_create').style.visibility='hidden';
 	}
 
 }
@@ -710,8 +711,8 @@ function register(login)
 		data : data
 	}).done(function(data, status, jqxhr) {
         var inf = data;
-		alert("¡Bienvenido "+inf.username+"! Ya puedes iniciar sesión");
-				
+		/*alert("¡Bienvenido "+inf.username+"! Ya puedes iniciar sesión");*/
+		log(login);
 
   	}).fail(function() {
 		alert("Error al registrarse: Nombre de usuario ya en uso");
