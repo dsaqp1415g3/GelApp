@@ -7,6 +7,8 @@ android:layout_width="match_parent"
 android:layout_height="match_parent">
 
 
+
+
     <!-- Contenido principal-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/ContenedorFrame"
@@ -25,14 +27,53 @@ android:layout_height="match_parent">
 
 </LinearLayout>
 
+    <!-- Botón flotante-->
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/tool_bar"
+
+            ></include>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:id="@+id/frameLayout">
+
+
+            <ImageButton
+                android:layout_margin="15dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/ic_action"
+                android:background="@drawable/circle"
+                android:id="@+id/imageButton"
+                android:layout_gravity="right|bottom" />
+
+
+        </FrameLayout>
+    </RelativeLayout>
+
 <!-- The navigation drawer (menú lateral)-->
 <ListView android:id="@+id/menu_lateral"
 android:layout_width="240dp"
 android:layout_height="match_parent"
 android:layout_gravity="start"
 android:choiceMode="singleChoice"
-android:divider="@android:color/transparent"
-android:dividerHeight="0dp"
-android:background="#FFFFFF"/>
+android:divider="@android:color/holo_orange_light"
+android:dividerHeight="1dp"
+android:background="#FFFFFF"
+    android:drawSelectorOnTop="false"
+    android:headerDividersEnabled="false"
+    android:stackFromBottom="false" />
+
 </android.support.v4.widget.DrawerLayout>
 

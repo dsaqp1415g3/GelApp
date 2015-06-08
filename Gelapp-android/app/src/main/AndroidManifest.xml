@@ -10,16 +10,19 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".GelappMainActivity"
-            android:label="@string/app_name" >
+            android:name=".LoginActivity"
+            android:label="Gelapp"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".GelappMainActivity"/>
         <activity android:name=".HeladoDetailActivity" />
         <activity android:name=".CreateGelappActivity" />
+        <activity android:name=".RegisterActivity"/>
 
     </application>
 

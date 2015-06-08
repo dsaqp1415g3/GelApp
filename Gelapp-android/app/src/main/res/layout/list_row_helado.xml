@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:padding="10dip"
         android:layout_gravity="center_horizontal"
         android:background="#75ffab00">
@@ -23,33 +23,27 @@
             android:layout_gravity="center_horizontal"
             android:gravity="center_horizontal" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:background="#FFFFFF"/>
+
     </LinearLayout>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="5dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
         android:baselineAligned="false"
-        android:background="#75ffab00">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text = "Topping 1: "
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:padding="5dp"
-            android:layout_weight="0.25"
-            android:background="@android:color/white" />
-
-        <TextView
-            android:id="@+id/tvCapa1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:padding="5dp"
-            android:layout_weight="0.65"
-            android:background="@android:color/white" />
+        android:background="#75ffab00"
+        >
 
         <TextView
             android:id="@+id/ColorCapa1"
@@ -58,162 +52,52 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:padding="5dp"
             android:gravity="right"
-            android:layout_weight="0.10" />
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:baselineAligned="false"
-        android:background="#75ffab00">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text = "Helado 1: "
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:padding="5dp"
-            android:layout_weight="0.25"
-            android:background="@android:color/white" />
-
-        <TextView
-            android:id="@+id/tvCapa2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:padding="5dp"
-            android:layout_weight="0.65"
-            android:background="@android:color/white" />
+            android:layout_weight="0.10"
+            android:background="#FFFFFF"/>
 
         <TextView
             android:id="@+id/ColorCapa2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:background="#111"
             android:padding="5dp"
             android:gravity="right"
-            android:layout_weight="0.10" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:baselineAligned="false"
-        android:background="#75ffab00">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text = "Topping 2: "
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:padding="5dp"
-            android:layout_weight="0.25"
-            android:background="@android:color/white" />
-
-        <TextView
-            android:id="@+id/tvCapa3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:padding="5dp"
-            android:layout_weight="0.65"
-            android:background="@android:color/white" />
+            android:layout_weight="0.10"
+            android:background="#FFFFFF"/>
 
         <TextView
             android:id="@+id/ColorCapa3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:background="#111"
             android:padding="5dp"
             android:gravity="right"
-            android:layout_weight="0.10" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:baselineAligned="false"
-        android:background="#75ffab00">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text = "Helado 2: "
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:padding="5dp"
-            android:layout_weight="0.25"
-            android:background="@android:color/white" />
-
-        <TextView
-            android:id="@+id/tvCapa4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:padding="5dp"
-            android:layout_weight="0.65"
-            android:background="@android:color/white" />
+            android:layout_weight="0.10"
+            android:background="#FFFFFF"/>
 
         <TextView
             android:id="@+id/ColorCapa4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:background="#111"
             android:padding="5dp"
             android:gravity="right"
-            android:layout_weight="0.10" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="5dp"
-        android:baselineAligned="false"
-        android:background="#75ffab00">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text = "Topping 3: "
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:padding="5dp"
-            android:layout_weight="0.25"
-            android:background="@android:color/white" />
-
-        <TextView
-            android:id="@+id/tvCapa5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:padding="5dp"
-            android:layout_weight="0.65"
-            android:background="@android:color/white" />
+            android:layout_weight="0.10"
+            android:background="#FFFFFF"/>
 
         <TextView
             android:id="@+id/ColorCapa5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:background="#111"
             android:padding="5dp"
             android:gravity="right"
-            android:layout_weight="0.10" />
+            android:layout_weight="0.10"
+            android:background="#FFFFFF"/>
+
 
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -221,32 +105,34 @@
         android:orientation="horizontal"
         android:layout_gravity="center_horizontal"
         android:background="#75ffab00"
-        android:paddingRight="5dp"
-        android:paddingLeft="10dp"
-        android:paddingBottom="5dp">
+        android:padding = "10dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text = "Votos: "
+            android:text = "Autor:"
             android:textAppearance="?android:attr/textAppearanceSmall"
+            android:background="#FFFFFF"
+            android:padding="5dp"
              />
 
         <TextView
-            android:id="@+id/tvVotos"
-            android:layout_width="0dp"
+            android:id="@+id/tvAutor"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:layout_weight="0.1"
             android:textStyle="bold"
+            android:background="#FFFFFF"
+            android:padding="5dp"
             />
         <TextView
             android:id="@+id/tvFechaCreacion"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:gravity="right"
-            android:layout_weight="0.9"
+            android:background="#FFFFFF"
+            android:padding="5dp"
             />
 
     </LinearLayout>

@@ -4,17 +4,22 @@ package edu.upc.eetac.dsa.dsaqp1415g3.gelapp;
  * Created by marc on 15/05/15.
  */
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -33,6 +38,8 @@ public class CreateGelappActivity extends Activity {
     private String capa5;
 
 
+
+
     private class PostHeladoTask extends AsyncTask<String, Void, Helado> {
         private ProgressDialog pd;
 
@@ -40,8 +47,7 @@ public class CreateGelappActivity extends Activity {
         protected Helado doInBackground(String... params) {
             Helado helado = null;
             try {
-                helado = GelappAPI.getInstance(CreateGelappActivity.this)
-                        .createHelado(Integer.parseInt(params[0]), params[1], params[2], params[3], params[4], params[5], params[6]);
+                helado = GelappAPI.getInstance(CreateGelappActivity.this).createHelado(Integer.parseInt(params[0]), params[1], params[2], params[3], params[4], params[5], params[6]);
             } catch (AppException e) {
                 Log.e(TAG, e.getMessage(), e);
             }
@@ -71,6 +77,14 @@ public class CreateGelappActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_gelapp_layout);
+
+        //Escondo la barra de acción
+        ActionBar actionBar = getActionBar();
+        actionBar.hide();
+
+        /////Oculta el teclado al iniciar el layout para que sea el usuario el que de click en el edit text
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
 
         //Creo los spinners, doy las variables
 
@@ -186,36 +200,48 @@ public class CreateGelappActivity extends Activity {
     }
 
     public void cancel(View v) {
+        v.setBackgroundResource(R.drawable.button_red_click);
         setResult(RESULT_CANCELED);
         finish();
     }
 
     public void postHelado(View v) {
+        v.setBackgroundResource(R.drawable.button_green_click);
+//Obtengo el nombre que ha escrito el usuario en el Edit Text
         EditText etNombre = (EditText) findViewById(R.id.etNombreHelado);
-        //EditText etCapa1 = (EditText) findViewById(R.id.spinner1);
-        //EditText etCapa2 = (EditText) findViewById(R.id.spinner2);
-        //EditText etCapa3 = (EditText) findViewById(R.id.spinner3);
-        //EditText etCapa4 = (EditText) findViewById(R.id.spinner4);
-        //EditText etCapa5 = (EditText) findViewById(R.id.spinner5);
-
         String nombreHelado = etNombre.getText().toString();
-        int autorid = 1;
 
-        (new PostHeladoTask()).execute("1",nombreHelado,capa1,capa2,capa3,capa4,capa5);
 
-       // EditText etSubject = (EditText) findViewById(R.id.etSubject);
-        //EditText etContent = (EditText) findViewById(R.id.etContent);
+//Obtengo los datos del login guardados
+        SharedPreferences prefs = getSharedPreferences("gelapp-profile",
+                Context.MODE_PRIVATE);
+        final String username = prefs.getString("username", null);
+        //final String password = prefs.getString("password", null);
+        final int usernameid = prefs.getInt("usuarioid",0);
 
-        //String subject = etSubject.getText().toString();
-        //String content = etContent.getText().toString();
+        String usuarioID = Integer.toString(usernameid);
 
-        //(new PostStingTask()).execute(subject, content);
+
+
+//Implemento un if para que no deje crear un helado sin haber escrito un "nombreHelado"
+        if (nombreHelado.length() >= 1) {
+            (new PostHeladoTask()).execute(usuarioID, nombreHelado, capa1, capa2, capa3, capa4, capa5);
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(), "Insert the name of your IceCream", Toast.LENGTH_LONG).show();
+        }
+
+        //Refresco el main para que ya se pueda visualizar el nuevo helado al final
+        Intent intent = new Intent(this, GelappMainActivity.class);
+        startActivity(intent);
+
     }
 
     private void showHelados(Helado result) {
         String json = new Gson().toJson(result);
         Bundle data = new Bundle();
-        data.putString("json-sting", json);
+        data.putString("json-helado", json);
         Intent intent = new Intent();
         intent.putExtras(data);
         setResult(RESULT_OK, intent);

@@ -25,7 +25,8 @@ public class GelAppRootAPI {
 		@InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "helados", title = "Get helados", type=MediaType.GELAPP_API_HELADO_COLLECTION),
 		@InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "delete-helado", title = "Delete helado", type=MediaType.GELAPP_API_HELADO),
 		@InjectLink(resource = UserResource.class, style = Style.ABSOLUTE, rel = "gelapp-register", title = "registrar", type=MediaType.GELAPP_API_USER),
-		@InjectLink(value = "users/login", style = Style.ABSOLUTE, rel = "gelapp-profile", title = "login", type=MediaType.GELAPP_API_USER)})
+		@InjectLink(value = "users/login", style = Style.ABSOLUTE, rel = "gelapp-profile", title = "login", type=MediaType.GELAPP_API_USER),
+		@InjectLink(value = "helados/ranking", style = Style.ABSOLUTE, rel = "gelapp-ranking", title = "ranking", type=MediaType.GELAPP_API_HELADO)})
 		
 		
 	private List<Link> links;

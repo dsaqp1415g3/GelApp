@@ -53,9 +53,10 @@ public class UserResource {
 			stmtGetUsername.setString(1, user.getUsername());
  
 			ResultSet rs = stmtGetUsername.executeQuery();
-			if (rs.next())
+			if (rs.next())				
 				throw new WebApplicationException(user.getUsername()
 						+ " already exists.", Status.CONFLICT); // CONFLICT es el error http 409
+				
 			rs.close();
  
 			conn.setAutoCommit(false);

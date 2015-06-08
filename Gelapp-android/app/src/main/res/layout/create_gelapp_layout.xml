@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="5dip"
-    android:orientation="vertical"
-    android:baselineAligned="false">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:background="#75ffab00"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dip"
+        android:background="#FFFFFF"
+        >
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text = "Create yours"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:textSize="30dp"
+            android:layout_marginTop="20dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold"
+            android:background="@drawable/title"
+            android:drawableBottom="@mipmap/ic_launcher"
+            android:padding="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +51,8 @@
             android:layout_height="wrap_content"
             android:inputType="text"
             android:singleLine="true"
-            android:textSize="24dp"/>
+            android:textSize="24dp"
+            android:hint="GelApp123"/>
 
 
     </LinearLayout>
@@ -50,7 +79,7 @@
             android:id="@+id/spinner1"
             android:layout_gravity="center_horizontal"
             android:layout_weight="80"
-        />
+            android:backgroundTint="@android:color/holo_blue_dark" />
     </LinearLayout>
 
     <LinearLayout
@@ -73,7 +102,7 @@
             android:id="@+id/spinner2"
             android:layout_gravity="center_horizontal"
             android:layout_weight="80"
-            />
+            android:backgroundTint="@android:color/holo_blue_dark" />
     </LinearLayout>
 
     <LinearLayout
@@ -95,7 +124,7 @@
             android:id="@+id/spinner3"
             android:layout_gravity="center_horizontal"
             android:layout_weight="80"
-            />
+            android:backgroundTint="@android:color/holo_blue_dark" />
     </LinearLayout>
 
     <LinearLayout
@@ -117,7 +146,7 @@
             android:id="@+id/spinner4"
             android:layout_gravity="center_horizontal"
             android:layout_weight="80"
-            />
+            android:backgroundTint="@android:color/holo_blue_dark" />
     </LinearLayout>
 
     <LinearLayout
@@ -139,7 +168,7 @@
             android:id="@+id/spinner5"
             android:layout_gravity="center_horizontal"
             android:layout_weight="80"
-            />
+            android:backgroundTint="@android:color/holo_blue_dark" />
     </LinearLayout>
 
 
@@ -160,7 +189,9 @@
             android:layout_gravity="bottom"
             android:elegantTextHeight="false"
             android:singleLine="false"
-            android:textSize="24dp" />
+            android:textSize="20dp"
+            android:background="@drawable/button_red"
+            android:layout_marginRight="5dp"/>
 
         <Button
             android:id="@+id/bSend"
@@ -170,7 +201,11 @@
             android:onClick="postHelado"
             android:text="Create"
             android:layout_gravity="bottom"
-            android:textSize="24dp" />
+            android:textSize="20dp"
+            android:background="@drawable/button_green"
+            android:layout_marginLeft="5dp"/>
     </LinearLayout>
 
 </LinearLayout>
+
+</ScrollView>

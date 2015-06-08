@@ -252,7 +252,7 @@ public class GelappAPI {
             JSONObject jsonHelado = createJsonHelado(helado);
 
 
-            URL urlPostHelados = new URL(rootAPI.getLinks().get("crear-helado").getTarget());
+            URL urlPostHelados = new URL(rootAPI.getLinks().get("create-helado").getTarget());
 
             urlConnection = (HttpURLConnection) urlPostHelados.openConnection();
             urlConnection.setRequestProperty("Accept",
@@ -312,10 +312,181 @@ public class GelappAPI {
         jsonHelado.put("capa1Topping", helado.getCapa1Topping());
         jsonHelado.put("capa2Helado", helado.getCapa2Helado());
         jsonHelado.put("capa3Topping", helado.getCapa3Topping());
-        jsonHelado.put("capa4helado", helado.getCapa4Helado());
+        jsonHelado.put("capa4Helado", helado.getCapa4Helado());
         jsonHelado.put("capa5Topping", helado.getCapa5Topping());
 
         return jsonHelado;
     }
+
+
+
+
+    //Borrar helado
+
+    public void deleteHelado(String urlHelado) throws AppException {
+        Helado helado = null;
+        HttpURLConnection urlConnection = null;
+
+            try {
+                JSONObject jsonHelado = createJsonHelado(helado);
+
+
+                URL urlPostHelados = new URL(rootAPI.getLinks().get("delete-helado").getTarget());
+
+                urlConnection = (HttpURLConnection) urlPostHelados.openConnection();
+                urlConnection.setRequestMethod("DELETE");
+                urlConnection.setDoInput(true);
+                urlConnection.setDoOutput(true);
+                urlConnection.connect();
+                PrintWriter writer = new PrintWriter(
+                        urlConnection.getOutputStream());
+                writer.println(jsonHelado.toString());
+                writer.close();
+
+
+            } catch (MalformedURLException e) {
+            Log.e(TAG, e.getMessage(), e);
+            throw new AppException("Bad helado url");
+        } catch (IOException e) {
+            Log.e(TAG, e.getMessage(), e);
+            throw new AppException("Exception when getting the helado");
+        } catch (JSONException e) {
+            Log.e(TAG, e.getMessage(), e);
+            throw new AppException("Exception parsing response");
+        }
+
+    }
+
+
+    //LOGIN/////////////
+
+    public User loginUser(String username, String password) throws AppException {
+        User user = new User();
+
+        user.setUsername(username);
+        user.setPassword(password);
+
+        HttpURLConnection urlConnection = null;
+        try {
+            JSONObject jsonUser = createJsonUser(user);
+
+
+            URL urlPostUser = new URL(rootAPI.getLinks().get("gelapp-profile").getTarget());
+
+            urlConnection = (HttpURLConnection) urlPostUser.openConnection();
+            urlConnection.setRequestProperty("Content-Type",
+                    MediaType.GELAPP_API_USER);
+            urlConnection.setRequestMethod("POST");
+            urlConnection.setDoInput(true);
+            urlConnection.setDoOutput(true);
+            urlConnection.connect();
+            PrintWriter writer = new PrintWriter(
+                    urlConnection.getOutputStream());
+            writer.println(jsonUser.toString());
+            writer.close();
+
+            int rc = urlConnection.getResponseCode();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    urlConnection.getInputStream()));
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+            }
+            jsonUser = new JSONObject(sb.toString());
+
+            user.setUsername(jsonUser.getString("username"));
+            user.setLoginSuccesful(jsonUser.getBoolean("loginSuccesful"));
+            user.setUsuarioid(jsonUser.getInt("usuarioid"));
+
+
+            //JSONArray jsonLinks = jsonUser.getJSONArray("links");
+            //parseLinks(jsonLinks, user.getLinks());
+        } catch (JSONException e) {
+            Log.e(TAG, e.getMessage(), e);
+            throw new AppException("Error parsing response");
+        } catch (IOException e) {
+            Log.e(TAG, e.getMessage(), e);
+            throw new AppException("Error getting response");
+        } finally {
+            if (urlConnection != null)
+                urlConnection.disconnect();
+        }
+        return user;
+    }
+
+
+    private JSONObject createJsonUser(User user) throws JSONException {
+        JSONObject jsonUser = new JSONObject();
+        jsonUser.put("username", user.getUsername());
+        jsonUser.put("password", user.getPassword());
+
+        return jsonUser;
+    }
+
+    //REGISTER////////////
+
+    public User registerUser(String username, String password) throws AppException {
+        User userReg = new User();
+
+        userReg.setUsername(username);
+        userReg.setPassword(password);
+
+        HttpURLConnection urlConnection = null;
+        try {
+            JSONObject jsonUserReg = createJsonUserReg(userReg);
+
+
+            URL urlPostUser = new URL(rootAPI.getLinks().get("gelapp-register").getTarget());
+
+            urlConnection = (HttpURLConnection) urlPostUser.openConnection();
+            urlConnection.setRequestProperty("Content-Type",
+                    MediaType.GELAPP_API_USER);
+            urlConnection.setRequestMethod("POST");
+            urlConnection.setDoInput(true);
+            urlConnection.setDoOutput(true);
+            urlConnection.connect();
+            PrintWriter writer = new PrintWriter(
+                    urlConnection.getOutputStream());
+            writer.println(jsonUserReg.toString());
+            writer.close();
+
+            int rc = urlConnection.getResponseCode();
+            BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    urlConnection.getInputStream()));
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+            }
+            jsonUserReg = new JSONObject(sb.toString());
+
+            userReg.setUsername(jsonUserReg.getString("username"));
+            userReg.setLoginSuccesful(jsonUserReg.getBoolean("loginSuccesful"));
+            //userReg.setStatus(jsonUserReg.getString("status"));
+
+;
+        } catch (JSONException e) {
+            Log.e(TAG, e.getMessage(), e);
+            throw new AppException("Error parsing response");
+        } catch (IOException e) {
+            Log.e(TAG, e.getMessage(), e);
+            throw new AppException("Error getting response, invalid user");
+        } finally {
+            if (urlConnection != null)
+                urlConnection.disconnect();
+        }
+        return userReg;
+    }
+
+
+    private JSONObject createJsonUserReg(User userReg) throws JSONException {
+        JSONObject jsonUserReg = new JSONObject();
+        jsonUserReg.put("username", userReg.getUsername());
+        jsonUserReg.put("password", userReg.getPassword());
+
+        return jsonUserReg;
+    }
+
 }
 
