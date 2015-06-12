@@ -18,7 +18,8 @@ public class HeladoCollection {
 	@InjectLinks({
 		@InjectLink(resource = HeladoResource.class, style = Style.ABSOLUTE, rel = "create-helado", title = "Create new helado", type = MediaType.GELAPP_API_HELADO),
 		@InjectLink(value = "/helados?page={previous}", style = Style.ABSOLUTE, rel = "previous", title = "Previous helados", type = MediaType.GELAPP_API_HELADO_COLLECTION, bindings = { @Binding(name = "previous", value = "${instance.previousPage}") }),
-		@InjectLink(value = "/helados?page={next}", style = Style.ABSOLUTE, rel = "next", title = "Next helados", type = MediaType.GELAPP_API_HELADO_COLLECTION, bindings = { @Binding(name = "next", value = "${instance.nextPage}") }) })
+		@InjectLink(value = "/helados?page={next}", style = Style.ABSOLUTE, rel = "next", title = "Next helados", type = MediaType.GELAPP_API_HELADO_COLLECTION, bindings = { @Binding(name = "next", value = "${instance.nextPage}") })})
+		//@InjectLink(value = "/helados/user/{autor}", style = Style.ABSOLUTE, rel = "autor-helado", title = "autor helado", type = MediaType.GELAPP_API_HELADO_COLLECTION, bindings = { @Binding(name = "autor", value = "${instance.resource.requester}") })})
 	
 	private List<Link> links;
 	
