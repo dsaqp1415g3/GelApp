@@ -115,8 +115,8 @@ public class HeladoResource {
 
 	/* HELADO POR ID */// ///////////////////////////////////////////////////////////////////////
 
-	private String GET_HELADO_BY_ID_QUERY = "select helado.*, usuario.username from helado inner join usuario on helado.autor_id = usuario.usuario_id where helado_id =?";
-
+	//private String GET_HELADO_BY_ID_QUERY = "select helado.*, usuario.username from helado inner join usuario on helado.autor_id = usuario.usuario_id where helado_id =?";
+	private String GET_HELADO_BY_ID_QUERY = "select h.*, (select usuario.username from usuario where usuario.usuario_id = h.autor_id) username, (select count(id_helado) from votos v where v.id_helado=h.helado_id) votos from helado h where h.helado_id = ?";
 	@GET
 	@Path("/{helado_id}")
 	@Produces(MediaType.GELAPP_API_HELADO)
@@ -474,6 +474,7 @@ public class HeladoResource {
 				helado.setCreationTimestamp(rs.getTimestamp(
 						"creation_timestamp").getTime());
 				helado.setAutor(rs.getString("username"));
+				helado.setVotos(rs.getInt("votos"));
 			} else {
 				throw new NotFoundException("There's no helado with heladoid="
 						+ heladoid);
