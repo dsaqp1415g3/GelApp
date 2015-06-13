@@ -575,8 +575,9 @@ function voteHelado(id_helado_a_votar) {
 		 202: function() {$('<div class="alert alert-danger"> <strong>Ok!</strong> File deleted successfully </div>').appendTo($("#delete_helado_result"));}
 		 } */
 	}).done(function(data, status, jqxhr) {
-		console.log("voto añadido correctamente");
+		console.log("voto añadido correctamente");       
         alert("¡Voto añadido correctamente!");
+        window.location.reload();
 	}).fail(function() {
 		console.log("no se ha podido añadir el voto");
         console.log(data);
@@ -845,9 +846,11 @@ function comprarHelado(helado_id) {
     	} */
         
 	}).done(function(data, status, jqxhr) {
-		$('<div class="alert alert-success"> <strong>¡Gracias!</strong> Puedes pasar a recogerlo a tu tienda GelApp más cercana </div>').appendTo($("#mishelados_comprar"));				
+		$('<div class="alert alert-success"> <strong>¡Gracias!</strong> Puedes pasar a recogerlo a tu tienda GelApp más cercana </div>').appendTo($("#mishelados_comprar"));
+        alert("<strong>¡Gracias!</strong> Puedes pasar a recogerlo a tu tienda GelApp más cercana");
   	}).fail(function() {
 		$('<div class="alert alert-danger"> <strong>Oh!</strong> El helado que quieres comprar no existe </div>').appendTo($("#mishelados_comprar"));
+        alert("<strong>¡Oh!</strong> Revisa que el helado exista");
 	});
 
 }
