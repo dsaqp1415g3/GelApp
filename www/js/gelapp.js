@@ -50,126 +50,458 @@ $("#top1_caramelo").click(function(e) {
 	e.preventDefault();   
     $("#topping_1").val('caramelo');
     $("#topping_1").text('Caramelo');
+	console.log(topping_1.value);
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
+
 });
 $("#top1_chocolate_negro").click(function(e) {
 	e.preventDefault();
 	$("#topping_1").val('chocolate_negro');
     $("#topping_1").text('Chocolate Negro');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#top1_chocolate_blanco").click(function(e) {
 	e.preventDefault();
 	$("#topping_1").val('chocolate_blanco');
     $("#topping_1").text('Chocolate Blanco');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#top1_sirope_fresa").click(function(e) {
 	e.preventDefault();
 	$("#topping_1").val('sirope_fresa');
     $("#topping_1").text('Sirope de Fresa');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#top1_multicolor").click(function(e) {
 	e.preventDefault();
 	$("#topping_1").val('multicolor');
     $("#topping_1").text('Multicolor');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class="multicolorgreen"></span>' +
+	'<span class="multicolorred"></span>' +
+	'<span class="multicolorblue"></span>' +
+	'<span class="multicolorwhite"></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#capa2_fresa").click(function(e) {
 	e.preventDefault();
 	$("#capa_2").val('fresa');
     $("#capa_2").text('Fresa');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#capa2_nata").click(function(e) {
 	e.preventDefault();
 	$("#capa_2").val('nata');
     $("#capa_2").text('Nata');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#capa2_vainilla").click(function(e) {
 	e.preventDefault();
 	$("#capa_2").val('vainilla');
     $("#capa_2").text('Vainilla');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#capa2_chocolate").click(function(e) {
 	e.preventDefault();
 	$("#capa_2").val('chocolate');
     $("#capa_2").text('Chocolate');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#capa2_turron").click(function(e) {
 	e.preventDefault();
 	$("#capa_2").val('turron');
     $("#capa_2").text('Turrón');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#top3_caramelo").click(function(e) {
 	e.preventDefault();
 	$("#topping_3").val('caramelo');
     $("#topping_3").text('Caramelo');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class='+topping_3.value+'1></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#top3_chocolate_negro").click(function(e) {
 	e.preventDefault();
 	$("#topping_3").val('chocolate_negro');
     $("#topping_3").text('Chocolate Negro');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class='+topping_3.value+'1></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#top3_chocolate_blanco").click(function(e) {
 	e.preventDefault();
 	$("#topping_3").val('chocolate_blanco');
     $("#topping_3").text('Chocolate Blanco');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class='+topping_3.value+'1></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#top3_sirope_fresa").click(function(e) {
 	e.preventDefault();
 	$("#topping_3").val('sirope_fresa');
     $("#topping_3").text('Sirope Fresa');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class='+topping_3.value+'1></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#top3_multicolor").click(function(e) {
 	e.preventDefault();
 	$("#topping_3").val('multicolor');
     $("#topping_3").text('Multicolor');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class="multicolorgreen1"></span>' +
+	'<span class="multicolorred1"></span>' +
+	'<span class="multicolorblue1"></span>' +
+	'<span class="multicolorwhite1"></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class='+topping_3.value+'1></span>' +
+	'<span class=""></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#capa4_fresa").click(function(e) {
 	e.preventDefault();
 	$("#capa_4").val('fresa');
     $("#capa_4").text('Fresa');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class='+topping_3.value+'1></span>' +
+	'<span class='+capa_4.value+'1></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#capa4_nata").click(function(e) {
 	e.preventDefault();
 	$("#capa_4").val('nata');
     $("#capa_4").text('Nata');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class='+topping_3.value+'1></span>' +
+	'<span class='+capa_4.value+'1></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#capa4_vainilla").click(function(e) {
 	e.preventDefault();
 	$("#capa_4").val('vainilla');
     $("#capa_4").text('Vainilla');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class='+topping_3.value+'1></span>' +
+	'<span class='+capa_4.value+'1></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#capa4_chocolate").click(function(e) {
 	e.preventDefault();
 	$("#capa_4").val('chocolate');
     $("#capa_4").text('Chocolate');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class='+topping_3.value+'1></span>' +
+	'<span class='+capa_4.value+'1></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#capa4_turron").click(function(e) {
 	e.preventDefault();
 	$("#capa_4").val('turron');
     $("#capa_4").text('Turrón');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class='+topping_3.value+'1></span>' +
+	'<span class='+capa_4.value+'1></span>' +
+	'<span class=""></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#top5_caramelo").click(function(e) {
 	e.preventDefault();   
     $("#topping_5").val('caramelo');
     $("#topping_5").text('Caramelo');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class='+topping_3.value+'1></span>' +
+	'<span class='+capa_4.value+'1></span>' +
+	'<span class='+topping_5.value+'2></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#top5_chocolate_negro").click(function(e) {
 	e.preventDefault();
 	$("#topping_5").val('chocolate_negro');
     $("#topping_5").text('Chocolate Negro');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class='+topping_3.value+'1></span>' +
+	'<span class='+capa_4.value+'1></span>' +
+	'<span class='+topping_5.value+'2></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#top5_chocolate_blanco").click(function(e) {
 	e.preventDefault();
 	$("#topping_5").val('chocolate_blanco');
     $("#topping_5").text('Chocolate Blanco');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class='+topping_3.value+'1></span>' +
+	'<span class='+capa_4.value+'1></span>' +
+	'<span class='+topping_5.value+'2></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#top5_sirope_fresa").click(function(e) {
 	e.preventDefault();
 	$("#topping_5").val('sirope_fresa');
     $("#topping_5").text('Sirope de Fresa');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class='+topping_3.value+'1></span>' +
+	'<span class='+capa_4.value+'1></span>' +
+	'<span class='+topping_5.value+'2></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 $("#top5_multicolor").click(function(e) {
 	e.preventDefault();
 	$("#topping_5").val('multicolor');
     $("#topping_5").text('Multicolor');
+	$('<button class="iceCream-btn" id="iceCream">' +
+	'<span class="stick"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="coconut"></span>' +
+	'<span class="nuts"></span>' +
+	'<span class="bola">' +
+	'<span class='+topping_1.value+'></span>' +
+	'<span class='+capa_2.value+'></span>' +
+	'<span class='+topping_3.value+'1></span>' +
+	'<span class='+capa_4.value+'1></span>' +
+	'<span class="multicolorgreen2"></span>' +
+	'<span class="multicolorred2"></span>' +
+	'<span class="multicolorblue2"></span>' +
+	'<span class="multicolorwhite2"></span>' +
+	'</span>' +
+	'</button>').appendTo($('#mi_helado'));
 });
 
 /*-----------------------------------------------------------*/
@@ -195,24 +527,40 @@ function createIce(newIce) {
     
 	var url = API_BASE_URL + '/helados';
 	var data = JSON.stringify(newIce);
-    $("#create_result").empty("#create_result");
+
 	$("#create_result").text('');
 
-	$.ajax({
-		url : url,
-		type : 'POST',
-		crossDomain : true,
-		dataType : 'json',
-		data : data,
-        contentType : 'application/vnd.gelapp.api.helado+json'
-	}).done(function(data, status, jqxhr) {
-        $("#create_result").empty("#create_result");
-		$('<div class="alert alert-success"> <strong>Ok!</strong> Helado creado correctamente. </div>').appendTo($("#create_result"));
-		window.location.reload();
-  	}).fail(function() {
-        $("#create_result").empty("#create_result");
-		$('<div class="alert alert-danger"> <strong>Oh!</strong> Introduce un nombre y al menos un sabor </div>').appendTo($("#create_result"));
-	});
+	console.log(newIce.nombreHelado);
+
+	if( newIce.nombreHelado == "" || newIce.nombreHelado == " " || newIce.nombreHelado == "  "|| newIce.nombreHelado == "   "
+	    || newIce.capa2Helado == "" && newIce.capa4Helado == ""){
+		console.log("Nombre vacío");
+		$('<div class="alert alert-danger"> <strong>Oh!</strong> Introduce un nombre y al menos una capa de sabor </div>').appendTo($("#create_result"));
+
+	}
+	else
+	{
+		$.ajax({
+			url : url,
+			type : 'POST',
+			crossDomain : true,
+			dataType : 'json',
+			data : data,
+			contentType : 'application/vnd.gelapp.api.helado+json'
+		}).done(function(data, status, jqxhr) {
+			$("#create_result").empty("#create_result");
+			$('<div class="alert alert-success"> <strong>¡Hecho!</strong></div>').appendTo($("#create_result"));
+			window.location.reload();
+		}).fail(function() {
+			$("#create_result").empty("#create_result");
+			$('<div class="alert alert-danger"> <strong>Oh!</strong> Ese nombre ya está en uso </div>').appendTo($("#create_result"));
+		});
+
+
+
+	}
+
+
 
 }
 

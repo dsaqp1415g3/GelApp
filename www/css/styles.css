@@ -267,3 +267,262 @@ pre {
 	font-weight: 400;
 	line-height: 18.5667px;
 }
+/* CSS DE LA IMAGEN DINÁMICA DEL HELADO        http://codepen.io/ElmahdiMahmoud/pen/lwkrK          */
+
+
+
+/*
+	Flat Ice Cream Button/Icon, Pure CSS - 30.10.13
+	(c) 2013 @ElmahdiMahmoud
+	license: http://www.opensource.org/licenses/mit-license.php
+*/
+
+/* Global ===================== */
+html,
+
+input::-moz-focus-inner { border: 0; }
+*:focus   { outline: 0; }
+
+/* Ice Cream Button =========== */
+.iceCream-btn {
+    width: 0px;
+    height: 174px;
+
+    border-radius: 40px; /* TODO: Hey you Lazy, Prefix me */
+    position: absolute;
+
+    left: 50%;
+    margin: -327px 0 0 -27px ;
+    /* Gradient */
+
+
+}
+
+/* Ice Cream Parts ============ */
+.iceCream-btn span {
+    position: absolute;
+    display: block;
+}
+.iceCream-btn > span {
+    left: 50%;
+}
+.iceCream-btn > span > span {
+    left: 0;
+    right: 0;
+}
+/* Ice Cream Stick ============ */
+.stick {
+    background-color: #F5DA81;
+    box-shadow: 1px 1px 1px #1c354b; /* TODO: Hey you Lazy, Prefix me */
+    border-radius: 0 0 30px 30px; /* TODO: Hey you Lazy, Prefix me */
+    bottom: 20px;
+    margin-left: 500px;
+    height: 30px;
+    width: 12px;
+    z-index: 20;
+}
+
+/* Ice Cream Bola ============= */
+.bola {
+    width: 80px;
+    height: 100px;
+    top: 20px;
+    margin-left: 465px;
+    border-radius: 60px 60px 20px 20px; /* TODO: Come on Dude, Prefix me please */
+    overflow: hidden;
+    box-shadow: 20px 20px 30px #20394f; /* TODO: Come on Dude, Prefix me please */
+    z-index: 10;
+}
+
+/* Ice Cream Flavors ========== */
+.fresa {
+    background-color: #FE2E64;
+    height: 20px;
+    top: 20px;
+}
+.fresa1 {
+    background-color: #FE2E64;
+    height: 20px;
+    top: 60px;
+}
+.turron {
+    background-color: #8A4B08;
+    height: 20px;
+    top: 20px;
+}
+.turron1 {
+    background-color: #8A4B08;
+    height: 20px;
+    top: 60px;
+}
+.chocolate {
+    background-color: #3B0B0B;
+    height: 20px;
+    top: 20px;
+}
+.chocolate1 {
+    background-color: #3B0B0B;
+    height: 20px;
+    top: 60px;
+}
+.sirope_fresa {
+    background-color: #FF0040;
+    height: 20px;
+    top: 0;
+}
+.sirope_fresa1 {
+    background-color: #FF0040;
+    height: 20px;
+    top: 40px;
+}
+.sirope_fresa2 {
+    background-color: #FF0040;
+    height: 20px;
+    bottom: 0;
+}
+.chocolate_negro {
+    background-color: #2A0A0A;
+    height: 20px;
+    top: 0;
+}
+.chocolate_negro1 {
+    background-color: #2A0A0A;
+    height: 20px;
+    top: 40px;
+}
+.chocolate_negro2 {
+    background-color: #2A0A0A;
+    height: 20px;
+    bottom: 0;
+}
+.vainilla {
+    background-color: #F3F781;
+    height: 20px;
+    top: 20px;
+}
+.vainilla1 {
+    background-color: #F3F781;
+    height: 20px;
+    top: 60px;
+}
+.nata {
+    background-color: #F2F2F2;
+    height: 20px;
+    top: 20px;
+}
+.nata1 {
+    background-color: #F2F2F2;
+    height: 20px;
+    top: 60px;
+}
+.multicolorgreen {
+    background-color: #00FF00;
+    height: 20px;
+    width: 20px;
+    top: 0;
+}
+.multicolorred {
+    background-color: #FF0000;
+    height: 20px;
+    width: 20px;
+    margin-left: 20px;
+    top: 0;
+}
+.multicolorblue {
+    background-color: #0000FF;
+    height: 20px;
+    width: 20px;
+    margin-left: 40px;
+    top: 0;
+}
+.multicolorwhite {
+    background-color: #FFFFFF;
+    height: 20px;
+    width: 20px;
+    margin-left: 60px;
+    top: 0;
+}
+.multicolorgreen1 {
+    background-color: #00FF00;
+    height: 20px;
+    width: 20px;
+    top: 40px;
+}
+.multicolorred1 {
+    background-color: #FF0000;
+    height: 20px;
+    width: 20px;
+    margin-left: 20px;
+    top: 40px;
+}
+.multicolorblue1 {
+    background-color: #0000FF;
+    height: 20px;
+    width: 20px;
+    margin-left: 40px;
+    top: 40px;
+}
+.multicolorwhite1 {
+    background-color: #FFFFFF;
+    height: 20px;
+    width: 20px;
+    margin-left: 60px;
+    top: 40px;
+}
+.multicolorgreen2 {
+    background-color: #00FF00;
+    height: 20px;
+    width: 20px;
+    bottom: 0;
+}
+.multicolorred2 {
+    background-color: #FF0000;
+    height: 20px;
+    width: 20px;
+    margin-left: 20px;
+    bottom: 0;
+}
+.multicolorblue2 {
+    background-color: #0000FF;
+    height: 20px;
+    width: 20px;
+    margin-left: 40px;
+    bottom: 0;
+}
+.multicolorwhite2 {
+    background-color: #FFFFFF;
+    height: 20px;
+    width: 20px;
+    margin-left: 60px;
+    bottom: 0;
+}
+.caramelo {
+    background-color: #FE9A2E;
+    height: 20px;
+    top: 0;
+}
+.caramelo1 {
+    background-color: #FE9A2E;
+    height: 20px;
+    top: 40px;
+}
+.caramelo2 {
+    background-color: #FE9A2E;
+    height: 20px;
+    top: 80px;
+}
+.chocolate_blanco {
+    background-color: #F6D8CE;
+    height: 20px;
+    top: 0;
+}
+.chocolate_blanco1 {
+    background-color: #F6D8CE;
+    height: 20px;
+    top: 40px;
+}
+.chocolate_blanco2 {
+    background-color: #F6D8CE;
+    height: 20px;
+    top: 80px;
+}
