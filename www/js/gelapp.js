@@ -1,100 +1,9 @@
 var API_BASE_URL = "http://147.83.7.157:8080/GelApp";
 
 /*
-var USERNAME = $.cookie('username');
-var PASSWORD = $.cookie('password');
-
-$.ajaxSetup({
-	headers: { 'Authorization': "Basic "+ btoa(USERNAME+':'+PASSWORD) }
-});
-*/
-
-/*
 Details about GelApp API on GitHub
  https://github.com/dsaqp1415g3/GelApp
 */
-
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
-
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
-
-/*
-$("#get_helado").click(function(e) {
-	e.preventDefault();
-	getHelado($("#helado_id").val());
-});
-
-function getHelado(helado_id) {
-	var url = API_BASE_URL + '/helados/' + helado_id;
-	$("#result").text('');
-
-	$.ajax({
-		url : url,
-		type : 'GET',
-		crossDomain : true,
-		dataType : 'json'
-	}).done(function(data, status, jqxhr) {
-
-				var helado = data;
-        
-                var dc = new Date(helado.creationTimestamp);        
-                var _mes=dc.getMonth()+1;
-                var _dia=dc.getDate();
-                var _anyo=dc.getFullYear();
-                var _hora = dc.getHours();
-                var _minuto = dc.getMinutes();
-                var _segundo = dc.getSeconds();    
-        
-                var dm = new Date(helado.lastModified);
-                var mes_=dm.getMonth()+1;
-                var dia_=dm.getDate();
-                var anyo_=dm.getFullYear();
-                var hora_ = dm.getHours();
-                var minuto_ = dm.getMinutes();
-                var segundo_ = dm.getSeconds();
-     
-                $("#result_1").empty("#result_1");
-                $("#result_2").empty("#result_2");
-                $("#result_3").empty("#result_3");
-                $("#result_4").empty("#result_4");
-                $("#result_5").empty("#result_5");
-                $("#result_6").empty("#result_6");
-                $("#result_7").empty("#result_7");
-                $("#result_8").empty("#result_8");
-                $("#result_9").empty("#result_9");
-
-				$("#result").text('');
-                $('<strong> Nombre: </strong> ' + helado.nombreHelado + '<br>').appendTo($('#result_1'));
-                $('<strong> Autor ID: </strong> ' + helado.autorid + '<br>').appendTo($('#result_2'));
-				$('<strong> Capa 1 (Topping): </strong> ' + helado.capa1Topping + '<br>').appendTo($('#result_3'));
-                $('<strong> Capa 2 (Helado): </strong> ' + helado.capa2Helado + '<br>').appendTo($('#result_4'));
-                $('<strong> Capa 3 (Topping): </strong> ' + helado.capa3Topping + '<br>').appendTo($('#result_5'));
-                $('<strong> Capa 4 (Helado): </strong> ' + helado.capa4Helado + '<br>').appendTo($('#result_6'));
-                $('<strong> Capa 5 (Topping): </strong> ' + helado.capa5Topping + '<br>').appendTo($('#result_7'));
-                $('<strong> Fecha de creación: </strong> ' + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+'<br>').appendTo($('#result_8'));
-              
-        $('<strong> Última modificación: </strong> '+ dia_+"-"+mes_+"-"+anyo_ +" a las "+hora_+":"+minuto_+":"+segundo_+ '<br>').appendTo($('#result_9'));
-                
-        
-			}).fail(function() {
-                $("#result_1").empty("#result_1");
-                $('<div class="alert alert-danger"> <strong>¡Lo sentimos!</strong> No disponemos de ningún helado con esa ID en la base de datos</div>').appendTo($("#result_1"));
-                $("#result_2").empty("#result_2");
-                $("#result_3").empty("#result_3");
-                $("#result_4").empty("#result_4");
-                $("#result_5").empty("#result_5");
-                $("#result_6").empty("#result_6");
-                $("#result_7").empty("#result_7");
-                $("#result_8").empty("#result_8");
-                $("#result_9").empty("#result_9");
-        
-	});
-    
-}
-*/
-
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
-
 
 $("#button_to_delete").click(function(e) {
 	e.preventDefault();	
@@ -162,8 +71,6 @@ $("#top1_multicolor").click(function(e) {
 	$("#topping_1").val('multicolor');
     $("#topping_1").text('Multicolor');
 });
-
-
 $("#capa2_fresa").click(function(e) {
 	e.preventDefault();
 	$("#capa_2").val('fresa');
@@ -189,7 +96,6 @@ $("#capa2_turron").click(function(e) {
 	$("#capa_2").val('turron');
     $("#capa_2").text('Turrón');
 });
-
 $("#top3_caramelo").click(function(e) {
 	e.preventDefault();
 	$("#topping_3").val('caramelo');
@@ -215,8 +121,6 @@ $("#top3_multicolor").click(function(e) {
 	$("#topping_3").val('multicolor');
     $("#topping_3").text('Multicolor');
 });
-
-
 $("#capa4_fresa").click(function(e) {
 	e.preventDefault();
 	$("#capa_4").val('fresa');
@@ -242,8 +146,6 @@ $("#capa4_turron").click(function(e) {
 	$("#capa_4").val('turron');
     $("#capa_4").text('Turrón');
 });
-
-
 $("#top5_caramelo").click(function(e) {
 	e.preventDefault();   
     $("#topping_5").val('caramelo');
@@ -269,9 +171,6 @@ $("#top5_multicolor").click(function(e) {
 	$("#topping_5").val('multicolor');
     $("#topping_5").text('Multicolor');
 });
-
-
-
 
 /*-----------------------------------------------------------*/
 $("#button_to_create").click(function(e) {
@@ -318,13 +217,10 @@ function createIce(newIce) {
 }
 
 
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
-
-
+/*ooooooooooooooooo MIS HELADOS ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 $(document).ready(function(){
 	getMisHelados();
 });
-
 
 function getMisHelados() {
 
@@ -356,18 +252,24 @@ function getMisHelados() {
                     var _anyo=dc.getFullYear();
                     var _hora = dc.getHours();
                     var _minuto = dc.getMinutes();
-                    var _segundo = dc.getSeconds();    
-                    
+                    var _segundo = dc.getSeconds();
                               
-                    $('<div class="col-md-4 text-center">                                                                                                                                                      <img class="img-circle" src="images/ranking1.jpg">                                                                                                                                        <h2>' + helado.nombreHelado + '</h2>                                                                                                                                                      <div class="panel-body"> <div class="list-group">                                                                                                                                          <a class="list-group-item active"> Sabores </a>                                                                                                                                            <a class="list-group-item disabled"> Capa Topping 1: ' +helado.capa1Topping+ ' </a>                                                                                                        <a class="list-group-item disabled"> Capa Helado 2:  ' +helado.capa2Helado+ ' </a>                                                                                                        <a class="list-group-item disabled"> Capa Topping 3:  ' +helado.capa3Topping+ ' </a>                                                                                                      <a class="list-group-item disabled"> Capa Helado 4:  ' +helado.capa4Helado+ ' </a>                                                                                                        <a class="list-group-item disabled"> Capa Topping 5: ' +helado.capa5Topping+ ' </a>                                                                                                        <a class="list-group-item disabled"> Identificador: ' +helado.heladoid+ ' </a>                                                                                                            <a class="list-group-item disabled"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>                                            </div>  </div>                                                                                                                                                                            <button type="button" class="btn btn-info" id="#comprar_en_mis_helados">Comprar »</button>                                                                                                <button onclick="deleteHelado('+helado.heladoid+')" style="background-color:red" type="button" class="btn btn-info" id="button_to_delete">Borrar »</button></br></br></br></br>           <span class="output-group-addon" id="mishelados_comprar">  </span></br> ').appendTo($('#mis_helados_result'));                 
+                    $('<div class="col-md-4 text-center">                                                                                                                                                      ' +
+					'<img class="img-circle" src="images/mis_helados.jpg">  ' +
+					'<h2>' + helado.nombreHelado + '</h2>    <div class="panel-body">' +
+					'<div class="list-group">   <a  style="background-color:coral" class="list-group-item active"> Sabores </a>   ' +
+					'<a class="list-group-item disabled"> Capa Topping 1: ' +helado.capa1Topping+ ' </a> ' +
+					'<a class="list-group-item disabled"> Capa Helado 2:  ' +helado.capa2Helado+ ' </a>  ' +
+					'<a class="list-group-item disabled"> Capa Topping 3:  ' +helado.capa3Topping+ ' </a> ' +
+					'<a class="list-group-item disabled"> Capa Helado 4:  ' +helado.capa4Helado+ ' </a>    ' +
+					'<a class="list-group-item disabled"> Capa Topping 5: ' +helado.capa5Topping+ ' </a> ' +
+					'<a class="list-group-item disabled"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>   ' +
+					'</div>  </div>     ' +
+					'<button type="button" class="btn btn-info" id="#comprar_en_mis_helados">Comprar »</button>     ' +
+					'<button onclick="deleteHelado('+helado.heladoid+')" style="background-color:red" type="button" class="btn btn-info" id="button_to_delete">Borrar »</button></br></br></br></br>   ' +
+					'<span class="output-group-addon" id="mishelados_comprar">  </span></br> ').appendTo($('#mis_helados_result'));
                     $('</div>').appendTo($('#mis_helados_result'));
 
-
- 
-                  
-                       
-                    
-                    
 				});
 				
 
@@ -376,9 +278,10 @@ function getMisHelados() {
 	});
 
 }
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
 
+
+/*oooooooooooooooooooooooooo TODOS LOS HELADOS oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 $(document).ready(function(){
 	getHelados();
 });
@@ -401,7 +304,22 @@ function getHelados() {
                     var _hora = dc.getHours();
                     var _minuto = dc.getMinutes();
                     var _segundo = dc.getSeconds();
-                    $('<div class="col-md-4 text-center">                                                                                                                        <img class="img-circle" src="images/ranking1.jpg">                                                                                                        <h2>' + helado.nombreHelado + '</h2>                                                                                                                      <div class="panel-body"> <div class="list-group"> <a class="list-group-item active"> Sabores </a>                                                          <a class="list-group-item disabled"> Capa Topping 1: ' +helado.capa1Topping+ ' </a>                                                                        <a class="list-group-item disabled"> Capa Helado 2:  ' +helado.capa2Helado+ ' </a>                                                                        <a class="list-group-item disabled"> Capa Topping 3:  ' +helado.capa3Topping+ ' </a>                                                                      <a class="list-group-item disabled"> Capa Helado 4:  ' +helado.capa4Helado+ ' </a>                                                                        <a class="list-group-item disabled"> Capa Topping 5: ' +helado.capa5Topping+ ' </a>                                                                        <a class="list-group-item disabled"> <strong>Autor del helado: </strong> ' +helado.autor+ ' </a>                                                          <a class="list-group-item disabled"> <strong>Votos: </strong> ' +helado.votos+ ' </a>                                                               <a class="list-group-item disabled"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>                                            </div>  </div>                                                                                                        <button type="button" class="btn btn-info" id="#comprar_en_mis_helados">Comprar »</button>                                                                <button id="button_to_vote" onclick="voteHelado('+helado.heladoid+')" style="background-color:green" type="button" class="btn btn-info"> Votar »</button></br></br></br></br>                                 </br> ').appendTo($('#helados_result'));
+                    $('<div class="col-md-4 text-center">' +
+					'<img class="img-circle" src="images/nuestros_helados.jpg">     ' +
+					'<h2>' + helado.nombreHelado + '</h2>          ' +
+					'<div class="panel-body"> <div class="list-group"> <a class="list-group-item active"> Sabores </a> ' +
+					'<a class="list-group-item disabled"> Capa Topping 1: ' +helado.capa1Topping+ ' </a> ' +
+					'<a class="list-group-item disabled"> Capa Helado 2:  ' +helado.capa2Helado+ ' </a>' +
+					'<a class="list-group-item disabled"> Capa Topping 3:  ' +helado.capa3Topping+ ' </a> ' +
+					'<a class="list-group-item disabled"> Capa Helado 4:  ' +helado.capa4Helado+ ' </a>' +
+					'<a class="list-group-item disabled"> Capa Topping 5: ' +helado.capa5Topping+ ' </a>' +
+					'<a class="list-group-item disabled"> <strong>Votos: </strong> ' +helado.votos+ ' </a> ' +
+					'<a class="list-group-item disabled"> <strong>Autor del helado: </strong> ' +helado.autor+ ' </a>' +
+					'<a class="list-group-item disabled"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>' +
+					'</div>  </div>    ' +
+					'<button type="button" class="btn btn-info" id="#comprar_en_mis_helados">Comprar »</button>    ' +
+					'<button id="button_to_vote" onclick="voteHelado('+helado.heladoid+')" style="background-color:green" type="button" class="btn btn-info"> Votar »</button></br></br></br></br>' +
+					'</br> ').appendTo($('#helados_result'));
                     $('</div>').appendTo($('#helados_result'));
 				});
 	}).fail(function() {
@@ -409,7 +327,8 @@ function getHelados() {
 	});
 }
 
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+/*ooooooooooooooooooooooooooo HELADOS DE UN USUARIO ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
 $("#button_to_get_helados_por_usuario").click(function(e) {
 	e.preventDefault();
@@ -446,7 +365,21 @@ function getHelados_by_user(user) {
                     var _segundo = dc.getSeconds();    
                     
                               
-                    $('<div class="col-md-4 text-center">                                                                                                                       <img class="img-circle" src="images/ranking1.jpg">                                                                                                        <h2>' + helado.nombreHelado + '</h2>                                                                                                  <div class="panel-body"> <div class="list-group"> <a class="list-group-item active"> Sabores </a>                                                        <a class="list-group-item disabled"> Capa Topping 1: ' +helado.capa1Topping+ ' </a>                                                                <a class="list-group-item disabled"> Capa Helado 2:  ' +helado.capa2Helado+ ' </a>                                                                  <a class="list-group-item disabled"> Capa Topping 3:  ' +helado.capa3Topping+ ' </a>                                                                <a class="list-group-item disabled"> Capa Helado 4:  ' +helado.capa4Helado+ ' </a>                                                                  <a class="list-group-item disabled"> Capa Topping 5: ' +helado.capa5Topping+ ' </a>                                                                <a class="list-group-item disabled"> Identificador: ' +helado.heladoid+ ' </a>                                                                      <a class="list-group-item disabled"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>                                                                                                                                                                                                                                                                                  </div>  </div>                                                                                                                                      <button type="button" class="btn btn-info" id="#comprar_en_mis_helados">Comprar »</button>                                                                                 <button onclick="voteHelado('+helado.heladoid+')" style="background-color:green" type="button" class="btn btn-info"> Votar »</button></br></br></br></br>                      <span class="output-group-addon" id="mishelados_comprar">  </span></br> ').appendTo($('#helados_result'));                 
+                    $('<div class="col-md-4 text-center">' +
+					'<img class="img-circle" src="images/helados_autor.jpg">' +
+					'<h2>' + helado.nombreHelado + '</h2>' +
+					'<div class="panel-body"> <div class="list-group"> <a class="list-group-item active"> Sabores </a>' +
+					'<a class="list-group-item disabled"> Capa Topping 1: ' +helado.capa1Topping+ ' </a> ' +
+					'<a class="list-group-item disabled"> Capa Helado 2:  ' +helado.capa2Helado+ ' </a>' +
+					'<a class="list-group-item disabled"> Capa Topping 3:  ' +helado.capa3Topping+ ' </a> ' +
+					'<a class="list-group-item disabled"> Capa Helado 4:  ' +helado.capa4Helado+ ' </a>' +
+					'<a class="list-group-item disabled"> Capa Topping 5: ' +helado.capa5Topping+ ' </a> ' +
+					'<a class="list-group-item disabled"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>' +
+					'</div>  </div>' +
+					'<button type="button" class="btn btn-info" id="#comprar_en_mis_helados">Comprar »</button>' +
+					'<button onclick="voteHelado('+helado.heladoid+')" style="background-color:green" type="button" class="btn btn-info"> Votar »</button></br></br></br></br>' +
+					'<span class="output-group-addon" id="mishelados_comprar">' +
+					'</span></br> ').appendTo($('#helados_result'));
                     $('</div>').appendTo($('#helados_result'));
                              
 				});
@@ -458,7 +391,7 @@ function getHelados_by_user(user) {
 
 }
 
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+/*ooooooooooooooooooooooooooo HELADOS POR SABOR oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
 $("#button_to_get_helados_por_sabor").click(function(e) {
 	e.preventDefault();
@@ -493,7 +426,7 @@ function getHelados_by_flavour(flavour) {
                     var _segundo = dc.getSeconds();    
                     
                               
-                    $('<div class="col-md-4 text-center">                                                                                                                       <img class="img-circle" src="images/ranking1.jpg">                                                                                                        <h2>' + helado.nombreHelado + '</h2>                                                                                                  <div class="panel-body"> <div class="list-group"> <a class="list-group-item active"> Sabores </a>                                                        <a class="list-group-item disabled"> Capa Topping 1: ' +helado.capa1Topping+ ' </a>                                                              <a class="list-group-item disabled"> Capa Helado 2:  ' +helado.capa2Helado+ ' </a>                                                                 <a class="list-group-item disabled"> Capa Topping 3:  ' +helado.capa3Topping+ ' </a>                                                             <a class="list-group-item disabled"> Capa Helado 4:  ' +helado.capa4Helado+ ' </a>                                                                  <a class="list-group-item disabled"> Capa Topping 5: ' +helado.capa5Topping+ ' </a>                                                                 <a class="list-group-item disabled"> Identificador: ' +helado.heladoid+ ' </a>                                                                     <a class="list-group-item disabled"> <strong>Autor del helado: </strong> ' +helado.autor+ ' </a>                                                  <a class="list-group-item disabled"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>                                                                                                                                                                                                                                                                               </div>  </div>                                                                                                                           <button type="button" class="btn btn-info" id="#comprar_en_mis_helados">Comprar »</button>                                                                                                                           <button onclick="voteHelado('+helado.heladoid+')" style="background-color:green" type="button" class="btn btn-info"> Votar »</button></br></br></br></br>                      <span class="output-group-addon" id="mishelados_comprar">  </span></br> ').appendTo($('#helados_result'));                 
+                    $('<div class="col-md-4 text-center">                                                                                                                       <img class="img-circle" src="images/helados_sabor.jpg">                                                                                                        <h2>' + helado.nombreHelado + '</h2>                                                                                                  <div class="panel-body"> <div class="list-group"> <a class="list-group-item active"> Sabores </a>                                                        <a class="list-group-item disabled"> Capa Topping 1: ' +helado.capa1Topping+ ' </a>                                                              <a class="list-group-item disabled"> Capa Helado 2:  ' +helado.capa2Helado+ ' </a>                                                                 <a class="list-group-item disabled"> Capa Topping 3:  ' +helado.capa3Topping+ ' </a>                                                             <a class="list-group-item disabled"> Capa Helado 4:  ' +helado.capa4Helado+ ' </a>                                                                  <a class="list-group-item disabled"> Capa Topping 5: ' +helado.capa5Topping+ ' </a>                                                                                                                                  <a class="list-group-item disabled"> <strong>Autor del helado: </strong> ' +helado.autor+ ' </a>                                                  <a class="list-group-item disabled"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>                                                                                                                                                                                                                                                                               </div>  </div>                                                                                                                           <button type="button" class="btn btn-info" id="#comprar_en_mis_helados">Comprar »</button>                                                                                                                           <button onclick="voteHelado('+helado.heladoid+')" style="background-color:green" type="button" class="btn btn-info"> Votar »</button></br></br></br></br>                      <span class="output-group-addon" id="mishelados_comprar">  </span></br> ').appendTo($('#helados_result'));
                     $('</div>').appendTo($('#helados_result'));
 				});
 				
@@ -505,6 +438,57 @@ function getHelados_by_flavour(flavour) {
 }
 
 
+/*oooooooooooooooooooooooooooo HELADOS POR NOMBRE oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+
+$("#button_to_get_helados_por_nombre").click(function(e) {
+	e.preventDefault();
+
+	var name = $("#helado_nombre").val();
+
+	console.log($("#helado_nombre").val());
+
+	getHelados_by_name(name);
+});
+
+function getHelados_by_name(name) {
+
+	var url = API_BASE_URL + '/helados/nombre-helado/' +name;
+	$("#helados_result").text('');
+
+	$.ajax({
+		url : url,
+		type : 'GET',
+		crossDomain : true,
+		dataType : 'json'
+	}).done(function(data, status, jqxhr) {
+		var bigdata = data.helados;
+
+		$.each(bigdata, function(i, h) {
+			var helado = h;
+
+			var dc = new Date(helado.creationTimestamp);
+			var _mes=dc.getMonth()+1;
+			var _dia=dc.getDate();
+			var _anyo=dc.getFullYear();
+			var _hora = dc.getHours();
+			var _minuto = dc.getMinutes();
+			var _segundo = dc.getSeconds();
+
+
+			$('<div class="col-md-4 text-center">                                                                                                                       <img class="img-circle" src="images/helados_nombre.jpg">                                                                                                        <h2>' + helado.nombreHelado + '</h2>                                                                                                  <div class="panel-body"> <div class="list-group"> <a class="list-group-item active"> Sabores </a>                                                        <a class="list-group-item disabled"> Capa Topping 1: ' +helado.capa1Topping+ ' </a>                                                                <a class="list-group-item disabled"> Capa Helado 2:  ' +helado.capa2Helado+ ' </a>                                                                  <a class="list-group-item disabled"> Capa Topping 3:  ' +helado.capa3Topping+ ' </a>                                                                <a class="list-group-item disabled"> Capa Helado 4:  ' +helado.capa4Helado+ ' </a>                                                                  <a class="list-group-item disabled"> Capa Topping 5: ' +helado.capa5Topping+ ' </a>       <a class="list-group-item disabled"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>                                                                                                                                                                                                                                                                                  </div>  </div>                                                                                                                                      <button type="button" class="btn btn-info" id="#comprar_en_mis_helados">Comprar »</button>                                                                              <button onclick="voteHelado('+helado.heladoid+')" style="background-color:green" type="button" class="btn btn-info"> Votar »</button></br></br></br></br>                      <span class="output-group-addon" id="mishelados_comprar">  </span></br> ').appendTo($('#helados_result'));
+			$('</div>').appendTo($('#helados_result'));
+
+		});
+
+
+	}).fail(function() {
+		$('<div class="alert alert-danger"> <strong>Oh!</strong> Este autor todavía no ha creado helados o no existe </div>').appendTo($("#helados_result"));
+	});
+
+}
+
+
+
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
 $(document).ready(function(){
@@ -514,39 +498,116 @@ $(document).ready(function(){
 
 function getRanking() {
 	var url = API_BASE_URL + '/helados/ranking';
-	$("#ranking_result").text(''); 
-	
+	$("#ranking_space").text('');
+
 	$.ajax({
 		url : url,
 		type : 'GET',
 		crossDomain : true,
 		dataType : 'json'
 	}).done(function(data, status, jqxhr) {
-				var bigdata = data.helados;
-				
-				$.each(bigdata, function(i, h) {
-					var helado = h;
-                    
-                    var dc = new Date(helado.creationTimestamp);        
-                    var _mes=dc.getMonth()+1;
-                    var _dia=dc.getDate();
-                    var _anyo=dc.getFullYear();
-                    var _hora = dc.getHours();
-                    var _minuto = dc.getMinutes();
-                    var _segundo = dc.getSeconds();    
-                             
-            $('<div class="col-md-4 text-center">                                                                                                                  <img class="img-circle" src="images/ranking1.jpg">                                                                                                  <h2>' + helado.nombreHelado + '</h2>                                                                                                            <div class="panel-body"> <div class="list-group"> <a class="list-group-item active"> Sabores </a>                                                  <a class="list-group-item disabled"> Capa Topping 1: ' +helado.capa1Topping+ ' </a>                                                                <a class="list-group-item disabled"> Capa Helado 2:  ' +helado.capa2Helado+ ' </a>                                                                  <a class="list-group-item disabled"> Capa Topping 3:  ' +helado.capa3Topping+ ' </a>                                                                <a class="list-group-item disabled"> Capa Helado 4:  ' +helado.capa4Helado+ ' </a>                                                                  <a class="list-group-item disabled"> Capa Topping 5: ' +helado.capa5Topping+ ' </a>                                                                <a class="list-group-item disabled"> Identificador: ' +helado.heladoid+ ' </a>                                                                      <a class="list-group-item disabled"> <strong>Autor del helado: </strong> ' +helado.autor+ ' </a>                                            <a class="list-group-item disabled"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>              <a class="list-group-item disabled">' +helado.votos+ ' votos </a>                                                                                                                                                                                                                              </div>  </div>                                                                                                                                                 <button type="button" class="btn btn-info" id="#comprar_en_mis_helados">Comprar »</button>                                                         <button style="background-color:green" type="button" class="btn btn-info" id="button_to_delete"> Votar »</button></br></br></br></br>               <span class="output-group-addon" id="mishelados_comprar">  </span></br> ').appendTo($('#ranking_result'));                 
-            $('</div>').appendTo($('#ranking_result'));
-                  
-                       
-                    
-                    
-				});
-				
+		var bigdata = data.helados;
+
+
+		console.log(bigdata);
+
+		$.each(bigdata, function(i, h) {
+			var helado = h;
+
+			var dc = new Date(helado.creationTimestamp);
+			var _mes=dc.getMonth()+1;
+			var _dia=dc.getDate();
+			var _anyo=dc.getFullYear();
+			var _hora = dc.getHours();
+			var _minuto = dc.getMinutes();
+			var _segundo = dc.getSeconds();
+
+
+			if (i==0){
+				$('<div class="featurette">' +
+				'<img class="featurette-image img-circle pull-right" src="images/1.jpg">' +
+				'<h2 class="featurette-heading"> #1: '+helado.nombreHelado+' <span class="text-muted"> '+helado.votos+' votos </span></h2> ' +
+				'<p class="lead"> En primera posición tenemos el helado '+helado.nombreHelado+' de <strong>'+helado.autor+'  </p>' +
+				'<p class="lead"> Helado de '+helado.capa2Helado+' y '+helado.capa4Helado+'  </p>' +
+				'<p class="lead"> Complementado con los toppings de '+helado.capa1Topping+', '+helado.capa3Topping+' y '+helado.capa5Topping+'.</p>' +
+				'<p class="lead"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>' +
+				'</div>  </div>     ' +
+				'<button type="button" class="btn btn-info" id="#comprar">Comprar »</button>     ' +
+				'</div>').appendTo($('#ranking_space'));
+				$('<hr class="featurette-divider">').appendTo($('#ranking_space'));
+			}
+
+			if (i==1){
+				$('<div class="featurette">' +
+				'<img class="featurette-image img-circle pull-left" src="images/2.jpg">' +
+				'<h2 class="featurette-heading"> #2: '+helado.nombreHelado+' <span class="text-muted"> '+helado.votos+' votos </span></h2> ' +
+				'<p class="lead"> En segundo lugar tenemos el helado '+helado.nombreHelado+' de <strong>'+helado.autor+'  </p>' +
+				'<p class="lead"> Helado de '+helado.capa2Helado+' y '+helado.capa4Helado+'  </p>' +
+				'<p class="lead"> Complementado con los toppings de '+helado.capa1Topping+', '+helado.capa3Topping+' y '+helado.capa5Topping+'.</p>' +
+				'<p class="lead"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>' +
+				'</div>  </div>     ' +
+				'<button type="button" class="btn btn-info" id="#comprar">Comprar »</button>     ' +
+				'</div>').appendTo($('#ranking_space'));
+				$('<hr class="featurette-divider">').appendTo($('#ranking_space'));
+			}
+
+			if (i==2){
+				$('<div class="featurette">' +
+				'<img class="featurette-image img-circle pull-right" src="images/3.jpg">' +
+				'<h2 class="featurette-heading"> #3: '+helado.nombreHelado+' <span class="text-muted"> '+helado.votos+' votos </span></h2> ' +
+				'<p class="lead"> En tercer lugar tenemos el helado '+helado.nombreHelado+' de <strong>'+helado.autor+'  </p>' +
+				'<p class="lead"> Helado de '+helado.capa2Helado+' y '+helado.capa4Helado+'  </p>' +
+				'<p class="lead"> Complementado con los toppings de '+helado.capa1Topping+', '+helado.capa3Topping+' y '+helado.capa5Topping+'.</p>' +
+				'<p class="lead"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>' +
+				'</div>  </div>     ' +
+				'<button type="button" class="btn btn-info" id="#comprar">Comprar »</button>     ' +
+				'</div>').appendTo($('#ranking_space'));
+				$('<hr class="featurette-divider">').appendTo($('#ranking_space'));
+			}
+
+			if (i==3){
+				$('<div class="featurette">' +
+				'<img class="featurette-image img-circle pull-left" src="images/4.jpg">' +
+				'<h2 class="featurette-heading"> #4: '+helado.nombreHelado+' <span class="text-muted"> '+helado.votos+' votos </span></h2> ' +
+				'<p class="lead"> En cuarto lugar tenemos el helado '+helado.nombreHelado+' de <strong>'+helado.autor+'  </p>' +
+				'<p class="lead"> Helado de '+helado.capa2Helado+' y '+helado.capa4Helado+'  </p>' +
+				'<p class="lead"> Complementado con los toppings de '+helado.capa1Topping+', '+helado.capa3Topping+' y '+helado.capa5Topping+'.</p>' +
+				'<p class="lead"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>' +
+				'</div>  </div>     ' +
+				'<button type="button" class="btn btn-info" id="#comprar">Comprar »</button>     ' +
+				'</div>').appendTo($('#ranking_space'));
+				$('<hr class="featurette-divider">').appendTo($('#ranking_space'));
+			}
+
+			if (i==4){
+				$('<div class="featurette">' +
+				'<img class="featurette-image img-circle pull-right" src="images/5.jpg">' +
+				'<h2 class="featurette-heading"> #5: '+helado.nombreHelado+' <span class="text-muted"> '+helado.votos+' votos </span></h2> ' +
+				'<p class="lead"> En última posición tenemos el helado '+helado.nombreHelado+' de <strong>'+helado.autor+'  </p>' +
+				'<p class="lead"> Helado de '+helado.capa2Helado+' y '+helado.capa4Helado+'  </p>' +
+				'<p class="lead"> Complementado con los toppings de '+helado.capa1Topping+', '+helado.capa3Topping+' y '+helado.capa5Topping+'.</p>' +
+				'<p class="lead"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>' +
+				'</div>  </div>     ' +
+				'<button type="button" class="btn btn-info" id="#comprar">Comprar »</button>     ' +
+				'</div>').appendTo($('#ranking_space'));
+				$('<hr class="featurette-divider">').appendTo($('#ranking_space'));
+			}
+
+
+
+
+
+		});
+
+
+
+
+
 
 	}).fail(function() {
 		$("#ranking_result").text("¡El ranking todavía está vacío!");
 	});
+
 
 }
 
@@ -576,7 +637,6 @@ function voteHelado(id_helado_a_votar) {
 		 } */
 	}).done(function(data, status, jqxhr) {
 		console.log("voto añadido correctamente");       
-        alert("¡Voto añadido correctamente!");
         window.location.reload();
 	}).fail(function() {
 		console.log("no se ha podido añadir el voto");
@@ -593,65 +653,6 @@ function voteHelado(id_helado_a_votar) {
 
 }
 
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
-
-$("#button_to_get_helados_por_nombre").click(function(e) {
-	e.preventDefault();
-
-    var name = $("#helado_nombre").val();
-
-    console.log($("#helado_nombre").val());
-
-	getHelados_by_name(name);
-});
-
-function getHelados_by_name(name) {
-    
-	var url = API_BASE_URL + '/helados/nombre-helado/' +name;
-	$("#helados_result").text('');
-	
-	$.ajax({
-		url : url,
-		type : 'GET',
-		crossDomain : true,
-		dataType : 'json'
-	}).done(function(data, status, jqxhr) {
-				var bigdata = data.helados;
-				
-				$.each(bigdata, function(i, h) {
-					var helado = h;
-                    
-                    var dc = new Date(helado.creationTimestamp);        
-                    var _mes=dc.getMonth()+1;
-                    var _dia=dc.getDate();
-                    var _anyo=dc.getFullYear();
-                    var _hora = dc.getHours();
-                    var _minuto = dc.getMinutes();
-                    var _segundo = dc.getSeconds();    
-                    
-                              
-                    $('<div class="col-md-4 text-center">                                                                                                                       <img class="img-circle" src="images/ranking1.jpg">                                                                                                        <h2>' + helado.nombreHelado + '</h2>                                                                                                  <div class="panel-body"> <div class="list-group"> <a class="list-group-item active"> Sabores </a>                                                        <a class="list-group-item disabled"> Capa Topping 1: ' +helado.capa1Topping+ ' </a>                                                                <a class="list-group-item disabled"> Capa Helado 2:  ' +helado.capa2Helado+ ' </a>                                                                  <a class="list-group-item disabled"> Capa Topping 3:  ' +helado.capa3Topping+ ' </a>                                                                <a class="list-group-item disabled"> Capa Helado 4:  ' +helado.capa4Helado+ ' </a>                                                                  <a class="list-group-item disabled"> Capa Topping 5: ' +helado.capa5Topping+ ' </a>                                                                <a class="list-group-item disabled"> Identificador: ' +helado.heladoid+ ' </a>                                                                      <a class="list-group-item disabled"><strong> Creado el '  + _dia+"-"+_mes+"-"+_anyo +" a las "+_hora+":"+_minuto+":"+_segundo+ '</strong> </a>                                                                                                                                                                                                                                                                                  </div>  </div>                                                                                                                                      <button type="button" class="btn btn-info" id="#comprar_en_mis_helados">Comprar »</button>                                                                              <button onclick="voteHelado('+helado.heladoid+')" style="background-color:green" type="button" class="btn btn-info"> Votar »</button></br></br></br></br>                      <span class="output-group-addon" id="mishelados_comprar">  </span></br> ').appendTo($('#helados_result'));                 
-                    $('</div>').appendTo($('#helados_result'));
-                             
-				});
-				
-
-	}).fail(function() {
-		$('<div class="alert alert-danger"> <strong>Oh!</strong> Este autor todavía no ha creado helados o no existe </div>').appendTo($("#helados_result"));
-	});
-
-}
-
-
-
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
-
-
-
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
-
-
-/*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
 
 
 /*oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
@@ -675,7 +676,7 @@ function getCookie() {
 		$('#create_result').html('<a href="login.html"><strong> Debes iniciar sesión antes de crear helados </strong></a>');
 		$('#mis_helados_result').html('<a align="center" href="login.html"><strong> Para ver tu lista de helados debes iniciar sesión o registrarte </strong></a>');
 		/*document.getElementById('button_to_create').style.visibility='hidden';*/
-		document.getElementById('button_to_vote').style.visibility='hidden';
+		/*document.getElementById('button_to_vote').style.visibility='hidden';*/
 	}
 
 }
