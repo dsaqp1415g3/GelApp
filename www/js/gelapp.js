@@ -1016,6 +1016,8 @@ function getCookie() {
 		console.log("logeado");
 		var user_tag = $.cookie('username');
 	    $('#login_info').html('<a href="logout.html"><strong> '+user_tag+' </strong></a>');
+        $('#create_result').html('<a href="login.html"><strong>  </strong></a>');
+
     }
 	else
 	{
