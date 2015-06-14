@@ -1023,7 +1023,7 @@ function getCookie() {
 		$('#login_info').html('<a href="login.html"><strong> Iniciar sesión - Registrarse </strong></a>');
 		$('#create_result').html('<a href="login.html"><strong> Debes iniciar sesión antes de crear helados </strong></a>');
 		$('#mis_helados_result').html('<a align="center" href="login.html"><strong> Para ver tu lista de helados debes iniciar sesión o registrarte </strong></a>');
-		/*document.getElementById('button_to_create').style.visibility='hidden';*/
+		document.getElementById('button_to_create').style.visibility='hidden';
 		/*document.getElementById('button_to_vote').style.visibility='hidden';*/
 	}
 
