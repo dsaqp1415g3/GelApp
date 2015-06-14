@@ -27,7 +27,7 @@
       <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="2737">
+            <state vertical-scroll-proportion="-19.615385" vertical-offset="799" max-vertical-offset="2737">
               <caret line="77" column="102" selection-start-line="77" selection-start-column="102" selection-end-line="77" selection-end-column="102" />
               <folding />
             </state>
@@ -37,18 +37,18 @@
       <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-23.538462" vertical-offset="527" max-vertical-offset="2822">
-              <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
+            <state vertical-scroll-proportion="-2.608108" vertical-offset="2085" max-vertical-offset="2822">
+              <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2567" max-vertical-offset="4675">
-              <caret line="154" column="17" selection-start-line="154" selection-start-column="17" selection-end-line="154" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.5846645" vertical-offset="4598" max-vertical-offset="9061">
+              <caret line="292" column="0" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -67,8 +67,8 @@
       <file leaf-file-name="mis-helados.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mis-helados.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.846154" vertical-offset="923" max-vertical-offset="3366">
-              <caret line="77" column="8" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
+            <state vertical-scroll-proportion="-1.8648648" vertical-offset="2548" max-vertical-offset="3417">
+              <caret line="158" column="23" selection-start-line="158" selection-start-column="23" selection-end-line="158" selection-end-column="23" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -109,62 +109,57 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gelapp.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gelapp.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/gelapp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7601246" vertical-offset="3320" max-vertical-offset="5049">
-              <caret line="588" column="142" selection-start-line="588" selection-start-column="142" selection-end-line="588" selection-end-column="142" />
+            <state vertical-scroll-proportion="-34.104168" vertical-offset="913" max-vertical-offset="6392">
+              <caret line="559" column="0" selection-start-line="559" selection-start-column="0" selection-end-line="559" selection-end-column="0" />
               <folding>
                 <element signature="e#177#251#0" expanded="false" />
                 <element signature="n#!!block;n#deleteHelado#0" expanded="false" />
-                <element signature="e#1379#1481#0" expanded="false" />
-                <element signature="e#1529#1639#0" expanded="false" />
-                <element signature="e#1688#1800#0" expanded="false" />
-                <element signature="e#1845#1952#0" expanded="false" />
-                <element signature="e#1995#2095#0" expanded="false" />
-                <element signature="e#2134#2218#0" expanded="false" />
-                <element signature="e#2256#2338#0" expanded="false" />
-                <element signature="e#2380#2470#0" expanded="false" />
-                <element signature="e#2513#2605#0" expanded="false" />
-                <element signature="e#2645#2731#0" expanded="false" />
-                <element signature="e#2772#2868#0" expanded="false" />
-                <element signature="e#2916#3026#0" expanded="false" />
-                <element signature="e#3075#3187#0" expanded="false" />
-                <element signature="e#3232#3336#0" expanded="false" />
-                <element signature="e#3379#3479#0" expanded="false" />
-                <element signature="e#3518#3602#0" expanded="false" />
-                <element signature="e#3640#3722#0" expanded="false" />
-                <element signature="e#3764#3854#0" expanded="false" />
-                <element signature="e#3897#3989#0" expanded="false" />
-                <element signature="e#4029#4115#0" expanded="false" />
-                <element signature="e#4156#4258#0" expanded="false" />
-                <element signature="e#4306#4416#0" expanded="false" />
-                <element signature="e#4465#4577#0" expanded="false" />
-                <element signature="e#4622#4729#0" expanded="false" />
-                <element signature="e#4772#4872#0" expanded="false" />
-                <element signature="e#4981#5430#0" expanded="false" />
-                <element signature="n#!!block;n#createIce#0" expanded="false" />
-                <element signature="e#6407#6428#0" expanded="false" />
+                <element signature="e#1379#1932#0" expanded="false" />
+                <element signature="e#1980#2509#0" expanded="false" />
+                <element signature="e#2558#3089#0" expanded="false" />
+                <element signature="e#3134#3660#0" expanded="false" />
+                <element signature="e#4273#4790#0" expanded="false" />
+                <element signature="e#4828#5343#0" expanded="false" />
+                <element signature="e#5385#5908#0" expanded="false" />
+                <element signature="e#5951#6476#0" expanded="false" />
+                <element signature="e#6516#7035#0" expanded="false" />
+                <element signature="e#7076#7623#0" expanded="false" />
+                <element signature="e#7671#8232#0" expanded="false" />
+                <element signature="e#8281#8844#0" expanded="false" />
+                <element signature="e#8889#9444#0" expanded="false" />
+                <element signature="e#10205#10755#0" expanded="false" />
+                <element signature="e#10793#11341#0" expanded="false" />
+                <element signature="e#11383#11939#0" expanded="false" />
+                <element signature="e#11982#12540#0" expanded="false" />
+                <element signature="e#12580#13132#0" expanded="false" />
+                <element signature="e#13173#13759#0" expanded="false" />
+                <element signature="e#13807#14401#0" expanded="false" />
+                <element signature="e#14450#15046#0" expanded="false" />
+                <element signature="e#15091#15682#0" expanded="false" />
+                <element signature="e#18300#18321#0" expanded="false" />
                 <element signature="n#!!block;n#getMisHelados#0" expanded="false" />
-                <element signature="e#9228#9246#0" expanded="false" />
+                <element signature="e#21121#21139#0" expanded="false" />
                 <element signature="n#!!block;n#getHelados#0" expanded="false" />
-                <element signature="e#11755#11891#0" expanded="false" />
-                <element signature="e#14451#14554#0" expanded="false" />
+                <element signature="e#23648#23784#0" expanded="false" />
+                <element signature="n#!!block;n#getHelados_by_user#0" expanded="false" />
+                <element signature="e#26344#26447#0" expanded="false" />
                 <element signature="n#!!block;n#getHelados_by_flavour#0" expanded="false" />
-                <element signature="e#18401#18535#0" expanded="false" />
+                <element signature="e#30294#30428#0" expanded="false" />
                 <element signature="n#!!block;n#getHelados_by_name#0" expanded="false" />
-                <element signature="e#21787#21805#0" expanded="false" />
+                <element signature="e#33680#33698#0" expanded="false" />
                 <element signature="n#!!block;n#voteHelado#0" expanded="false" />
-                <element signature="e#28633#28650#0" expanded="false" />
-                <element signature="n#!!block;n#getCookie#0" expanded="false" />
-                <element signature="e#29583#30204#0" expanded="false" />
+                <element signature="e#40526#40543#0" expanded="false" />
+                <element signature="e#41476#42097#0" expanded="false" />
                 <element signature="n#!!block;n#register#0" expanded="false" />
-                <element signature="e#30863#31479#0" expanded="false" />
+                <element signature="e#42756#43372#0" expanded="false" />
                 <element signature="n#!!block;n#log#0" expanded="false" />
-                <element signature="e#32725#33107#0" expanded="false" />
-                <element signature="e#33264#33328#0" expanded="false" />
+                <element signature="e#44618#45000#0" expanded="false" />
+                <element signature="e#45157#45221#0" expanded="false" />
                 <element signature="n#!!block;n#comprarHelado#0" expanded="false" />
-                <marker date="1434299496641" expanded="true" signature="7744:7766" placeholder="..." />
+                <marker date="1434322631851" expanded="true" signature="19637:19659" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -179,10 +174,11 @@
         <option value="$PROJECT_DIR$/logout.html" />
         <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/nuestros-helados.html" />
+        <option value="$PROJECT_DIR$/ranking.html" />
         <option value="$PROJECT_DIR$/about.html" />
         <option value="$PROJECT_DIR$/mis-helados.html" />
-        <option value="$PROJECT_DIR$/ranking.html" />
         <option value="$PROJECT_DIR$/js/gelapp.js" />
+        <option value="$PROJECT_DIR$/css/styles.css" />
       </list>
     </option>
   </component>
@@ -190,10 +186,9 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="54" />
-    <option name="y" value="-8" />
-    <option name="width" value="1554" />
-    <option name="height" value="916" />
+    <option name="x" value="560" />
+    <option name="width" value="1040" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -271,7 +266,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/styleHelado.html" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -346,16 +341,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1554" height="916" extended-state="6" />
-    <editor active="true" />
+    <frame x="560" y="0" width="1040" height="900" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.027686223" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13358779" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.041874375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13636364" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -387,19 +382,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="14" />
+      <option name="time" value="16" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="2737">
-          <caret line="34" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mis-helados.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2502" max-vertical-offset="4301">
@@ -446,54 +433,49 @@
           <folding>
             <element signature="e#177#251#0" expanded="false" />
             <element signature="n#!!block;n#deleteHelado#0" expanded="false" />
-            <element signature="e#1379#1481#0" expanded="false" />
-            <element signature="e#1529#1639#0" expanded="false" />
-            <element signature="e#1688#1800#0" expanded="false" />
-            <element signature="e#1845#1952#0" expanded="false" />
-            <element signature="e#1995#2095#0" expanded="false" />
-            <element signature="e#2134#2218#0" expanded="false" />
-            <element signature="e#2256#2338#0" expanded="false" />
-            <element signature="e#2380#2470#0" expanded="false" />
-            <element signature="e#2513#2605#0" expanded="false" />
-            <element signature="e#2645#2731#0" expanded="false" />
-            <element signature="e#2772#2868#0" expanded="false" />
-            <element signature="e#2916#3026#0" expanded="false" />
-            <element signature="e#3075#3187#0" expanded="false" />
-            <element signature="e#3232#3336#0" expanded="false" />
-            <element signature="e#3379#3479#0" expanded="false" />
-            <element signature="e#3518#3602#0" expanded="false" />
-            <element signature="e#3640#3722#0" expanded="false" />
-            <element signature="e#3764#3854#0" expanded="false" />
-            <element signature="e#3897#3989#0" expanded="false" />
-            <element signature="e#4029#4115#0" expanded="false" />
-            <element signature="e#4156#4258#0" expanded="false" />
-            <element signature="e#4306#4416#0" expanded="false" />
-            <element signature="e#4465#4577#0" expanded="false" />
-            <element signature="e#4622#4729#0" expanded="false" />
-            <element signature="e#4772#4872#0" expanded="false" />
-            <element signature="e#4981#5430#0" expanded="false" />
-            <element signature="n#!!block;n#createIce#0" expanded="false" />
-            <element signature="e#6407#6428#0" expanded="false" />
+            <element signature="e#1379#1932#0" expanded="false" />
+            <element signature="e#1980#2509#0" expanded="false" />
+            <element signature="e#2558#3089#0" expanded="false" />
+            <element signature="e#3134#3660#0" expanded="false" />
+            <element signature="e#4273#4790#0" expanded="false" />
+            <element signature="e#4828#5343#0" expanded="false" />
+            <element signature="e#5385#5908#0" expanded="false" />
+            <element signature="e#5951#6476#0" expanded="false" />
+            <element signature="e#6516#7035#0" expanded="false" />
+            <element signature="e#7076#7623#0" expanded="false" />
+            <element signature="e#7671#8232#0" expanded="false" />
+            <element signature="e#8281#8844#0" expanded="false" />
+            <element signature="e#8889#9444#0" expanded="false" />
+            <element signature="e#10205#10755#0" expanded="false" />
+            <element signature="e#10793#11341#0" expanded="false" />
+            <element signature="e#11383#11939#0" expanded="false" />
+            <element signature="e#11982#12540#0" expanded="false" />
+            <element signature="e#12580#13132#0" expanded="false" />
+            <element signature="e#13173#13759#0" expanded="false" />
+            <element signature="e#13807#14401#0" expanded="false" />
+            <element signature="e#14450#15046#0" expanded="false" />
+            <element signature="e#15091#15682#0" expanded="false" />
+            <element signature="e#18300#18321#0" expanded="false" />
             <element signature="n#!!block;n#getMisHelados#0" expanded="false" />
-            <element signature="e#9228#9246#0" expanded="false" />
+            <element signature="e#21121#21139#0" expanded="false" />
             <element signature="n#!!block;n#getHelados#0" expanded="false" />
-            <element signature="e#11755#11891#0" expanded="false" />
-            <element signature="e#14451#14554#0" expanded="false" />
+            <element signature="e#23648#23784#0" expanded="false" />
+            <element signature="n#!!block;n#getHelados_by_user#0" expanded="false" />
+            <element signature="e#26344#26447#0" expanded="false" />
             <element signature="n#!!block;n#getHelados_by_flavour#0" expanded="false" />
-            <element signature="e#18401#18535#0" expanded="false" />
+            <element signature="e#30294#30428#0" expanded="false" />
             <element signature="n#!!block;n#getHelados_by_name#0" expanded="false" />
-            <element signature="e#21787#21805#0" expanded="false" />
+            <element signature="e#33680#33698#0" expanded="false" />
             <element signature="n#!!block;n#voteHelado#0" expanded="false" />
-            <element signature="e#28633#28650#0" expanded="false" />
-            <element signature="n#!!block;n#getCookie#0" expanded="false" />
-            <element signature="e#29583#30204#0" expanded="false" />
+            <element signature="e#40526#40543#0" expanded="false" />
+            <element signature="e#41476#42097#0" expanded="false" />
             <element signature="n#!!block;n#register#0" expanded="false" />
-            <element signature="e#30863#31479#0" expanded="false" />
+            <element signature="e#42756#43372#0" expanded="false" />
             <element signature="n#!!block;n#log#0" expanded="false" />
-            <element signature="e#32725#33107#0" expanded="false" />
-            <element signature="e#33264#33328#0" expanded="false" />
+            <element signature="e#44618#45000#0" expanded="false" />
+            <element signature="e#45157#45221#0" expanded="false" />
             <element signature="n#!!block;n#comprarHelado#0" expanded="false" />
-            <marker date="1434299496641" expanded="true" signature="7744:7766" placeholder="..." />
+            <marker date="1434322631851" expanded="true" signature="19637:19659" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -584,54 +566,49 @@
           <folding>
             <element signature="e#177#251#0" expanded="false" />
             <element signature="n#!!block;n#deleteHelado#0" expanded="false" />
-            <element signature="e#1379#1481#0" expanded="false" />
-            <element signature="e#1529#1639#0" expanded="false" />
-            <element signature="e#1688#1800#0" expanded="false" />
-            <element signature="e#1845#1952#0" expanded="false" />
-            <element signature="e#1995#2095#0" expanded="false" />
-            <element signature="e#2134#2218#0" expanded="false" />
-            <element signature="e#2256#2338#0" expanded="false" />
-            <element signature="e#2380#2470#0" expanded="false" />
-            <element signature="e#2513#2605#0" expanded="false" />
-            <element signature="e#2645#2731#0" expanded="false" />
-            <element signature="e#2772#2868#0" expanded="false" />
-            <element signature="e#2916#3026#0" expanded="false" />
-            <element signature="e#3075#3187#0" expanded="false" />
-            <element signature="e#3232#3336#0" expanded="false" />
-            <element signature="e#3379#3479#0" expanded="false" />
-            <element signature="e#3518#3602#0" expanded="false" />
-            <element signature="e#3640#3722#0" expanded="false" />
-            <element signature="e#3764#3854#0" expanded="false" />
-            <element signature="e#3897#3989#0" expanded="false" />
-            <element signature="e#4029#4115#0" expanded="false" />
-            <element signature="e#4156#4258#0" expanded="false" />
-            <element signature="e#4306#4416#0" expanded="false" />
-            <element signature="e#4465#4577#0" expanded="false" />
-            <element signature="e#4622#4729#0" expanded="false" />
-            <element signature="e#4772#4872#0" expanded="false" />
-            <element signature="e#4981#5430#0" expanded="false" />
-            <element signature="n#!!block;n#createIce#0" expanded="false" />
-            <element signature="e#6407#6428#0" expanded="false" />
+            <element signature="e#1379#1932#0" expanded="false" />
+            <element signature="e#1980#2509#0" expanded="false" />
+            <element signature="e#2558#3089#0" expanded="false" />
+            <element signature="e#3134#3660#0" expanded="false" />
+            <element signature="e#4273#4790#0" expanded="false" />
+            <element signature="e#4828#5343#0" expanded="false" />
+            <element signature="e#5385#5908#0" expanded="false" />
+            <element signature="e#5951#6476#0" expanded="false" />
+            <element signature="e#6516#7035#0" expanded="false" />
+            <element signature="e#7076#7623#0" expanded="false" />
+            <element signature="e#7671#8232#0" expanded="false" />
+            <element signature="e#8281#8844#0" expanded="false" />
+            <element signature="e#8889#9444#0" expanded="false" />
+            <element signature="e#10205#10755#0" expanded="false" />
+            <element signature="e#10793#11341#0" expanded="false" />
+            <element signature="e#11383#11939#0" expanded="false" />
+            <element signature="e#11982#12540#0" expanded="false" />
+            <element signature="e#12580#13132#0" expanded="false" />
+            <element signature="e#13173#13759#0" expanded="false" />
+            <element signature="e#13807#14401#0" expanded="false" />
+            <element signature="e#14450#15046#0" expanded="false" />
+            <element signature="e#15091#15682#0" expanded="false" />
+            <element signature="e#18300#18321#0" expanded="false" />
             <element signature="n#!!block;n#getMisHelados#0" expanded="false" />
-            <element signature="e#9228#9246#0" expanded="false" />
+            <element signature="e#21121#21139#0" expanded="false" />
             <element signature="n#!!block;n#getHelados#0" expanded="false" />
-            <element signature="e#11755#11891#0" expanded="false" />
-            <element signature="e#14451#14554#0" expanded="false" />
+            <element signature="e#23648#23784#0" expanded="false" />
+            <element signature="n#!!block;n#getHelados_by_user#0" expanded="false" />
+            <element signature="e#26344#26447#0" expanded="false" />
             <element signature="n#!!block;n#getHelados_by_flavour#0" expanded="false" />
-            <element signature="e#18401#18535#0" expanded="false" />
+            <element signature="e#30294#30428#0" expanded="false" />
             <element signature="n#!!block;n#getHelados_by_name#0" expanded="false" />
-            <element signature="e#21787#21805#0" expanded="false" />
+            <element signature="e#33680#33698#0" expanded="false" />
             <element signature="n#!!block;n#voteHelado#0" expanded="false" />
-            <element signature="e#28633#28650#0" expanded="false" />
-            <element signature="n#!!block;n#getCookie#0" expanded="false" />
-            <element signature="e#29583#30204#0" expanded="false" />
+            <element signature="e#40526#40543#0" expanded="false" />
+            <element signature="e#41476#42097#0" expanded="false" />
             <element signature="n#!!block;n#register#0" expanded="false" />
-            <element signature="e#30863#31479#0" expanded="false" />
+            <element signature="e#42756#43372#0" expanded="false" />
             <element signature="n#!!block;n#log#0" expanded="false" />
-            <element signature="e#32725#33107#0" expanded="false" />
-            <element signature="e#33264#33328#0" expanded="false" />
+            <element signature="e#44618#45000#0" expanded="false" />
+            <element signature="e#45157#45221#0" expanded="false" />
             <element signature="n#!!block;n#comprarHelado#0" expanded="false" />
-            <marker date="1434299496641" expanded="true" signature="7744:7766" placeholder="..." />
+            <marker date="1434322631851" expanded="true" signature="19637:19659" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -722,54 +699,49 @@
           <folding>
             <element signature="e#177#251#0" expanded="false" />
             <element signature="n#!!block;n#deleteHelado#0" expanded="false" />
-            <element signature="e#1379#1481#0" expanded="false" />
-            <element signature="e#1529#1639#0" expanded="false" />
-            <element signature="e#1688#1800#0" expanded="false" />
-            <element signature="e#1845#1952#0" expanded="false" />
-            <element signature="e#1995#2095#0" expanded="false" />
-            <element signature="e#2134#2218#0" expanded="false" />
-            <element signature="e#2256#2338#0" expanded="false" />
-            <element signature="e#2380#2470#0" expanded="false" />
-            <element signature="e#2513#2605#0" expanded="false" />
-            <element signature="e#2645#2731#0" expanded="false" />
-            <element signature="e#2772#2868#0" expanded="false" />
-            <element signature="e#2916#3026#0" expanded="false" />
-            <element signature="e#3075#3187#0" expanded="false" />
-            <element signature="e#3232#3336#0" expanded="false" />
-            <element signature="e#3379#3479#0" expanded="false" />
-            <element signature="e#3518#3602#0" expanded="false" />
-            <element signature="e#3640#3722#0" expanded="false" />
-            <element signature="e#3764#3854#0" expanded="false" />
-            <element signature="e#3897#3989#0" expanded="false" />
-            <element signature="e#4029#4115#0" expanded="false" />
-            <element signature="e#4156#4258#0" expanded="false" />
-            <element signature="e#4306#4416#0" expanded="false" />
-            <element signature="e#4465#4577#0" expanded="false" />
-            <element signature="e#4622#4729#0" expanded="false" />
-            <element signature="e#4772#4872#0" expanded="false" />
-            <element signature="e#4981#5430#0" expanded="false" />
-            <element signature="n#!!block;n#createIce#0" expanded="false" />
-            <element signature="e#6407#6428#0" expanded="false" />
+            <element signature="e#1379#1932#0" expanded="false" />
+            <element signature="e#1980#2509#0" expanded="false" />
+            <element signature="e#2558#3089#0" expanded="false" />
+            <element signature="e#3134#3660#0" expanded="false" />
+            <element signature="e#4273#4790#0" expanded="false" />
+            <element signature="e#4828#5343#0" expanded="false" />
+            <element signature="e#5385#5908#0" expanded="false" />
+            <element signature="e#5951#6476#0" expanded="false" />
+            <element signature="e#6516#7035#0" expanded="false" />
+            <element signature="e#7076#7623#0" expanded="false" />
+            <element signature="e#7671#8232#0" expanded="false" />
+            <element signature="e#8281#8844#0" expanded="false" />
+            <element signature="e#8889#9444#0" expanded="false" />
+            <element signature="e#10205#10755#0" expanded="false" />
+            <element signature="e#10793#11341#0" expanded="false" />
+            <element signature="e#11383#11939#0" expanded="false" />
+            <element signature="e#11982#12540#0" expanded="false" />
+            <element signature="e#12580#13132#0" expanded="false" />
+            <element signature="e#13173#13759#0" expanded="false" />
+            <element signature="e#13807#14401#0" expanded="false" />
+            <element signature="e#14450#15046#0" expanded="false" />
+            <element signature="e#15091#15682#0" expanded="false" />
+            <element signature="e#18300#18321#0" expanded="false" />
             <element signature="n#!!block;n#getMisHelados#0" expanded="false" />
-            <element signature="e#9228#9246#0" expanded="false" />
+            <element signature="e#21121#21139#0" expanded="false" />
             <element signature="n#!!block;n#getHelados#0" expanded="false" />
-            <element signature="e#11755#11891#0" expanded="false" />
-            <element signature="e#14451#14554#0" expanded="false" />
+            <element signature="e#23648#23784#0" expanded="false" />
+            <element signature="n#!!block;n#getHelados_by_user#0" expanded="false" />
+            <element signature="e#26344#26447#0" expanded="false" />
             <element signature="n#!!block;n#getHelados_by_flavour#0" expanded="false" />
-            <element signature="e#18401#18535#0" expanded="false" />
+            <element signature="e#30294#30428#0" expanded="false" />
             <element signature="n#!!block;n#getHelados_by_name#0" expanded="false" />
-            <element signature="e#21787#21805#0" expanded="false" />
+            <element signature="e#33680#33698#0" expanded="false" />
             <element signature="n#!!block;n#voteHelado#0" expanded="false" />
-            <element signature="e#28633#28650#0" expanded="false" />
-            <element signature="n#!!block;n#getCookie#0" expanded="false" />
-            <element signature="e#29583#30204#0" expanded="false" />
+            <element signature="e#40526#40543#0" expanded="false" />
+            <element signature="e#41476#42097#0" expanded="false" />
             <element signature="n#!!block;n#register#0" expanded="false" />
-            <element signature="e#30863#31479#0" expanded="false" />
+            <element signature="e#42756#43372#0" expanded="false" />
             <element signature="n#!!block;n#log#0" expanded="false" />
-            <element signature="e#32725#33107#0" expanded="false" />
-            <element signature="e#33264#33328#0" expanded="false" />
+            <element signature="e#44618#45000#0" expanded="false" />
+            <element signature="e#45157#45221#0" expanded="false" />
             <element signature="n#!!block;n#comprarHelado#0" expanded="false" />
-            <marker date="1434299496641" expanded="true" signature="7744:7766" placeholder="..." />
+            <marker date="1434322631851" expanded="true" signature="19637:19659" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -860,54 +832,49 @@
           <folding>
             <element signature="e#177#251#0" expanded="false" />
             <element signature="n#!!block;n#deleteHelado#0" expanded="false" />
-            <element signature="e#1379#1481#0" expanded="false" />
-            <element signature="e#1529#1639#0" expanded="false" />
-            <element signature="e#1688#1800#0" expanded="false" />
-            <element signature="e#1845#1952#0" expanded="false" />
-            <element signature="e#1995#2095#0" expanded="false" />
-            <element signature="e#2134#2218#0" expanded="false" />
-            <element signature="e#2256#2338#0" expanded="false" />
-            <element signature="e#2380#2470#0" expanded="false" />
-            <element signature="e#2513#2605#0" expanded="false" />
-            <element signature="e#2645#2731#0" expanded="false" />
-            <element signature="e#2772#2868#0" expanded="false" />
-            <element signature="e#2916#3026#0" expanded="false" />
-            <element signature="e#3075#3187#0" expanded="false" />
-            <element signature="e#3232#3336#0" expanded="false" />
-            <element signature="e#3379#3479#0" expanded="false" />
-            <element signature="e#3518#3602#0" expanded="false" />
-            <element signature="e#3640#3722#0" expanded="false" />
-            <element signature="e#3764#3854#0" expanded="false" />
-            <element signature="e#3897#3989#0" expanded="false" />
-            <element signature="e#4029#4115#0" expanded="false" />
-            <element signature="e#4156#4258#0" expanded="false" />
-            <element signature="e#4306#4416#0" expanded="false" />
-            <element signature="e#4465#4577#0" expanded="false" />
-            <element signature="e#4622#4729#0" expanded="false" />
-            <element signature="e#4772#4872#0" expanded="false" />
-            <element signature="e#4981#5430#0" expanded="false" />
-            <element signature="n#!!block;n#createIce#0" expanded="false" />
-            <element signature="e#6407#6428#0" expanded="false" />
+            <element signature="e#1379#1932#0" expanded="false" />
+            <element signature="e#1980#2509#0" expanded="false" />
+            <element signature="e#2558#3089#0" expanded="false" />
+            <element signature="e#3134#3660#0" expanded="false" />
+            <element signature="e#4273#4790#0" expanded="false" />
+            <element signature="e#4828#5343#0" expanded="false" />
+            <element signature="e#5385#5908#0" expanded="false" />
+            <element signature="e#5951#6476#0" expanded="false" />
+            <element signature="e#6516#7035#0" expanded="false" />
+            <element signature="e#7076#7623#0" expanded="false" />
+            <element signature="e#7671#8232#0" expanded="false" />
+            <element signature="e#8281#8844#0" expanded="false" />
+            <element signature="e#8889#9444#0" expanded="false" />
+            <element signature="e#10205#10755#0" expanded="false" />
+            <element signature="e#10793#11341#0" expanded="false" />
+            <element signature="e#11383#11939#0" expanded="false" />
+            <element signature="e#11982#12540#0" expanded="false" />
+            <element signature="e#12580#13132#0" expanded="false" />
+            <element signature="e#13173#13759#0" expanded="false" />
+            <element signature="e#13807#14401#0" expanded="false" />
+            <element signature="e#14450#15046#0" expanded="false" />
+            <element signature="e#15091#15682#0" expanded="false" />
+            <element signature="e#18300#18321#0" expanded="false" />
             <element signature="n#!!block;n#getMisHelados#0" expanded="false" />
-            <element signature="e#9228#9246#0" expanded="false" />
+            <element signature="e#21121#21139#0" expanded="false" />
             <element signature="n#!!block;n#getHelados#0" expanded="false" />
-            <element signature="e#11755#11891#0" expanded="false" />
-            <element signature="e#14451#14554#0" expanded="false" />
+            <element signature="e#23648#23784#0" expanded="false" />
+            <element signature="n#!!block;n#getHelados_by_user#0" expanded="false" />
+            <element signature="e#26344#26447#0" expanded="false" />
             <element signature="n#!!block;n#getHelados_by_flavour#0" expanded="false" />
-            <element signature="e#18401#18535#0" expanded="false" />
+            <element signature="e#30294#30428#0" expanded="false" />
             <element signature="n#!!block;n#getHelados_by_name#0" expanded="false" />
-            <element signature="e#21787#21805#0" expanded="false" />
+            <element signature="e#33680#33698#0" expanded="false" />
             <element signature="n#!!block;n#voteHelado#0" expanded="false" />
-            <element signature="e#28633#28650#0" expanded="false" />
-            <element signature="n#!!block;n#getCookie#0" expanded="false" />
-            <element signature="e#29583#30204#0" expanded="false" />
+            <element signature="e#40526#40543#0" expanded="false" />
+            <element signature="e#41476#42097#0" expanded="false" />
             <element signature="n#!!block;n#register#0" expanded="false" />
-            <element signature="e#30863#31479#0" expanded="false" />
+            <element signature="e#42756#43372#0" expanded="false" />
             <element signature="n#!!block;n#log#0" expanded="false" />
-            <element signature="e#32725#33107#0" expanded="false" />
-            <element signature="e#33264#33328#0" expanded="false" />
+            <element signature="e#44618#45000#0" expanded="false" />
+            <element signature="e#45157#45221#0" expanded="false" />
             <element signature="n#!!block;n#comprarHelado#0" expanded="false" />
-            <marker date="1434299496641" expanded="true" signature="7744:7766" placeholder="..." />
+            <marker date="1434322631851" expanded="true" signature="19637:19659" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -998,54 +965,49 @@
           <folding>
             <element signature="e#177#251#0" expanded="false" />
             <element signature="n#!!block;n#deleteHelado#0" expanded="false" />
-            <element signature="e#1379#1481#0" expanded="false" />
-            <element signature="e#1529#1639#0" expanded="false" />
-            <element signature="e#1688#1800#0" expanded="false" />
-            <element signature="e#1845#1952#0" expanded="false" />
-            <element signature="e#1995#2095#0" expanded="false" />
-            <element signature="e#2134#2218#0" expanded="false" />
-            <element signature="e#2256#2338#0" expanded="false" />
-            <element signature="e#2380#2470#0" expanded="false" />
-            <element signature="e#2513#2605#0" expanded="false" />
-            <element signature="e#2645#2731#0" expanded="false" />
-            <element signature="e#2772#2868#0" expanded="false" />
-            <element signature="e#2916#3026#0" expanded="false" />
-            <element signature="e#3075#3187#0" expanded="false" />
-            <element signature="e#3232#3336#0" expanded="false" />
-            <element signature="e#3379#3479#0" expanded="false" />
-            <element signature="e#3518#3602#0" expanded="false" />
-            <element signature="e#3640#3722#0" expanded="false" />
-            <element signature="e#3764#3854#0" expanded="false" />
-            <element signature="e#3897#3989#0" expanded="false" />
-            <element signature="e#4029#4115#0" expanded="false" />
-            <element signature="e#4156#4258#0" expanded="false" />
-            <element signature="e#4306#4416#0" expanded="false" />
-            <element signature="e#4465#4577#0" expanded="false" />
-            <element signature="e#4622#4729#0" expanded="false" />
-            <element signature="e#4772#4872#0" expanded="false" />
-            <element signature="e#4981#5430#0" expanded="false" />
-            <element signature="n#!!block;n#createIce#0" expanded="false" />
-            <element signature="e#6407#6428#0" expanded="false" />
+            <element signature="e#1379#1932#0" expanded="false" />
+            <element signature="e#1980#2509#0" expanded="false" />
+            <element signature="e#2558#3089#0" expanded="false" />
+            <element signature="e#3134#3660#0" expanded="false" />
+            <element signature="e#4273#4790#0" expanded="false" />
+            <element signature="e#4828#5343#0" expanded="false" />
+            <element signature="e#5385#5908#0" expanded="false" />
+            <element signature="e#5951#6476#0" expanded="false" />
+            <element signature="e#6516#7035#0" expanded="false" />
+            <element signature="e#7076#7623#0" expanded="false" />
+            <element signature="e#7671#8232#0" expanded="false" />
+            <element signature="e#8281#8844#0" expanded="false" />
+            <element signature="e#8889#9444#0" expanded="false" />
+            <element signature="e#10205#10755#0" expanded="false" />
+            <element signature="e#10793#11341#0" expanded="false" />
+            <element signature="e#11383#11939#0" expanded="false" />
+            <element signature="e#11982#12540#0" expanded="false" />
+            <element signature="e#12580#13132#0" expanded="false" />
+            <element signature="e#13173#13759#0" expanded="false" />
+            <element signature="e#13807#14401#0" expanded="false" />
+            <element signature="e#14450#15046#0" expanded="false" />
+            <element signature="e#15091#15682#0" expanded="false" />
+            <element signature="e#18300#18321#0" expanded="false" />
             <element signature="n#!!block;n#getMisHelados#0" expanded="false" />
-            <element signature="e#9228#9246#0" expanded="false" />
+            <element signature="e#21121#21139#0" expanded="false" />
             <element signature="n#!!block;n#getHelados#0" expanded="false" />
-            <element signature="e#11755#11891#0" expanded="false" />
-            <element signature="e#14451#14554#0" expanded="false" />
+            <element signature="e#23648#23784#0" expanded="false" />
+            <element signature="n#!!block;n#getHelados_by_user#0" expanded="false" />
+            <element signature="e#26344#26447#0" expanded="false" />
             <element signature="n#!!block;n#getHelados_by_flavour#0" expanded="false" />
-            <element signature="e#18401#18535#0" expanded="false" />
+            <element signature="e#30294#30428#0" expanded="false" />
             <element signature="n#!!block;n#getHelados_by_name#0" expanded="false" />
-            <element signature="e#21787#21805#0" expanded="false" />
+            <element signature="e#33680#33698#0" expanded="false" />
             <element signature="n#!!block;n#voteHelado#0" expanded="false" />
-            <element signature="e#28633#28650#0" expanded="false" />
-            <element signature="n#!!block;n#getCookie#0" expanded="false" />
-            <element signature="e#29583#30204#0" expanded="false" />
+            <element signature="e#40526#40543#0" expanded="false" />
+            <element signature="e#41476#42097#0" expanded="false" />
             <element signature="n#!!block;n#register#0" expanded="false" />
-            <element signature="e#30863#31479#0" expanded="false" />
+            <element signature="e#42756#43372#0" expanded="false" />
             <element signature="n#!!block;n#log#0" expanded="false" />
-            <element signature="e#32725#33107#0" expanded="false" />
-            <element signature="e#33264#33328#0" expanded="false" />
+            <element signature="e#44618#45000#0" expanded="false" />
+            <element signature="e#45157#45221#0" expanded="false" />
             <element signature="n#!!block;n#comprarHelado#0" expanded="false" />
-            <marker date="1434299496641" expanded="true" signature="7744:7766" placeholder="..." />
+            <marker date="1434322631851" expanded="true" signature="19637:19659" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1057,26 +1019,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2567" max-vertical-offset="4675">
-          <caret line="154" column="17" selection-start-line="154" selection-start-column="17" selection-end-line="154" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="2737">
+        <state vertical-scroll-proportion="-19.615385" vertical-offset="799" max-vertical-offset="2737">
           <caret line="77" column="102" selection-start-line="77" selection-start-column="102" selection-end-line="77" selection-end-column="102" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.538462" vertical-offset="527" max-vertical-offset="2822">
-          <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1097,20 +1043,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mis-helados.html">
+    <entry file="file://$PROJECT_DIR$/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.846154" vertical-offset="923" max-vertical-offset="3366">
-          <caret line="77" column="8" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
+        <state vertical-scroll-proportion="-2.608108" vertical-offset="2085" max-vertical-offset="2822">
+          <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/styleHelado.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3243243" vertical-offset="0" max-vertical-offset="629">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ranking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.9324324" vertical-offset="401" max-vertical-offset="1479">
+          <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
           <folding>
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1126,72 +1080,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ranking.html">
+    <entry file="file://$PROJECT_DIR$/mis-helados.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9324324" vertical-offset="401" max-vertical-offset="1479">
-          <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
+        <state vertical-scroll-proportion="-1.8648648" vertical-offset="2548" max-vertical-offset="3417">
+          <caret line="158" column="23" selection-start-line="158" selection-start-column="23" selection-end-line="158" selection-end-column="23" />
           <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/gelapp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7601246" vertical-offset="3320" max-vertical-offset="5049">
-          <caret line="588" column="142" selection-start-line="588" selection-start-column="142" selection-end-line="588" selection-end-column="142" />
+        <state vertical-scroll-proportion="-34.104168" vertical-offset="913" max-vertical-offset="6392">
+          <caret line="559" column="0" selection-start-line="559" selection-start-column="0" selection-end-line="559" selection-end-column="0" />
           <folding>
             <element signature="e#177#251#0" expanded="false" />
             <element signature="n#!!block;n#deleteHelado#0" expanded="false" />
-            <element signature="e#1379#1481#0" expanded="false" />
-            <element signature="e#1529#1639#0" expanded="false" />
-            <element signature="e#1688#1800#0" expanded="false" />
-            <element signature="e#1845#1952#0" expanded="false" />
-            <element signature="e#1995#2095#0" expanded="false" />
-            <element signature="e#2134#2218#0" expanded="false" />
-            <element signature="e#2256#2338#0" expanded="false" />
-            <element signature="e#2380#2470#0" expanded="false" />
-            <element signature="e#2513#2605#0" expanded="false" />
-            <element signature="e#2645#2731#0" expanded="false" />
-            <element signature="e#2772#2868#0" expanded="false" />
-            <element signature="e#2916#3026#0" expanded="false" />
-            <element signature="e#3075#3187#0" expanded="false" />
-            <element signature="e#3232#3336#0" expanded="false" />
-            <element signature="e#3379#3479#0" expanded="false" />
-            <element signature="e#3518#3602#0" expanded="false" />
-            <element signature="e#3640#3722#0" expanded="false" />
-            <element signature="e#3764#3854#0" expanded="false" />
-            <element signature="e#3897#3989#0" expanded="false" />
-            <element signature="e#4029#4115#0" expanded="false" />
-            <element signature="e#4156#4258#0" expanded="false" />
-            <element signature="e#4306#4416#0" expanded="false" />
-            <element signature="e#4465#4577#0" expanded="false" />
-            <element signature="e#4622#4729#0" expanded="false" />
-            <element signature="e#4772#4872#0" expanded="false" />
-            <element signature="e#4981#5430#0" expanded="false" />
-            <element signature="n#!!block;n#createIce#0" expanded="false" />
-            <element signature="e#6407#6428#0" expanded="false" />
+            <element signature="e#1379#1932#0" expanded="false" />
+            <element signature="e#1980#2509#0" expanded="false" />
+            <element signature="e#2558#3089#0" expanded="false" />
+            <element signature="e#3134#3660#0" expanded="false" />
+            <element signature="e#4273#4790#0" expanded="false" />
+            <element signature="e#4828#5343#0" expanded="false" />
+            <element signature="e#5385#5908#0" expanded="false" />
+            <element signature="e#5951#6476#0" expanded="false" />
+            <element signature="e#6516#7035#0" expanded="false" />
+            <element signature="e#7076#7623#0" expanded="false" />
+            <element signature="e#7671#8232#0" expanded="false" />
+            <element signature="e#8281#8844#0" expanded="false" />
+            <element signature="e#8889#9444#0" expanded="false" />
+            <element signature="e#10205#10755#0" expanded="false" />
+            <element signature="e#10793#11341#0" expanded="false" />
+            <element signature="e#11383#11939#0" expanded="false" />
+            <element signature="e#11982#12540#0" expanded="false" />
+            <element signature="e#12580#13132#0" expanded="false" />
+            <element signature="e#13173#13759#0" expanded="false" />
+            <element signature="e#13807#14401#0" expanded="false" />
+            <element signature="e#14450#15046#0" expanded="false" />
+            <element signature="e#15091#15682#0" expanded="false" />
+            <element signature="e#18300#18321#0" expanded="false" />
             <element signature="n#!!block;n#getMisHelados#0" expanded="false" />
-            <element signature="e#9228#9246#0" expanded="false" />
+            <element signature="e#21121#21139#0" expanded="false" />
             <element signature="n#!!block;n#getHelados#0" expanded="false" />
-            <element signature="e#11755#11891#0" expanded="false" />
-            <element signature="e#14451#14554#0" expanded="false" />
+            <element signature="e#23648#23784#0" expanded="false" />
+            <element signature="n#!!block;n#getHelados_by_user#0" expanded="false" />
+            <element signature="e#26344#26447#0" expanded="false" />
             <element signature="n#!!block;n#getHelados_by_flavour#0" expanded="false" />
-            <element signature="e#18401#18535#0" expanded="false" />
+            <element signature="e#30294#30428#0" expanded="false" />
             <element signature="n#!!block;n#getHelados_by_name#0" expanded="false" />
-            <element signature="e#21787#21805#0" expanded="false" />
+            <element signature="e#33680#33698#0" expanded="false" />
             <element signature="n#!!block;n#voteHelado#0" expanded="false" />
-            <element signature="e#28633#28650#0" expanded="false" />
-            <element signature="n#!!block;n#getCookie#0" expanded="false" />
-            <element signature="e#29583#30204#0" expanded="false" />
+            <element signature="e#40526#40543#0" expanded="false" />
+            <element signature="e#41476#42097#0" expanded="false" />
             <element signature="n#!!block;n#register#0" expanded="false" />
-            <element signature="e#30863#31479#0" expanded="false" />
+            <element signature="e#42756#43372#0" expanded="false" />
             <element signature="n#!!block;n#log#0" expanded="false" />
-            <element signature="e#32725#33107#0" expanded="false" />
-            <element signature="e#33264#33328#0" expanded="false" />
+            <element signature="e#44618#45000#0" expanded="false" />
+            <element signature="e#45157#45221#0" expanded="false" />
             <element signature="n#!!block;n#comprarHelado#0" expanded="false" />
-            <marker date="1434299496641" expanded="true" signature="7744:7766" placeholder="..." />
+            <marker date="1434322631851" expanded="true" signature="19637:19659" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5846645" vertical-offset="4598" max-vertical-offset="9061">
+          <caret line="292" column="0" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
