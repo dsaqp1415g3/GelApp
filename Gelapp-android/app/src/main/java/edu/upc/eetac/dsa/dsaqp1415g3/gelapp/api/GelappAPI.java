@@ -90,6 +90,8 @@ public class GelappAPI {
 
     }
 
+
+    //Obtener lista de helados
     public HeladoCollection getHelados() throws AppException {
         Log.d(TAG, "getHelados()");
         HeladoCollection helados = new HeladoCollection();
@@ -171,6 +173,75 @@ public class GelappAPI {
         }
     }
 
+
+    //Obtener ranking de helados
+
+    public HeladoCollection getRankingHelados() throws AppException {
+        Log.d(TAG, "getHelados()");
+        HeladoCollection helados = new HeladoCollection();
+
+        HttpURLConnection urlConnection = null;
+        try {
+            urlConnection = (HttpURLConnection) new URL(rootAPI.getLinks()
+                    .get("gelapp-ranking").getTarget()).openConnection();
+            urlConnection.setRequestMethod("GET");
+            urlConnection.setDoInput(true);
+            urlConnection.connect();
+        } catch (IOException e) {
+            throw new AppException(
+                    "Can't connect to Gelapp API Web Service");
+        }
+
+        BufferedReader reader;
+        try {
+            reader = new BufferedReader(new InputStreamReader(
+                    urlConnection.getInputStream()));
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+            }
+
+            JSONObject jsonObject = new JSONObject(sb.toString());
+            JSONArray jsonLinks = jsonObject.getJSONArray("links");
+            parseLinks(jsonLinks, helados.getLinks());
+
+            //helados.setNewestTimestamp(jsonObject.getLong("newestTimestamp"));
+            //helados.setOldestTimestamp(jsonObject.getLong("oldestTimestamp"));
+            JSONArray jsonHelados = jsonObject.getJSONArray("helados");
+            for (int i = 0; i < jsonHelados.length(); i++) {
+                Helado helado = new Helado();
+                JSONObject jsonHelado = jsonHelados.getJSONObject(i);
+
+                helado.setAutor(jsonHelado.getString("autor"));
+                helado.setAutorid(jsonHelado.getInt("autorid"));
+                helado.setCapa1Topping(jsonHelado.getString("capa1Topping"));
+                helado.setCapa2Helado(jsonHelado.getString("capa2Helado"));
+                helado.setCapa3Topping(jsonHelado.getString("capa3Topping"));
+                helado.setCapa4Helado(jsonHelado.getString("capa4Helado"));
+                helado.setCapa5Topping(jsonHelado.getString("capa5Topping"));
+                helado.setCreationTimestamp(jsonHelado.getLong("creationTimestamp"));
+                helado.setHeladoid(jsonHelado.getInt("heladoid"));
+                helado.setLastModified(jsonHelado.getLong("lastModified"));
+                helado.setNombreHelado(jsonHelado.getString("nombreHelado"));
+                helado.setVotos(jsonHelado.getInt("votos"));
+
+                jsonLinks = jsonHelado.getJSONArray("links");
+                parseLinks(jsonLinks, helado.getLinks());
+                helados.getHelados().add(helado);
+            }
+        } catch (IOException e) {
+            throw new AppException(
+                    "Can't get response from Gelapp API Web Service");
+        } catch (JSONException e) {
+            throw new AppException("Error parsing Gelapp Rooooooot API");
+        }
+
+        return helados;
+    }
+
+    //Obtener 1 helado
+
     private Map<String, Helado> heladosCache = new HashMap<String, Helado>();
 
     public Helado getHelado(String urlHelado) throws AppException {
@@ -203,6 +274,7 @@ public class GelappAPI {
             String line = null;
             while ((line = reader.readLine()) != null) {
                 sb.append(line);
+
             }
             JSONObject jsonHelado = new JSONObject(sb.toString());
 
@@ -221,6 +293,8 @@ public class GelappAPI {
 
             JSONArray jsonLinks = jsonHelado.getJSONArray("links");
             parseLinks(jsonLinks, helado.getLinks());
+
+
         } catch (MalformedURLException e) {
             Log.e(TAG, e.getMessage(), e);
             throw new AppException("Bad helado url");
@@ -323,38 +397,47 @@ public class GelappAPI {
 
     //Borrar helado
 
-    public void deleteHelado(String urlHelado) throws AppException {
+    public Helado deleteHelado(String urlHelado) throws AppException {
         Helado helado = null;
         HttpURLConnection urlConnection = null;
 
-            try {
-                JSONObject jsonHelado = createJsonHelado(helado);
+        try {
+            URL url = new URL(urlHelado);
+            urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setRequestMethod("DELETE");
+            urlConnection.setDoInput(true);
 
+            helado = heladosCache.get(urlHelado);
+            String eTag = (helado == null) ? null : helado.getETag();
+            if (eTag != null)
+                urlConnection.setRequestProperty("If-None-Match", eTag);
+            urlConnection.connect();
+            if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_NOT_MODIFIED) {
+                Log.d(TAG, "CACHE");
+                return heladosCache.get(urlHelado);
+            }
+            Log.d(TAG, "NOT IN CACHE");
+            helado = new Helado();
+            eTag = urlConnection.getHeaderField("ETag");
+            helado.setETag(eTag);
+            heladosCache.put(urlHelado, helado);
 
-                URL urlPostHelados = new URL(rootAPI.getLinks().get("delete-helado").getTarget());
+            BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    urlConnection.getInputStream()));
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+            }
 
-                urlConnection = (HttpURLConnection) urlPostHelados.openConnection();
-                urlConnection.setRequestMethod("DELETE");
-                urlConnection.setDoInput(true);
-                urlConnection.setDoOutput(true);
-                urlConnection.connect();
-                PrintWriter writer = new PrintWriter(
-                        urlConnection.getOutputStream());
-                writer.println(jsonHelado.toString());
-                writer.close();
-
-
-            } catch (MalformedURLException e) {
+        } catch (MalformedURLException e) {
             Log.e(TAG, e.getMessage(), e);
             throw new AppException("Bad helado url");
         } catch (IOException e) {
             Log.e(TAG, e.getMessage(), e);
             throw new AppException("Exception when getting the helado");
-        } catch (JSONException e) {
-            Log.e(TAG, e.getMessage(), e);
-            throw new AppException("Exception parsing response");
         }
-
+        return helado;
     }
 
 
@@ -386,6 +469,10 @@ public class GelappAPI {
             writer.close();
 
             int rc = urlConnection.getResponseCode();
+            if(rc==404){
+                user.setLoginSuccesful(false);
+                return user;
+            }
             BufferedReader reader = new BufferedReader(new InputStreamReader(
                     urlConnection.getInputStream()));
             StringBuilder sb = new StringBuilder();
@@ -452,6 +539,10 @@ public class GelappAPI {
             writer.close();
 
             int rc = urlConnection.getResponseCode();
+            if(rc==409){
+                userReg.setLoginSuccesful(true);//indica que ha habido un error
+                return userReg;
+            }
             BufferedReader reader = new BufferedReader(new InputStreamReader(
                     urlConnection.getInputStream()));
             StringBuilder sb = new StringBuilder();
@@ -487,6 +578,77 @@ public class GelappAPI {
 
         return jsonUserReg;
     }
+
+
+    //VOTAR/////////////
+
+    public Voto VoteHelado(int idusuario, int idhelado) throws AppException {
+        Voto voto = new Voto();
+
+        voto.setId_usuario(idusuario);
+        voto.setId_helado(idhelado);
+
+        HttpURLConnection urlConnection = null;
+        try {
+            JSONObject jsonVoto = createJsonVoto(voto);
+
+
+            URL urlPostVoto = new URL(rootAPI.getLinks().get("vote").getTarget());//link de votar
+
+            urlConnection = (HttpURLConnection) urlPostVoto.openConnection();
+            urlConnection.setRequestProperty("Content-Type",
+                    MediaType.GELAPP_API_VOTOS);
+            urlConnection.setRequestMethod("POST");
+            urlConnection.setDoInput(true);
+            urlConnection.setDoOutput(true);
+            urlConnection.connect();
+            PrintWriter writer = new PrintWriter(
+                    urlConnection.getOutputStream());
+            writer.println(jsonVoto.toString());
+            writer.close();
+
+
+            int rc = urlConnection.getResponseCode();
+            if(rc==500){//código de error si ya se ha votado
+                voto.setId_usuario(0);
+                voto.setId_helado(0);
+                return voto;
+            }
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(
+                    urlConnection.getInputStream()));
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line);
+            }
+            jsonVoto = new JSONObject(sb.toString());
+
+            voto.setId_usuario(jsonVoto.getInt("id_usuario"));
+            voto.setId_helado(jsonVoto.getInt("id_helado"));
+
+        } catch (JSONException e) {
+            Log.e(TAG, e.getMessage(), e);
+            throw new AppException("Error parsing response");
+        } catch (IOException e) {
+            Log.e(TAG, e.getMessage(), e);
+            throw new AppException("Error getting response");
+        } finally {
+            if (urlConnection != null)
+                urlConnection.disconnect();
+        }
+        return voto;
+    }
+
+
+    private JSONObject createJsonVoto(Voto voto) throws JSONException {
+        JSONObject jsonVoto = new JSONObject();
+        jsonVoto.put("id_usuario", voto.getId_usuario());
+        jsonVoto.put("id_helado", voto.getId_helado());
+
+        return jsonVoto;
+    }
+
 
 }
 

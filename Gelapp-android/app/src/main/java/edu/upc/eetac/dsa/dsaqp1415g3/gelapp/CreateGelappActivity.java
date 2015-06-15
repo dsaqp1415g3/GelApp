@@ -200,13 +200,13 @@ public class CreateGelappActivity extends Activity {
     }
 
     public void cancel(View v) {
-        v.setBackgroundResource(R.drawable.button_red_click);
+
         setResult(RESULT_CANCELED);
         finish();
     }
 
     public void postHelado(View v) {
-        v.setBackgroundResource(R.drawable.button_green_click);
+
 //Obtengo el nombre que ha escrito el usuario en el Edit Text
         EditText etNombre = (EditText) findViewById(R.id.etNombreHelado);
         String nombreHelado = etNombre.getText().toString();

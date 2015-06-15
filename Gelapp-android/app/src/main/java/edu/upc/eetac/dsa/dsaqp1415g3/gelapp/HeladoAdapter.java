@@ -20,6 +20,7 @@ public class HeladoAdapter extends BaseAdapter {
 
     ArrayList<Helado> data;
     LayoutInflater inflater;
+    int contador = 0;
 
     public HeladoAdapter(Context context, ArrayList<Helado> data) {
         super();

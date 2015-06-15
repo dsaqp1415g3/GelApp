@@ -23,6 +23,8 @@
         <activity android:name=".HeladoDetailActivity" />
         <activity android:name=".CreateGelappActivity" />
         <activity android:name=".RegisterActivity"/>
+        <activity android:name=".RankingActivity"/>
+        <activity android:name=".aboutActivity"/>
 
     </application>
 

@@ -190,7 +190,7 @@
             android:elegantTextHeight="false"
             android:singleLine="false"
             android:textSize="20dp"
-            android:background="@drawable/button_red"
+            android:background="@drawable/button_default_red"
             android:layout_marginRight="5dp"/>
 
         <Button
@@ -202,7 +202,7 @@
             android:text="Create"
             android:layout_gravity="bottom"
             android:textSize="20dp"
-            android:background="@drawable/button_green"
+            android:background="@drawable/button_default_green"
             android:layout_marginLeft="5dp"/>
     </LinearLayout>
 

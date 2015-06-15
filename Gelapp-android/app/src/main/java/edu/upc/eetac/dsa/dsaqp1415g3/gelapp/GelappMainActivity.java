@@ -12,13 +12,16 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.TextView;
+
+import com.google.gson.Gson;
 
 import java.net.Authenticator;
 import java.net.PasswordAuthentication;
@@ -35,11 +38,10 @@ public class GelappMainActivity extends ListActivity implements AdapterView.OnIt
     private String UserName;
     private DrawerLayout drawerLayout;
     private ListView listView;
-    private static final String[] values = {"Crear Helado", "About*", "Music Off", "Log Out"};
+    private static final String[] values = {"Crear Helado", "Top 5", "About", "Log Out"};
 ////////////
 ////////////Botón flotante
-    //Toolbar toolbar;
-    ImageButton FAB;
+    ImageButton imageButton;
 ///////////
 
     private final static String TAG = GelappMainActivity.class.toString();
@@ -49,11 +51,17 @@ public class GelappMainActivity extends ListActivity implements AdapterView.OnIt
 
     MediaPlayer mediaPlayer;
 
-/** Called when the activity is first created. */
+
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gelapp_main);
+        //Escribo el título del layout Ranking
+        TextView tituloMain = (TextView) findViewById(R.id.tituloMain);
+        tituloMain.setText("LISTA DE HELADOS");
+
 ////////
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -63,12 +71,12 @@ public class GelappMainActivity extends ListActivity implements AdapterView.OnIt
 
         listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values));
         listView.setOnItemClickListener(this);//cuando pulsa una opción de la lista
-////////
-///////Botón flotante
-        //toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-        FAB = (ImageButton) findViewById(R.id.imageButton);
-        FAB.setOnClickListener(new View.OnClickListener() {
+///////Botón flotante
+
+        imageButton = (ImageButton) findViewById(R.id.imageButton);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -78,17 +86,10 @@ public class GelappMainActivity extends ListActivity implements AdapterView.OnIt
             }
         });
 
+////Lista de helados
         heladosList = new ArrayList<Helado>();
         adapter = new HeladoAdapter(this, heladosList);
         setListAdapter(adapter);
-
-
-        //Poner musica de fondo (se añade la canción en la carpeta res>raw)
-
-        mediaPlayer = MediaPlayer.create(this,R.raw.helados);
-        mediaPlayer.setLooping(true);
-        mediaPlayer.setVolume(50,50);
-       // mediaPlayer.start();
 
 
 ///////////////LOGIN
@@ -103,10 +104,15 @@ public class GelappMainActivity extends ListActivity implements AdapterView.OnIt
                         .toCharArray());
             }
         });
-        UserName=prefs.getString("username",null);//Envio el nombre del usuario para ponerlo en la barra de arriba
+
+
+
+        //Envio el nombre del usuario para ponerlo en la barra de arriba
+        UserName=prefs.getString("username",null);
 
         ActionBar actionBar = getActionBar();
         actionBar.setTitle("Hi " +UserName);
+
 ////////////////
 
                 (new FetchHeladosTask()).execute();
@@ -152,6 +158,42 @@ public class GelappMainActivity extends ListActivity implements AdapterView.OnIt
 
             }
 
+
+    private final static int WRITE_ACTIVITY = 0;
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case WRITE_ACTIVITY:
+                if (resultCode == RESULT_OK) {
+                    Bundle res = data.getExtras();
+                    String jsonHelado = res.getString("json-helado");
+                    Helado helado = new Gson().fromJson(jsonHelado, Helado.class);
+                    heladosList.add(0, helado);
+                    adapter.notifyDataSetChanged();
+                }
+                break;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             //Si pulsamos un objeto de la lista se nos abre el helado_detail_layout
             @Override
             protected void onListItemClick(ListView l, View v, int position, long id) {
@@ -166,7 +208,7 @@ public class GelappMainActivity extends ListActivity implements AdapterView.OnIt
 
             ////////////Al pulsar una opción del drawer lateral
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 Fragment fragment = null;
 
@@ -174,9 +216,17 @@ public class GelappMainActivity extends ListActivity implements AdapterView.OnIt
 
                     Intent intent = new Intent(this, CreateGelappActivity.class);
                     startActivity(intent);
+                    //cierro este layout para q no se acumule
+                    finish();
                 }
 
                 if (position == 1) {
+
+                    Intent intent = new Intent(this, RankingActivity.class);
+                    startActivity(intent);
+
+                    //cierro este layout para q no se acumule
+                    finish();
 
 
                 }
@@ -202,6 +252,8 @@ public class GelappMainActivity extends ListActivity implements AdapterView.OnIt
                     //Como me he deslogueado inicio el layout del Login
                     Intent intent = new Intent(this, LoginActivity.class);
                     startActivity(intent);
+
+                    //cierro el layout por si le dan al boton "atrás"
                     finish();
 
 
@@ -209,16 +261,17 @@ public class GelappMainActivity extends ListActivity implements AdapterView.OnIt
                 }
 
                 if (position == 2) {
-                    mediaPlayer.stop();
-                    Toast.makeText(this, "Music OFF", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(this, aboutActivity.class);
+                    startActivity(intent);
                 }
 
                 drawerLayout.closeDrawers();
 
 
+
             }
 
-
+/*
             //Ap pulsar botón HOME
             @Override
             public boolean onOptionsItemSelected(MenuItem item) {
@@ -234,6 +287,72 @@ public class GelappMainActivity extends ListActivity implements AdapterView.OnIt
 
                 return super.onOptionsItemSelected(item);
             }
+*/
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.gelapp, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.refresh:
+                //metodo refresh
+                Intent intent = new Intent(this, GelappMainActivity.class);
+                startActivity(intent);
+                finish();
+                return true;
+
+            case R.id.menu:
+                intent = new Intent(this, RankingActivity.class);
+                startActivity(intent);
+                finish();
+                return true;
+
+            case R.id.about:
+
+                intent = new Intent(this, aboutActivity.class);
+                startActivity(intent);
+
+                return true;
+
+            case R.id.logOut:
+
+                //Elimino usuario y contraseña en local para no volverme a loggear automaticamente
+                SharedPreferences prefs = getSharedPreferences("gelapp-profile",
+                        Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.clear();
+                editor.remove("username");
+                editor.remove("password");
+                boolean done = editor.commit();
+                if (done) {
+                    Log.d(TAG, "preferences deleted");
+                }
+                else {
+                    Log.d(TAG, "preferences not deleted. THIS A SEVERE PROBLEM");
+                }
+
+
+                //Como me he deslogueado inicio el layout del Login
+                intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
+
+    }
+
+
+
+
+}

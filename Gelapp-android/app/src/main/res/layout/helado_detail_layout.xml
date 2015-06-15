@@ -24,6 +24,7 @@
         >
 
         <LinearLayout
+            android:id="@+id/layout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -43,10 +44,12 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="5dip"
+            android:paddingRight="5dip"
+            android:paddingLeft="5dip"
             android:layout_gravity="center_horizontal"
             android:background="#75ffab00">
 
@@ -55,10 +58,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:background="#FFFFFF"
 
-                android:drawableTop="@drawable/ic_drawer"
+                android:drawableTop="@drawable/images"
                 />
 
 
@@ -69,6 +72,7 @@
 
 
         <LinearLayout
+            android:id="@+id/layout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -105,6 +109,7 @@
 
 
         <LinearLayout
+            android:id="@+id/layout4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -349,7 +354,7 @@
                 android:text="Delete"
                 android:layout_gravity="bottom"
                 android:textSize="20dp"
-                android:background="@drawable/button_red"
+                android:background="@drawable/button_default_red"
                 android:layout_marginRight="5dp"/>
 
             <Button
@@ -361,7 +366,7 @@
                 android:text="Buy"
                 android:layout_gravity="bottom"
                 android:textSize="20dp"
-                android:background="@drawable/button_blue"
+                android:background="@drawable/button_default_blue"
                 android:layout_marginLeft="5dp"/>
 
         </LinearLayout>
