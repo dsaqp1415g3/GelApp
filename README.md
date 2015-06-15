@@ -1,6 +1,6 @@
 # Proyecto Final de la asignatura DSA. QP 2015 - EETAC (UPC)
 
-### Título: GelApp
+### Título: GelApp http://gelapp-web.appspot.com/
 
 * Descripción: Aplicación para web y android con formato de tienda virtual de helados
 que permite a los usuarios registrarse, crear helados a su gusto y guardarlos, 
