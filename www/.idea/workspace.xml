@@ -23,149 +23,7 @@
     <favorites_list name="www" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.615385" vertical-offset="799" max-vertical-offset="2737">
-              <caret line="77" column="102" selection-start-line="77" selection-start-column="102" selection-end-line="77" selection-end-column="102" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/about.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.608108" vertical-offset="2085" max-vertical-offset="2822">
-              <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/css/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5846645" vertical-offset="4598" max-vertical-offset="9061">
-              <caret line="292" column="0" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0" vertical-offset="493" max-vertical-offset="2584">
-              <caret line="29" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mis-helados.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mis-helados.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.8648648" vertical-offset="2548" max-vertical-offset="3417">
-              <caret line="158" column="23" selection-start-line="158" selection-start-column="23" selection-end-line="158" selection-end-column="23" />
-              <folding>
-                <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#2;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#3;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nuestros-helados.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nuestros-helados.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-19.615385" vertical-offset="1938" max-vertical-offset="2567">
-              <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="51" />
-              <folding>
-                <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ranking.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ranking.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.9324324" vertical-offset="401" max-vertical-offset="1479">
-              <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
-              <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gelapp.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/gelapp.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-34.104168" vertical-offset="913" max-vertical-offset="6392">
-              <caret line="559" column="0" selection-start-line="559" selection-start-column="0" selection-end-line="559" selection-end-column="0" />
-              <folding>
-                <element signature="e#177#251#0" expanded="false" />
-                <element signature="n#!!block;n#deleteHelado#0" expanded="false" />
-                <element signature="e#1379#1932#0" expanded="false" />
-                <element signature="e#1980#2509#0" expanded="false" />
-                <element signature="e#2558#3089#0" expanded="false" />
-                <element signature="e#3134#3660#0" expanded="false" />
-                <element signature="e#4273#4790#0" expanded="false" />
-                <element signature="e#4828#5343#0" expanded="false" />
-                <element signature="e#5385#5908#0" expanded="false" />
-                <element signature="e#5951#6476#0" expanded="false" />
-                <element signature="e#6516#7035#0" expanded="false" />
-                <element signature="e#7076#7623#0" expanded="false" />
-                <element signature="e#7671#8232#0" expanded="false" />
-                <element signature="e#8281#8844#0" expanded="false" />
-                <element signature="e#8889#9444#0" expanded="false" />
-                <element signature="e#10205#10755#0" expanded="false" />
-                <element signature="e#10793#11341#0" expanded="false" />
-                <element signature="e#11383#11939#0" expanded="false" />
-                <element signature="e#11982#12540#0" expanded="false" />
-                <element signature="e#12580#13132#0" expanded="false" />
-                <element signature="e#13173#13759#0" expanded="false" />
-                <element signature="e#13807#14401#0" expanded="false" />
-                <element signature="e#14450#15046#0" expanded="false" />
-                <element signature="e#15091#15682#0" expanded="false" />
-                <element signature="e#18300#18321#0" expanded="false" />
-                <element signature="n#!!block;n#getMisHelados#0" expanded="false" />
-                <element signature="e#21121#21139#0" expanded="false" />
-                <element signature="n#!!block;n#getHelados#0" expanded="false" />
-                <element signature="e#23648#23784#0" expanded="false" />
-                <element signature="n#!!block;n#getHelados_by_user#0" expanded="false" />
-                <element signature="e#26344#26447#0" expanded="false" />
-                <element signature="n#!!block;n#getHelados_by_flavour#0" expanded="false" />
-                <element signature="e#30294#30428#0" expanded="false" />
-                <element signature="n#!!block;n#getHelados_by_name#0" expanded="false" />
-                <element signature="e#33680#33698#0" expanded="false" />
-                <element signature="n#!!block;n#voteHelado#0" expanded="false" />
-                <element signature="e#40526#40543#0" expanded="false" />
-                <element signature="e#41476#42097#0" expanded="false" />
-                <element signature="n#!!block;n#register#0" expanded="false" />
-                <element signature="e#42756#43372#0" expanded="false" />
-                <element signature="n#!!block;n#log#0" expanded="false" />
-                <element signature="e#44618#45000#0" expanded="false" />
-                <element signature="e#45157#45221#0" expanded="false" />
-                <element signature="n#!!block;n#comprarHelado#0" expanded="false" />
-                <marker date="1434322631851" expanded="true" signature="19637:19659" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -266,7 +124,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/styleHelado.html" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/calendapp-project-master/www" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -276,14 +134,10 @@
     <property name="FullScreen" value="false" />
   </component>
   <component name="RunManager" selected="Chromium Remote.Unnamed">
-    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
-      <method />
-    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
-      <envs />
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
     </configuration>
     <configuration default="true" type="JSTestDriver:ConfigurationType" factoryName="JsTestDriver">
@@ -291,6 +145,10 @@
       <setting name="settingsFile" value="" />
       <setting name="serverType" value="INTERNAL" />
       <setting name="preferredDebugBrowser" value="Chrome" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="ChromiumRemoteDebugType" factoryName="Chromium Remote">
@@ -350,18 +208,18 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.041874375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13636364" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13636364" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -475,7 +333,7 @@
             <element signature="e#44618#45000#0" expanded="false" />
             <element signature="e#45157#45221#0" expanded="false" />
             <element signature="n#!!block;n#comprarHelado#0" expanded="false" />
-            <marker date="1434322631851" expanded="true" signature="19637:19659" placeholder="..." />
+            <marker date="1434322631851" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -484,7 +342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="2601">
           <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -608,7 +465,7 @@
             <element signature="e#44618#45000#0" expanded="false" />
             <element signature="e#45157#45221#0" expanded="false" />
             <element signature="n#!!block;n#comprarHelado#0" expanded="false" />
-            <marker date="1434322631851" expanded="true" signature="19637:19659" placeholder="..." />
+            <marker date="1434322631851" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -617,7 +474,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="2601">
           <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -741,7 +597,7 @@
             <element signature="e#44618#45000#0" expanded="false" />
             <element signature="e#45157#45221#0" expanded="false" />
             <element signature="n#!!block;n#comprarHelado#0" expanded="false" />
-            <marker date="1434322631851" expanded="true" signature="19637:19659" placeholder="..." />
+            <marker date="1434322631851" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -750,7 +606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="2601">
           <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -874,7 +729,7 @@
             <element signature="e#44618#45000#0" expanded="false" />
             <element signature="e#45157#45221#0" expanded="false" />
             <element signature="n#!!block;n#comprarHelado#0" expanded="false" />
-            <marker date="1434322631851" expanded="true" signature="19637:19659" placeholder="..." />
+            <marker date="1434322631851" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -883,7 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="2601">
           <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1007,7 +861,7 @@
             <element signature="e#44618#45000#0" expanded="false" />
             <element signature="e#45157#45221#0" expanded="false" />
             <element signature="n#!!block;n#comprarHelado#0" expanded="false" />
-            <marker date="1434322631851" expanded="true" signature="19637:19659" placeholder="..." />
+            <marker date="1434322631851" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1021,16 +875,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.615385" vertical-offset="799" max-vertical-offset="2737">
+        <state vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="2737">
           <caret line="77" column="102" selection-start-line="77" selection-start-column="102" selection-end-line="77" selection-end-column="102" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="2584">
-          <caret line="29" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1039,13 +885,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.1923075" vertical-offset="918" max-vertical-offset="2601">
           <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.608108" vertical-offset="2085" max-vertical-offset="2822">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2085" max-vertical-offset="2822">
           <caret line="134" column="19" selection-start-line="134" selection-start-column="19" selection-end-line="134" selection-end-column="19" />
           <folding />
         </state>
@@ -1055,34 +900,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3243243" vertical-offset="0" max-vertical-offset="629">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ranking.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9324324" vertical-offset="401" max-vertical-offset="1479">
-          <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nuestros-helados.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.615385" vertical-offset="1938" max-vertical-offset="2567">
-          <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="51" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mis-helados.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.8648648" vertical-offset="2548" max-vertical-offset="3417">
+        <state vertical-scroll-proportion="0.19574468" vertical-offset="2548" max-vertical-offset="3417">
           <caret line="158" column="23" selection-start-line="158" selection-start-column="23" selection-end-line="158" selection-end-column="23" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1098,9 +921,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.500684" vertical-offset="4598" max-vertical-offset="9061">
+          <caret line="292" column="0" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="493" max-vertical-offset="2584">
+          <caret line="29" column="12" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nuestros-helados.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.83120567" vertical-offset="1862" max-vertical-offset="2567">
+          <caret line="144" column="0" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ranking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20283689" vertical-offset="401" max-vertical-offset="1479">
+          <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
+          <folding>
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/gelapp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.104168" vertical-offset="913" max-vertical-offset="6392">
+        <state vertical-scroll-proportion="2.239398" vertical-offset="913" max-vertical-offset="6392">
           <caret line="559" column="0" selection-start-line="559" selection-start-column="0" selection-end-line="559" selection-end-column="0" />
           <folding>
             <element signature="e#177#251#0" expanded="false" />
@@ -1147,16 +1007,8 @@
             <element signature="e#44618#45000#0" expanded="false" />
             <element signature="e#45157#45221#0" expanded="false" />
             <element signature="n#!!block;n#comprarHelado#0" expanded="false" />
-            <marker date="1434322631851" expanded="true" signature="19637:19659" placeholder="..." />
+            <marker date="1434322631851" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5846645" vertical-offset="4598" max-vertical-offset="9061">
-          <caret line="292" column="0" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
