@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Toppings">
+        <item>caramelo</item>
+        <item>chocolate_blanco</item>
+        <item>chocolate_negro</item>
+        <item>sirope_fresa</item>
+        <item>multicolor</item>
+    </string-array>
+
+    <string-array name="Sabores">
+        <item>fresa</item>
+        <item>nata</item>
+        <item>vainilla</item>
+        <item>chocolate</item>
+        <item>turron</item>
+    </string-array>
+
+
+</resources>
